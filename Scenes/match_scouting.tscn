@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://debhkbfae60wr"]
+[gd_scene load_steps=5 format=3 uid="uid://debhkbfae60wr"]
 
 [ext_resource type="Script" path="res://Scripts/match_scouting.gd" id="1_u2ron"]
 [ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_77k5n"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="3_rvlpy"]
+[ext_resource type="Texture2D" uid="uid://6wksducocnk1" path="res://Assets/button2.png" id="4_hhm0p"]
 
 [node name="MatchScouting" type="Node2D"]
 script = ExtResource("1_u2ron")
@@ -12,3 +13,10 @@ script = ExtResource("1_u2ron")
 [node name="QR code generator" parent="." instance=ExtResource("2_77k5n")]
 
 [node name="DataStorage" parent="." instance=ExtResource("3_rvlpy")]
+
+[node name="Return to menu" type="TouchScreenButton" parent="."]
+
+[node name="Image" type="Sprite2D" parent="Return to menu"]
+position = Vector2(499, -240)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_hhm0p")
