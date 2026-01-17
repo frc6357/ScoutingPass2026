@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3v62nyafqopb"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_d4pt4"]
+[ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="2_cicmk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvxjn"]
+size = Vector2(60, 20)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_d4pt4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="buttons" type="Node2D" parent="."]
+
+[node name="Scouting" type="TouchScreenButton" parent="buttons"]
+position = Vector2(-1, -248)
+scale = Vector2(8.8, 5.57)
+shape = SubResource("RectangleShape2D_qvxjn")
+action = "scouting"
+
+[node name="Image" type="Sprite2D" parent="buttons/Scouting"]
+
+[node name="Pitscouting" type="TouchScreenButton" parent="buttons"]
+position = Vector2(-1, -123)
+scale = Vector2(8.74347, 5.50977)
+shape = SubResource("RectangleShape2D_qvxjn")
+action = "pit"
+
+[node name="Image" type="Sprite2D" parent="buttons/Pitscouting"]
+
+[node name="Strategy" type="TouchScreenButton" parent="buttons"]
+position = Vector2(2, 4.99999)
+scale = Vector2(8.84, 5.64)
+shape = SubResource("RectangleShape2D_qvxjn")
+action = "strategy"
+
+[node name="Image" type="Sprite2D" parent="buttons/Strategy"]
+
+[node name="Tools" type="TouchScreenButton" parent="buttons"]
+position = Vector2(1, 131)
+scale = Vector2(8.65889, -5.64585)
+shape = SubResource("RectangleShape2D_qvxjn")
+action = "tools"
+
+[node name="Image" type="Sprite2D" parent="buttons/Tools"]
+
+[node name="MiniGame" type="TouchScreenButton" parent="buttons"]
+position = Vector2(1, 257)
+scale = Vector2(8.68, 5.68)
+shape = SubResource("RectangleShape2D_qvxjn")
+action = "minigame"
+
+[node name="Image" type="Sprite2D" parent="buttons/MiniGame"]
+
+[node name="visuals" type="Node2D" parent="."]
+
+[node name="DataStorage" parent="." instance=ExtResource("2_cicmk")]

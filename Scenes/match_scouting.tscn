@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://debhkbfae60wr"]
+
+[ext_resource type="Script" path="res://Scripts/match_scouting.gd" id="1_u2ron"]
+[ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_77k5n"]
+[ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="3_rvlpy"]
+
+[node name="MatchScouting" type="Node2D"]
+script = ExtResource("1_u2ron")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="QR code generator" parent="." instance=ExtResource("2_77k5n")]
+
+[node name="DataStorage" parent="." instance=ExtResource("3_rvlpy")]

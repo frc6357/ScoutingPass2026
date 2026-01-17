@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dah3g7k0b3elt"]
+
+[ext_resource type="Script" path="res://Scripts/minigame.gd" id="1_lfhgs"]
+[ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="2_14ex8"]
+
+[node name="minigame" type="Node2D"]
+script = ExtResource("1_lfhgs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="DataStorage" parent="." instance=ExtResource("2_14ex8")]

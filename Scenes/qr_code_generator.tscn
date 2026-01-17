@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dyich51qwix0q"]
+
+[node name="QR code generator" type="Node2D"]

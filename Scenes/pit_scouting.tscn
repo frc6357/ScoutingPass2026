@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dokjhhg2g5n87"]
+
+[ext_resource type="Script" path="res://Scripts/pit_scouting.gd" id="1_obrrj"]
+
+[node name="pit_scouting" type="Node2D"]
+script = ExtResource("1_obrrj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
