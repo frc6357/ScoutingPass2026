@@ -1,11 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dah3g7k0b3elt"]
+[gd_scene load_steps=5 format=3 uid="uid://dah3g7k0b3elt"]
 
 [ext_resource type="Script" path="res://Scripts/minigame.gd" id="1_lfhgs"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="2_14ex8"]
+[ext_resource type="Texture2D" uid="uid://6wksducocnk1" path="res://Assets/button2.png" id="2_gimsa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_so5ne"]
 
 [node name="minigame" type="Node2D"]
 script = ExtResource("1_lfhgs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StartScouting" type="TouchScreenButton" parent="Camera2D"]
+position = Vector2(474, -221)
+scale = Vector2(8, 8)
+shape = SubResource("CircleShape2D_so5ne")
+action = "scouting"
+
+[node name="Image" type="Sprite2D" parent="Camera2D/StartScouting"]
+position = Vector2(0.5, 1.125)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_gimsa")
 
 [node name="DataStorage" parent="." instance=ExtResource("2_14ex8")]

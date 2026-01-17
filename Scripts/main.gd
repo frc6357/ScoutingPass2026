@@ -7,9 +7,9 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#changes to the appropriate scene when certain commands are triggered
-	if Input.is_action_just_pressed("scouting"):
+	if Input.is_action_just_pressed("auto"):
 		get_tree().change_scene_to_file("res://Scenes/match_scouting.tscn")
 	if Input.is_action_just_pressed("pit"):
 		get_tree().change_scene_to_file("res://Scenes/pit_scouting.tscn")

@@ -18,7 +18,7 @@ script = ExtResource("1_d4pt4")
 position = Vector2(-1, -248)
 scale = Vector2(8.8, 5.57)
 shape = SubResource("RectangleShape2D_qvxjn")
-action = "scouting"
+action = "auto"
 
 [node name="Image" type="Sprite2D" parent="buttons/Scouting"]
 position = Vector2(0.227273, 8.79713)
