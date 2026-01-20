@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://0aql3ehp8yaf"]
 
-[ext_resource type="Script" path="res://Scenes/match_scouting_final.gd" id="1_h0oje"]
+[ext_resource type="Script" path="res://Scripts/match_scouting_final.gd" id="1_h0oje"]
 [ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_e18bi"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="3_nuwcn"]
 
