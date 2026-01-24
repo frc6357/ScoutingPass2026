@@ -1,14 +1,113 @@
-[gd_scene load_steps=9 format=3 uid="uid://qo77a3fgbfyq"]
+[gd_scene load_steps=33 format=3 uid="uid://qo77a3fgbfyq"]
 
 [ext_resource type="Script" path="res://Scripts/match_scouting_2.gd" id="1_abj35"]
 [ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_73pei"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="3_vau7e"]
 [ext_resource type="Script" path="res://Scenes/data_storage.gd" id="4_qhi3p"]
 [ext_resource type="Script" path="res://Scenes/timer.gd" id="4_r62gf"]
+[ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="5_b1js0"]
 [ext_resource type="Script" path="res://Scenes/disabled.gd" id="5_nuj6h"]
+[ext_resource type="Texture2D" uid="uid://dw5vhhsnrqnv3" path="res://Assets/disabled_button.png" id="6_j6wy3"]
 [ext_resource type="Script" path="res://Scenes/defense.gd" id="6_rfpmv"]
+[ext_resource type="Texture2D" uid="uid://cndlrfbqlrqjg" path="res://Assets/happy_button.png" id="7_gawtn"]
+[ext_resource type="Texture2D" uid="uid://bxb7nfmddii8a" path="res://Assets/defense_button.png" id="10_2o2cp"]
+[ext_resource type="Texture2D" uid="uid://dgxktb01y1rsw" path="res://Assets/offense_button.png" id="11_tphem"]
+[ext_resource type="Texture2D" uid="uid://bh2ua7tp2v3e" path="res://Assets/sleeping button.png" id="12_n5yt1"]
+[ext_resource type="Texture2D" uid="uid://cbvk4607eodgq" path="res://Assets/shuttling_button.png" id="12_yantw"]
+[ext_resource type="Texture2D" uid="uid://dfae4s0ohqldf" path="res://Assets/Fuel buttons.png" id="14_i80bh"]
+[ext_resource type="Texture2D" uid="uid://dpr8sh7wwv6y7" path="res://Assets/scale.png" id="14_jwefq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5wm3b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ghwsc"]
+radius = 80.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hpiyv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_j6wy3")
+}],
+"loop": true,
+"name": &"disabled",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_gawtn")
+}],
+"loop": true,
+"name": &"enabled",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjnok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_yantw")
+}],
+"loop": true,
+"name": &"cycle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_2o2cp")
+}],
+"loop": true,
+"name": &"defense",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_tphem")
+}],
+"loop": true,
+"name": &"offense",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_n5yt1")
+}],
+"loop": true,
+"name": &"sleeping",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfs2e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3vre"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_jwefq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pu4pa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gnnal"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ckdb1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vftfh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_geobo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_twkno"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53h7h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_twqel"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ca0hi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bkudm"]
 
 [node name="MatchScouting" type="Node2D"]
 script = ExtResource("1_abj35")
@@ -21,36 +120,175 @@ script = ExtResource("1_abj35")
 script = ExtResource("4_qhi3p")
 
 [node name="Next" type="TouchScreenButton" parent="."]
-position = Vector2(469, -232)
+position = Vector2(486, 236)
 scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_5wm3b")
 action = "endgame"
 
 [node name="Image" type="Sprite2D" parent="Next"]
-position = Vector2(-39.125, 33.875)
-scale = Vector2(0.05, 0.05)
+position = Vector2(2.5, -6.375)
+scale = Vector2(0.0775, 0.1005)
+texture = ExtResource("5_b1js0")
 
 [node name="Previous" type="TouchScreenButton" parent="."]
-position = Vector2(-490, -236)
+position = Vector2(-487, 239)
 scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_5wm3b")
 action = "auto"
 
 [node name="Image" type="Sprite2D" parent="Previous"]
-position = Vector2(-39.125, 33.875)
-scale = Vector2(0.05, 0.05)
+position = Vector2(-3.375, -6)
+scale = Vector2(-0.078, 0.101)
+texture = ExtResource("5_b1js0")
 
 [node name="Disabled" type="Node2D" parent="."]
 script = ExtResource("5_nuj6h")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Disabled"]
+position = Vector2(473, -229)
+shape = SubResource("CircleShape2D_ghwsc")
+action = "disabled"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Disabled"]
+position = Vector2(473, -232)
+scale = Vector2(0.429, 0.429)
+sprite_frames = SubResource("SpriteFrames_hpiyv")
+animation = &"enabled"
 
 [node name="Defense" type="Node2D" parent="."]
+position = Vector2(-431, -185)
 script = ExtResource("6_rfpmv")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Defense"]
+position = Vector2(740, -44)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_tjnok")
+animation = &"defense"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Defense"]
+position = Vector2(782, 16)
+scale = Vector2(0.266, 0.266)
+sprite_frames = SubResource("SpriteFrames_tjnok")
+animation = &"defense"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Defense"]
+position = Vector2(692, 15)
+scale = Vector2(0.268, 0.266)
+sprite_frames = SubResource("SpriteFrames_tjnok")
+animation = &"cycle"
+
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Defense"]
+position = Vector2(692, 12)
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_lfs2e")
+action = "defense_p"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Defense"]
+position = Vector2(785, 15)
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_lfs2e")
+action = "defense_n"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 360.0
+wait_time = 140.0
 autostart = true
 script = ExtResource("4_r62gf")
+
+[node name="Accuracy" type="Node2D" parent="."]
+position = Vector2(-175, 14)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Accuracy"]
+position = Vector2(29, -19)
+scale = Vector2(0.722, 0.722)
+sprite_frames = SubResource("SpriteFrames_q3vre")
+
+[node name="0" type="TouchScreenButton" parent="Accuracy"]
+position = Vector2(157, 116)
+rotation = -0.254818
+scale = Vector2(5, 1.25)
+shape = SubResource("CapsuleShape2D_pu4pa")
+action = "0"
+
+[node name="16" type="TouchScreenButton" parent="Accuracy"]
+position = Vector2(97, 85)
+rotation = -0.507891
+scale = Vector2(5, 2)
+shape = SubResource("CapsuleShape2D_gnnal")
+action = "16"
+
+[node name="33" type="TouchScreenButton" parent="Accuracy"]
+position = Vector2(55, 48)
+rotation = -0.253073
+scale = Vector2(5, 2)
+shape = SubResource("CapsuleShape2D_ckdb1")
+action = "33"
+
+[node name="50" type="TouchScreenButton" parent="Accuracy"]
+position = Vector2(50, 0)
+scale = Vector2(6, 3)
+shape = SubResource("RectangleShape2D_vftfh")
+action = "50"
+
+[node name="67" type="TouchScreenButton" parent="Accuracy"]
+position = Vector2(55, -63)
+rotation = 0.127409
+scale = Vector2(6, 2)
+shape = SubResource("CapsuleShape2D_geobo")
+action = "67"
+
+[node name="83" type="TouchScreenButton" parent="Accuracy"]
+position = Vector2(95, -98)
+rotation = 0.380482
+scale = Vector2(5, 1.7)
+shape = SubResource("CapsuleShape2D_twkno")
+action = "83"
+
+[node name="100" type="TouchScreenButton" parent="Accuracy"]
+position = Vector2(155, -120)
+rotation = 0.507891
+scale = Vector2(5, 1.5)
+shape = SubResource("CapsuleShape2D_53h7h")
+action = "100"
+
+[node name="Fuel" type="Node2D" parent="."]
+position = Vector2(-282, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fuel"]
+position = Vector2(384, -8)
+scale = Vector2(0.752, 0.734)
+texture = ExtResource("14_i80bh")
+
+[node name="+10" type="TouchScreenButton" parent="Fuel"]
+position = Vector2(442, 27)
+scale = Vector2(9, 9)
+shape = SubResource("CircleShape2D_twqel")
+action = "fuel10"
+
+[node name="+4" type="TouchScreenButton" parent="Fuel"]
+position = Vector2(325, -57)
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ca0hi")
+action = "fuel4"
+
+[node name="+1" type="TouchScreenButton" parent="Fuel"]
+position = Vector2(298, 49)
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_bkudm")
+action = "fuel1"
+
+[node name="-1" type="TouchScreenButton" parent="Fuel"]
+position = Vector2(341, 100)
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_bkudm")
+action = "fuel-1"
+
+[node name="Label" type="Label" parent="Fuel"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 387.0
+offset_top = -116.0
+offset_right = 479.0
+offset_bottom = -70.0
+text = "Fuel Count:"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true

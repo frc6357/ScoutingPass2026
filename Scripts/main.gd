@@ -1,4 +1,5 @@
 extends Node2D
+@onready var data: Node2D = $DataStorage
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,7 +11,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	#changes to the appropriate scene when certain commands are triggered
 	if Input.is_action_just_pressed("auto"):
-		get_tree().change_scene_to_file("res://Scenes/match_scouting.tscn")
+		data.reset()
 	if Input.is_action_just_pressed("pit"):
 		get_tree().change_scene_to_file("res://Scenes/pit_scouting.tscn")
 	if Input.is_action_just_pressed("strategy"):

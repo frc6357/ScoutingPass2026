@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://0aql3ehp8yaf"]
+[gd_scene load_steps=7 format=3 uid="uid://0aql3ehp8yaf"]
 
 [ext_resource type="Script" path="res://Scripts/match_scouting_final.gd" id="1_h0oje"]
 [ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_e18bi"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="3_nuwcn"]
+[ext_resource type="Script" path="res://Scenes/data_storage.gd" id="4_1cruf"]
+[ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="4_70eiv"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5wm3b"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_04jwm"]
 
 [node name="MatchScouting" type="Node2D"]
 script = ExtResource("1_h0oje")
@@ -14,23 +16,26 @@ script = ExtResource("1_h0oje")
 [node name="QR code generator" parent="." instance=ExtResource("2_e18bi")]
 
 [node name="DataStorage" parent="." instance=ExtResource("3_nuwcn")]
+script = ExtResource("4_1cruf")
 
 [node name="Next" type="TouchScreenButton" parent="."]
-position = Vector2(469, -232)
+position = Vector2(486, 236)
 scale = Vector2(8, 8)
-shape = SubResource("CircleShape2D_5wm3b")
+shape = SubResource("CircleShape2D_04jwm")
 action = "main"
 
 [node name="Image" type="Sprite2D" parent="Next"]
-position = Vector2(-39.125, 33.875)
-scale = Vector2(0.05, 0.05)
+position = Vector2(2.5, -6.375)
+scale = Vector2(0.0775, 0.1005)
+texture = ExtResource("4_70eiv")
 
 [node name="Previous" type="TouchScreenButton" parent="."]
-position = Vector2(-490, -236)
+position = Vector2(-487, 239)
 scale = Vector2(8, 8)
-shape = SubResource("CircleShape2D_5wm3b")
+shape = SubResource("CircleShape2D_04jwm")
 action = "misc"
 
 [node name="Image" type="Sprite2D" parent="Previous"]
-position = Vector2(-39.125, 33.875)
-scale = Vector2(0.05, 0.05)
+position = Vector2(-3.375, -6)
+scale = Vector2(-0.078, 0.101)
+texture = ExtResource("4_70eiv")

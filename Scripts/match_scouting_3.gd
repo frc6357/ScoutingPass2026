@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("teleop"):
 		get_tree().change_scene_to_file("res://Scenes/match_scouting2.tscn")
 	if Input.is_action_just_pressed("misc"):
