@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://qo77a3fgbfyq"]
+[gd_scene load_steps=44 format=3 uid="uid://qo77a3fgbfyq"]
 
 [ext_resource type="Script" path="res://Scripts/match_scouting_2.gd" id="1_abj35"]
 [ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_73pei"]
@@ -16,6 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://cbvk4607eodgq" path="res://Assets/shuttling_button.png" id="12_yantw"]
 [ext_resource type="Texture2D" uid="uid://dfae4s0ohqldf" path="res://Assets/Fuel buttons.png" id="14_i80bh"]
 [ext_resource type="Texture2D" uid="uid://dpr8sh7wwv6y7" path="res://Assets/scale.png" id="14_jwefq"]
+[ext_resource type="Texture2D" uid="uid://ckew74hdxpglq" path="res://Assets/shot.png" id="17_66qr2"]
+[ext_resource type="Script" path="res://Scenes/climb.gd" id="18_1qhxq"]
+[ext_resource type="Texture2D" uid="uid://kfwbqxtkqtij" path="res://Assets/climb_button.png" id="18_feivl"]
+[ext_resource type="Texture2D" uid="uid://b6dw47ew813kr" path="res://Assets/climb_button2.png" id="19_owdi5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5wm3b"]
 
@@ -45,14 +49,6 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_yantw")
-}],
-"loop": true,
-"name": &"cycle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("10_2o2cp")
 }],
 "loop": true,
@@ -65,6 +61,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"offense",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_yantw")
+}],
+"loop": true,
+"name": &"shuttle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -108,6 +112,71 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ca0hi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bkudm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hujfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7vlw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2cg1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_feivl")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_owdi5")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70ek2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mot2a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_feivl")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_owdi5")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myw4h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fn5eb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_feivl")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_owdi5")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
 
 [node name="MatchScouting" type="Node2D"]
 script = ExtResource("1_abj35")
@@ -163,7 +232,7 @@ script = ExtResource("6_rfpmv")
 position = Vector2(740, -44)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_tjnok")
-animation = &"defense"
+animation = &"offense"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Defense"]
 position = Vector2(782, 16)
@@ -175,7 +244,7 @@ animation = &"defense"
 position = Vector2(692, 15)
 scale = Vector2(0.268, 0.266)
 sprite_frames = SubResource("SpriteFrames_tjnok")
-animation = &"cycle"
+animation = &"shuttle"
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Defense"]
 position = Vector2(692, 12)
@@ -190,7 +259,7 @@ shape = SubResource("CircleShape2D_lfs2e")
 action = "defense_n"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 140.0
+wait_time = 160.0
 autostart = true
 script = ExtResource("4_r62gf")
 
@@ -292,3 +361,55 @@ text = "Fuel Count:"
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="shots_image" type="Sprite2D" parent="Fuel"]
+position = Vector2(320, 191)
+scale = Vector2(0.5, 0.3)
+texture = ExtResource("17_66qr2")
+
+[node name="cycles" type="TouchScreenButton" parent="Fuel"]
+position = Vector2(320, 198)
+scale = Vector2(12, 3)
+shape = SubResource("RectangleShape2D_hujfe")
+action = "cycle"
+
+[node name="Node2D" type="Node2D" parent="Fuel"]
+
+[node name="Climb" type="Node2D" parent="."]
+script = ExtResource("18_1qhxq")
+
+[node name="L1" type="TouchScreenButton" parent="Climb"]
+position = Vector2(-490, 100)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_j7vlw")
+action = "l1"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/L1"]
+position = Vector2(0, -4.2)
+scale = Vector2(0.085, 0.085)
+sprite_frames = SubResource("SpriteFrames_m2cg1")
+animation = &"no"
+
+[node name="L2" type="TouchScreenButton" parent="Climb"]
+position = Vector2(-490, -20)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_70ek2")
+action = "l2"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/L2"]
+position = Vector2(0, -3.8)
+scale = Vector2(0.085, 0.085)
+sprite_frames = SubResource("SpriteFrames_mot2a")
+animation = &"no"
+
+[node name="L3" type="TouchScreenButton" parent="Climb"]
+position = Vector2(-490, -147)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_myw4h")
+action = "l3"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/L3"]
+position = Vector2(0, -1.80011)
+scale = Vector2(0.085, 0.085)
+sprite_frames = SubResource("SpriteFrames_fn5eb")
+animation = &"yes"

@@ -125,3 +125,19 @@ defense_p={
 "deadzone": 0.5,
 "events": []
 }
+cycle={
+"deadzone": 0.5,
+"events": []
+}
+l1={
+"deadzone": 0.5,
+"events": []
+}
+l2={
+"deadzone": 0.5,
+"events": []
+}
+l3={
+"deadzone": 0.5,
+"events": []
+}

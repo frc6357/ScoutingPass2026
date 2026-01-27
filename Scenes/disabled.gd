@@ -16,12 +16,14 @@ var active=false
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("disabled"):
 		if active==false:
+			defense.disabled()
 			active=true
 			#sets the start time to the current time on the timer.
 			s_time=timer.time_left
 			s_time=((int(s_time*10))) #rounds to the nearest tenth of a second
 			animate.play("disabled")
 		elif active:
+			defense.enabled()
 			active=false
 			#sets the end time to the current time on the timer.
 			e_time=timer.time_left

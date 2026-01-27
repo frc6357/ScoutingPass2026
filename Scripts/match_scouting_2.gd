@@ -5,6 +5,7 @@ extends Node2D
 @onready var label: Label = $Fuel/Label
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("scouting2")
@@ -15,23 +16,32 @@ func _process(_delta: float) -> void:
 	label.text=str("Fuel Count: ", data.fuel_t)
 	if Input.is_action_just_pressed("auto"):
 		get_tree().change_scene_to_file("res://Scenes/match_scouting.tscn")
-	if Input.is_action_just_pressed("endgame"):
-		data.time_disabled=disabled.time
-		data.time_defense=defense.dtime
-		data.time_offense=defense.otime
-		data.time_shuttle=defense.ctime
-		get_tree().change_scene_to_file("res://Scenes/match_scouting3.tscn")
+	if Input.is_action_just_pressed("cycle"):
+		data.shots+=1
+		print("cycle")
 	if Input.is_action_just_pressed("fuel1"):
-		data.fuel_t+=1
+		if defense.mode=="offense":
+			data.fuel_t+=1
+		else:
+			data.fuel_s+=1
 		print(data.fuel_t)
 	if Input.is_action_just_pressed("fuel-1"):
-		data.fuel_t-=1
+		if defense.mode=="offense":
+			data.fuel_t-=1
+		else:
+			data.fuel_s-=1
 		print(data.fuel_t)
 	if Input.is_action_just_pressed("fuel4"):
-		data.fuel_t+=4
+		if defense.mode=="offense":
+			data.fuel_t+=4
+		else:
+			data.fuel_s+=4
 		print(data.fuel_t)
 	if Input.is_action_just_pressed("fuel10"):
-		data.fuel_t+=10
+		if defense.mode=="offense":
+			data.fuel_t+=10
+		else:
+			data.fuel_s+=10
 		print(data.fuel_t)
 	if Input.is_action_just_pressed("0"):
 		data.accuracy_t=0
