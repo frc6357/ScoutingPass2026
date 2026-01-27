@@ -141,3 +141,15 @@ l3={
 "deadzone": 0.5,
 "events": []
 }
+left={
+"deadzone": 0.5,
+"events": []
+}
+right={
+"deadzone": 0.5,
+"events": []
+}
+center={
+"deadzone": 0.5,
+"events": []
+}

@@ -13,6 +13,7 @@ static var climb_t=0
 static var time_l1=0
 static var time_l2=0
 static var time_l3=0
+static var c_zone="none"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -37,4 +38,5 @@ func reset():
 	time_l1=0
 	time_l2=0
 	time_l3=0
+	c_zone="none"
 	get_tree().change_scene_to_file("res://Scenes/match_scouting.tscn")
