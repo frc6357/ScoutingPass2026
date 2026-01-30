@@ -3,15 +3,17 @@ extends Node2D
 @onready var animate: AnimatedSprite2D = $AnimatedSprite2D
 @onready var defense: Node2D = $"../Defense"
 @onready var animate2: AnimatedSprite2D = $"../Defense/AnimatedSprite2D"
+@onready var data: Node2D = $"../DataStorage"
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	animate.play("enabled")
 var s_time # time where the timer started
 var e_time # time when the timer ended
 var time=0 #total time elapsed
 var active=false
+func _ready() -> void:
+	time=data.time_disabled
+	animate.play("enabled")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("disabled"):

@@ -153,3 +153,19 @@ center={
 "deadzone": 0.5,
 "events": []
 }
+foul+={
+"deadzone": 0.5,
+"events": []
+}
+foul-={
+"deadzone": 0.5,
+"events": []
+}
+bump={
+"deadzone": 0.5,
+"events": []
+}
+trench={
+"deadzone": 0.5,
+"events": []
+}

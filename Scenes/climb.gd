@@ -7,16 +7,6 @@ extends Node2D
 @onready var animate2: AnimatedSprite2D = $right/AnimatedSprite2D2
 @onready var animate3: AnimatedSprite2D = $center/AnimatedSprite2D3
 @onready var data: Node2D = $"../DataStorage"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	animate_l1.play("no")
-	animate_l2.play("no")
-	animate_l3.play("no")
-	animate.play("off")
-	animate2.play("off")
-	animate3.play("off")
 var time_l1=0
 var time_l2=0
 var time_l3=0
@@ -25,6 +15,39 @@ var l2=false
 var l3=false
 var zone="none"
 var points=0
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	time_l1=data.time_l1
+	time_l2=data.time_l2
+	time_l3=data.time_l3
+	l1=data.l1
+	l2=data.l2
+	l3=data.l3
+	zone=data.c_zone
+	print(l1)
+	if l3:
+		animate_l3.play("yes")
+	else:
+		animate_l3.play("no")
+	if l2:
+		animate_l2.play("yes")
+	else:
+		animate_l2.play("no")
+	if l1:
+		animate_l1.play("yes")
+	else:
+		animate_l1.play("no")
+	animate.play("off")
+	animate2.play("off")
+	animate3.play("off")
+	if zone=="center":
+		animate3.play("on")
+	if zone=="left":
+		animate.play("on")
+	if zone=="right":
+		animate2.play("on")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("l1"):

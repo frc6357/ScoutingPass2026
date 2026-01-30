@@ -1,12 +1,63 @@
-[gd_scene load_steps=7 format=3 uid="uid://rnrdje1vlgpy"]
+[gd_scene load_steps=18 format=3 uid="uid://rnrdje1vlgpy"]
 
 [ext_resource type="Script" path="res://Scripts/match_scouting_4.gd" id="1_yeysk"]
 [ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_8qnhp"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="3_wqrnt"]
 [ext_resource type="Script" path="res://Scenes/data_storage.gd" id="4_p2o4k"]
 [ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="4_vtj0q"]
+[ext_resource type="Texture2D" uid="uid://ce1pw32vl8dq0" path="res://Assets/fouls.png" id="6_5eq86"]
+[ext_resource type="Texture2D" uid="uid://tpg34yspabk5" path="res://Assets/bump2.png" id="7_rs2rd"]
+[ext_resource type="Texture2D" uid="uid://e4v8inl37p2r" path="res://Assets/bump1.png" id="8_qyyr6"]
+[ext_resource type="Texture2D" uid="uid://bgkymjrps6cku" path="res://Assets/trench2.png" id="9_h7y04"]
+[ext_resource type="Texture2D" uid="uid://c6pibwqynnufo" path="res://Assets/trench1.png" id="10_8550g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rtdrl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6mwx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cb8m1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nuet0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_rs2rd")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_qyyr6")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34416"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7j5n5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_h7y04")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_8550g")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmhak"]
 
 [node name="MatchScouting" type="Node2D"]
 script = ExtResource("1_yeysk")
@@ -39,3 +90,59 @@ action = "endgame"
 position = Vector2(-3.375, -6)
 scale = Vector2(-0.078, 0.101)
 texture = ExtResource("4_vtj0q")
+
+[node name="Fouls" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Fouls"]
+position = Vector2(-362, 20)
+scale = Vector2(0.664, 0.664)
+texture = ExtResource("6_5eq86")
+
+[node name="Label" type="Label" parent="Fouls"]
+offset_left = -418.0
+offset_top = -17.0
+offset_right = -313.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 70
+text = "0"
+horizontal_alignment = 1
+
+[node name="plus" type="TouchScreenButton" parent="Fouls"]
+position = Vector2(-243, 29)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_b6mwx")
+action = "foul+"
+
+[node name="minus" type="TouchScreenButton" parent="Fouls"]
+position = Vector2(-491, 33)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_cb8m1")
+action = "foul-"
+
+[node name="Bump" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bump"]
+position = Vector2(-462, -165)
+scale = Vector2(0.404, 0.404)
+sprite_frames = SubResource("SpriteFrames_nuet0")
+animation = &"yes"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Bump"]
+position = Vector2(-461, -170)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_34416")
+action = "bump"
+
+[node name="Trench" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Trench"]
+position = Vector2(-287, -170)
+scale = Vector2(0.415, 0.415)
+sprite_frames = SubResource("SpriteFrames_7j5n5")
+animation = &"no"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Trench"]
+position = Vector2(-287, -174)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_lmhak")
+action = "trench"

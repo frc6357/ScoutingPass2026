@@ -9,8 +9,7 @@ extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	animate.play("offense")
+
 var ds_time=0 # time where the timer started for cycling
 var de_time=0 # time when the timer ended for cycling
 var cs_time=0 # time where the timer started for cycling
@@ -25,6 +24,11 @@ var active=false
 var sleeping=false
 var mode="offense"
 var d=false
+func _ready() -> void:
+	animate.play("offense")
+	dtime=data.time_defense
+	ctime=data.time_shuttle
+	otime=data.time_offense
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("endgame"):
@@ -48,7 +52,10 @@ func _process(_delta: float) -> void:
 		data.time_l2=climb.time_l2
 		data.time_l3=climb.time_l3
 		data.climb_t=climb.points
-		get_tree().change_scene_to_file("res://Scenes/match_scouting3.tscn")
+		data.l1=climb.l1
+		data.l2=climb.l2
+		data.l3=climb.l3
+		get_tree().change_scene_to_file("res://Scenes/match_scouting4.tscn")
 	if timer.time_left>20:
 		if Input.is_action_just_pressed("defense_n") and d==false:
 			if mode=="offense":
@@ -150,8 +157,11 @@ func _process(_delta: float) -> void:
 		data.time_l1=climb.time_l1
 		data.time_l2=climb.time_l2
 		data.time_l3=climb.time_l3
+		data.l1=climb.l1
+		data.l2=climb.l2
+		data.l3=climb.l3
 		data.climb_t=climb.points
-		get_tree().change_scene_to_file("res://Scenes/match_scouting3.tscn")
+		get_tree().change_scene_to_file("res://Scenes/match_scouting4.tscn")
 func disabled():
 	d=true
 	print("disabled")
