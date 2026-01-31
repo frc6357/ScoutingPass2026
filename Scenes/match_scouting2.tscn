@@ -1,14 +1,15 @@
-[gd_scene load_steps=44 format=3 uid="uid://qo77a3fgbfyq"]
+[gd_scene load_steps=54 format=3 uid="uid://qo77a3fgbfyq"]
 
 [ext_resource type="Script" path="res://Scripts/match_scouting_2.gd" id="1_abj35"]
 [ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_73pei"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="3_vau7e"]
-[ext_resource type="Script" path="res://Scenes/data_storage.gd" id="4_qhi3p"]
-[ext_resource type="Script" path="res://Scenes/timer.gd" id="4_r62gf"]
+[ext_resource type="Script" path="res://Scripts/data_storage.gd" id="4_qhi3p"]
+[ext_resource type="Script" path="res://Scripts/timer.gd" id="4_r62gf"]
 [ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="5_b1js0"]
-[ext_resource type="Script" path="res://Scenes/disabled.gd" id="5_nuj6h"]
+[ext_resource type="Script" path="res://Scripts/disabled.gd" id="5_nuj6h"]
+[ext_resource type="Texture2D" uid="uid://ce1pw32vl8dq0" path="res://Assets/fouls.png" id="6_dd5k5"]
 [ext_resource type="Texture2D" uid="uid://dw5vhhsnrqnv3" path="res://Assets/disabled_button.png" id="6_j6wy3"]
-[ext_resource type="Script" path="res://Scenes/defense.gd" id="6_rfpmv"]
+[ext_resource type="Script" path="res://Scripts/defense.gd" id="6_rfpmv"]
 [ext_resource type="Texture2D" uid="uid://cndlrfbqlrqjg" path="res://Assets/happy_button.png" id="7_gawtn"]
 [ext_resource type="Texture2D" uid="uid://bxb7nfmddii8a" path="res://Assets/defense_button.png" id="10_2o2cp"]
 [ext_resource type="Texture2D" uid="uid://dgxktb01y1rsw" path="res://Assets/offense_button.png" id="11_tphem"]
@@ -17,11 +18,18 @@
 [ext_resource type="Texture2D" uid="uid://dfae4s0ohqldf" path="res://Assets/Fuel buttons.png" id="14_i80bh"]
 [ext_resource type="Texture2D" uid="uid://dpr8sh7wwv6y7" path="res://Assets/scale.png" id="14_jwefq"]
 [ext_resource type="Texture2D" uid="uid://ckew74hdxpglq" path="res://Assets/shot.png" id="17_66qr2"]
-[ext_resource type="Script" path="res://Scenes/climb.gd" id="18_1qhxq"]
+[ext_resource type="Script" path="res://Scripts/climb.gd" id="18_1qhxq"]
 [ext_resource type="Texture2D" uid="uid://kfwbqxtkqtij" path="res://Assets/climb_button.png" id="18_feivl"]
 [ext_resource type="Texture2D" uid="uid://b6dw47ew813kr" path="res://Assets/climb_button2.png" id="19_owdi5"]
+[ext_resource type="Texture2D" uid="uid://bl8cprb4q61ob" path="res://Assets/eeeeee.png" id="21_jdbke"]
+[ext_resource type="Texture2D" uid="uid://bfmnlhyre3gtx" path="res://Assets/eeeee.png" id="22_vojk2"]
+[ext_resource type="Texture2D" uid="uid://b3nhnwxg12h6a" path="res://Assets/pinning.png" id="24_eoqjh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5wm3b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2dnv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqbex"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghwsc"]
 radius = 80.0
@@ -178,6 +186,31 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxtap"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hdel7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_jdbke")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_vojk2")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtqjb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nac2t"]
+
 [node name="MatchScouting" type="Node2D"]
 script = ExtResource("1_abj35")
 
@@ -210,7 +243,36 @@ position = Vector2(-3.375, -6)
 scale = Vector2(-0.078, 0.101)
 texture = ExtResource("5_b1js0")
 
+[node name="Fouls" type="Node2D" parent="Previous"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Previous/Fouls"]
+position = Vector2(-362, 20)
+scale = Vector2(0.664, 0.664)
+texture = ExtResource("6_dd5k5")
+
+[node name="Label" type="Label" parent="Previous/Fouls"]
+offset_left = -418.0
+offset_top = -17.0
+offset_right = -313.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 70
+text = "0"
+horizontal_alignment = 1
+
+[node name="plus" type="TouchScreenButton" parent="Previous/Fouls"]
+position = Vector2(-243, 29)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_d2dnv")
+action = "foul+"
+
+[node name="minus" type="TouchScreenButton" parent="Previous/Fouls"]
+position = Vector2(-491, 33)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_eqbex")
+action = "foul-"
+
 [node name="Disabled" type="Node2D" parent="."]
+position = Vector2(0, -2)
 script = ExtResource("5_nuj6h")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Disabled"]
@@ -363,7 +425,7 @@ autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="shots_image" type="Sprite2D" parent="Fuel"]
-position = Vector2(320, 191)
+position = Vector2(320, 194)
 scale = Vector2(0.5, 0.3)
 texture = ExtResource("17_66qr2")
 
@@ -379,7 +441,7 @@ action = "cycle"
 script = ExtResource("18_1qhxq")
 
 [node name="L1" type="TouchScreenButton" parent="Climb"]
-position = Vector2(-490, 100)
+position = Vector2(-450, 100)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_j7vlw")
 action = "l1"
@@ -391,7 +453,7 @@ sprite_frames = SubResource("SpriteFrames_m2cg1")
 animation = &"no"
 
 [node name="L2" type="TouchScreenButton" parent="Climb"]
-position = Vector2(-490, -20)
+position = Vector2(-450, -20)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_70ek2")
 action = "l2"
@@ -403,7 +465,7 @@ sprite_frames = SubResource("SpriteFrames_mot2a")
 animation = &"no"
 
 [node name="L3" type="TouchScreenButton" parent="Climb"]
-position = Vector2(-490, -147)
+position = Vector2(-450, -147)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_myw4h")
 action = "l3"
@@ -413,3 +475,65 @@ position = Vector2(0, -1.80011)
 scale = Vector2(0.085, 0.085)
 sprite_frames = SubResource("SpriteFrames_fn5eb")
 animation = &"yes"
+
+[node name="left" type="TouchScreenButton" parent="Climb"]
+position = Vector2(-515, -240)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_dxtap")
+action = "left"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/left"]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_hdel7")
+animation = &"off"
+
+[node name="right" type="TouchScreenButton" parent="Climb"]
+position = Vector2(-395, -240)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_gtqjb")
+action = "right"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Climb/right"]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_hdel7")
+animation = &"on"
+
+[node name="center" type="TouchScreenButton" parent="Climb"]
+position = Vector2(-455, -240)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_nac2t")
+action = "center"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Climb/center"]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_hdel7")
+animation = &"on"
+
+[node name="Pinning" type="Node2D" parent="."]
+position = Vector2(360, -260)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pinning"]
+position = Vector2(-362, 20)
+scale = Vector2(0.664, 0.664)
+texture = ExtResource("24_eoqjh")
+
+[node name="Label" type="Label" parent="Pinning"]
+offset_left = -418.0
+offset_top = -17.0
+offset_right = -313.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 70
+text = "0"
+horizontal_alignment = 1
+
+[node name="plus" type="TouchScreenButton" parent="Pinning"]
+position = Vector2(-243, 29)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_d2dnv")
+action = "pin+"
+
+[node name="minus" type="TouchScreenButton" parent="Pinning"]
+position = Vector2(-491, 33)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_eqbex")
+action = "pin-"
