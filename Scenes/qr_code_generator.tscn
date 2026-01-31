@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dyich51qwix0q"]
 
-[ext_resource type="Script" path="res://Scenes/qr_code_generator.gd" id="1_j6xmb"]
+[ext_resource type="Script" path="res://Scripts/qr_code_generator.gd" id="1_j6xmb"]
 
 [node name="QR code generator" type="Node2D"]
 script = ExtResource("1_j6xmb")

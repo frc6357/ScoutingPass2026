@@ -3,6 +3,7 @@ extends Node2D
 @onready var disabled: Node2D = $Disabled
 @onready var defense: Node2D = $Defense
 @onready var label: Label = $Fuel/Label
+@onready var label2: Label = $Pinning/Label
 
 
 
@@ -19,6 +20,12 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("cycle"):
 		data.shots+=1
 		print("cycle")
+	if Input.is_action_just_pressed("pin+"):
+		data.pins+=1
+		label2.text=str(data.pins)
+	if Input.is_action_just_pressed("pin-") and  data.pins>=1:
+		data.pins-=1
+		label2.text=str(data.pins)
 	if Input.is_action_just_pressed("fuel1"):
 		if defense.mode=="offense":
 			data.fuel_t+=1

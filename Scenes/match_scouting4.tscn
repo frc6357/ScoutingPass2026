@@ -1,12 +1,14 @@
-[gd_scene load_steps=18 format=3 uid="uid://rnrdje1vlgpy"]
+[gd_scene load_steps=20 format=3 uid="uid://rnrdje1vlgpy"]
 
 [ext_resource type="Script" path="res://Scripts/match_scouting_4.gd" id="1_yeysk"]
 [ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_8qnhp"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="3_wqrnt"]
-[ext_resource type="Script" path="res://Scenes/data_storage.gd" id="4_p2o4k"]
+[ext_resource type="Script" path="res://Scripts/data_storage.gd" id="4_p2o4k"]
 [ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="4_vtj0q"]
 [ext_resource type="Texture2D" uid="uid://ce1pw32vl8dq0" path="res://Assets/fouls.png" id="6_5eq86"]
+[ext_resource type="Script" path="res://Scripts/resid_f.gd" id="7_j4pgm"]
 [ext_resource type="Texture2D" uid="uid://tpg34yspabk5" path="res://Assets/bump2.png" id="7_rs2rd"]
+[ext_resource type="Script" path="res://Scenes/resid_c.gd" id="8_2bk4c"]
 [ext_resource type="Texture2D" uid="uid://e4v8inl37p2r" path="res://Assets/bump1.png" id="8_qyyr6"]
 [ext_resource type="Texture2D" uid="uid://bgkymjrps6cku" path="res://Assets/trench2.png" id="9_h7y04"]
 [ext_resource type="Texture2D" uid="uid://c6pibwqynnufo" path="res://Assets/trench1.png" id="10_8550g"]
@@ -119,6 +121,68 @@ scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_cb8m1")
 action = "foul-"
 
+[node name="ResidF" type="Node2D" parent="."]
+position = Vector2(373, -60)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("7_j4pgm")
+
+[node name="Sprite2D" type="Sprite2D" parent="ResidF"]
+position = Vector2(-362, 20)
+scale = Vector2(0.664, 0.664)
+texture = ExtResource("6_5eq86")
+
+[node name="Label" type="Label" parent="ResidF"]
+offset_left = -418.0
+offset_top = -17.0
+offset_right = -313.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 70
+text = "0"
+horizontal_alignment = 1
+
+[node name="plus" type="TouchScreenButton" parent="ResidF"]
+position = Vector2(-243, 29)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_b6mwx")
+action = "f+"
+
+[node name="minus" type="TouchScreenButton" parent="ResidF"]
+position = Vector2(-491, 33)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_cb8m1")
+action = "f-"
+
+[node name="ResidC" type="Node2D" parent="."]
+position = Vector2(380, 167)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("8_2bk4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="ResidC"]
+position = Vector2(-362, 20)
+scale = Vector2(0.664, 0.664)
+texture = ExtResource("6_5eq86")
+
+[node name="Label" type="Label" parent="ResidC"]
+offset_left = -418.0
+offset_top = -17.0
+offset_right = -313.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 70
+text = "0"
+horizontal_alignment = 1
+
+[node name="plus" type="TouchScreenButton" parent="ResidC"]
+position = Vector2(-243, 29)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_b6mwx")
+action = "c+"
+
+[node name="minus" type="TouchScreenButton" parent="ResidC"]
+position = Vector2(-491, 33)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_cb8m1")
+action = "c-"
+
 [node name="Bump" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bump"]
@@ -146,3 +210,61 @@ position = Vector2(-287, -174)
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_lmhak")
 action = "trench"
+
+[node name="Labels" type="Node2D" parent="."]
+
+[node name="Fuel_A" type="Label" parent="Labels"]
+offset_left = 112.0
+offset_top = -226.0
+offset_right = 409.0
+offset_bottom = -181.0
+text = "Fuel Scored Auto:"
+
+[node name="Fuel_T" type="Label" parent="Labels"]
+offset_left = 110.0
+offset_top = -197.0
+offset_right = 407.0
+offset_bottom = -152.0
+text = "Fuel Scored Teleop:"
+
+[node name="Total" type="Label" parent="Labels"]
+offset_left = 109.0
+offset_top = -164.0
+offset_right = 406.0
+offset_bottom = -119.0
+text = "Fuel Scored Total:"
+
+[node name="R_F" type="Label" parent="Labels"]
+offset_left = 109.0
+offset_top = -130.0
+offset_right = 406.0
+offset_bottom = -85.0
+text = "Residual:"
+
+[node name="Climb_A" type="Label" parent="Labels"]
+offset_left = 108.0
+offset_top = 22.0
+offset_right = 405.0
+offset_bottom = 67.0
+text = "Climb points Auto:"
+
+[node name="Climb_E" type="Label" parent="Labels"]
+offset_left = 108.0
+offset_top = 54.0
+offset_right = 405.0
+offset_bottom = 99.0
+text = "Climb points Endgame:"
+
+[node name="Climb_T" type="Label" parent="Labels"]
+offset_left = 107.0
+offset_top = 85.0
+offset_right = 404.0
+offset_bottom = 130.0
+text = "Climb points Total:"
+
+[node name="R_C" type="Label" parent="Labels"]
+offset_left = 108.0
+offset_top = 112.0
+offset_right = 405.0
+offset_bottom = 157.0
+text = "Residual:"

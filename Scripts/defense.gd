@@ -163,6 +163,7 @@ func _process(_delta: float) -> void:
 		data.climb_t=climb.points
 		get_tree().change_scene_to_file("res://Scenes/match_scouting4.tscn")
 func disabled():
+	#stops the timer for defense/offense/shuttling (depending on which is selected.
 	d=true
 	print("disabled")
 	if mode=="offense":
@@ -183,10 +184,10 @@ func disabled():
 func enabled():
 	print("enabled")
 	d=false
-	if mode=="defensive":
+	if mode=="defense":
 		ds_time=timer.time_left
 		ds_time=(int(ds_time*10)) #rounds to the nearest tenth of a second
-	if mode=="offensive":
+	if mode=="offense":
 		os_time=timer.time_left
 		os_time=(int(os_time*10)) #rounds to the nearest tenth of a second
 	if mode=="shuttle":

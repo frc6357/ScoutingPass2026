@@ -169,3 +169,27 @@ trench={
 "deadzone": 0.5,
 "events": []
 }
+c+={
+"deadzone": 0.5,
+"events": []
+}
+c-={
+"deadzone": 0.5,
+"events": []
+}
+f+={
+"deadzone": 0.5,
+"events": []
+}
+f-={
+"deadzone": 0.5,
+"events": []
+}
+pin-={
+"deadzone": 0.5,
+"events": []
+}
+pin+={
+"deadzone": 0.5,
+"events": []
+}

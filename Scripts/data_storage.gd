@@ -1,4 +1,7 @@
 extends Node2D
+
+#all data is stored here as static variables. Any data not stored here will be deleted when changing files.
+#all of this data should be changed with seasons.
 static var fuel=0
 static var fuel_a=0
 static var fuel_t=0
@@ -10,9 +13,11 @@ static var accuracy_t=-1
 static var shots=0
 static var fuel_s=0
 static var climb_t=0
+static var climb_a=0
 static var time_l1=0
 static var time_l2=0
 static var time_l3=0
+static var pins=0
 static var c_zone="none"
 static var l1
 static var l2
@@ -20,6 +25,8 @@ static var l3
 static var fouls
 static var trench=false
 static var bump=false
+static var residual_f
+static var residual_c
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -29,6 +36,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 func reset():
+	#this function sets all data to it's default setting.
 	fuel=fuel_a+fuel_t
 	fuel=0
 	fuel_a=0
@@ -40,10 +48,17 @@ func reset():
 	time_shuttle=0
 	accuracy_t=-1
 	shots=0
+	
 	climb_t=0
+	climb_a=0
+	
 	time_l1=0
 	time_l2=0
 	time_l3=0
+	
+	residual_f=0
+	residual_c=0
+	pins=0
 	l1=false
 	l2=false
 	l3=false

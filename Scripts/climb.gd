@@ -49,7 +49,7 @@ func _ready() -> void:
 		animate2.play("on")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("l1"):
 		if l1 and not l2 and not l3:
 			l1=false
