@@ -1,9 +1,11 @@
 extends Node2D
 @onready var qr_code: Node2D = $"QR code generator"
+@onready var data: Node2D = $DataStorage
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	data.update()
 	qr_code.generate()
 	print("scouting final")
 

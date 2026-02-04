@@ -1,39 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://debhkbfae60wr"]
+[gd_scene format=3 uid="uid://debhkbfae60wr"]
 
-[ext_resource type="Script" path="res://Scripts/match_scouting.gd" id="1_u2ron"]
+[ext_resource type="Script" uid="uid://gursfwnwlies" path="res://Scripts/match_scouting.gd" id="1_u2ron"]
 [ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_77k5n"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="3_rvlpy"]
 [ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="4_a76dx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6majs"]
 
-[node name="MatchScouting" type="Node2D"]
+[node name="MatchScouting" type="Node2D" unique_id=1396292542]
 script = ExtResource("1_u2ron")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1723197538]
 
-[node name="QR code generator" parent="." instance=ExtResource("2_77k5n")]
+[node name="QR code generator" parent="." unique_id=912148523 instance=ExtResource("2_77k5n")]
+position = Vector2(-1000, 0)
 
-[node name="DataStorage" parent="." instance=ExtResource("3_rvlpy")]
+[node name="DataStorage" parent="." unique_id=2082699722 instance=ExtResource("3_rvlpy")]
 
-[node name="Next" type="TouchScreenButton" parent="."]
+[node name="Next" type="TouchScreenButton" parent="." unique_id=1575683134]
 position = Vector2(486, 236)
 scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_6majs")
 action = "teleop"
 
-[node name="Image" type="Sprite2D" parent="Next"]
+[node name="Image" type="Sprite2D" parent="Next" unique_id=1857840315]
 position = Vector2(2.5, -6.375)
 scale = Vector2(0.0775, 0.1005)
 texture = ExtResource("4_a76dx")
 
-[node name="Previous" type="TouchScreenButton" parent="."]
+[node name="Previous" type="TouchScreenButton" parent="." unique_id=421069598]
 position = Vector2(-487, 239)
 scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_6majs")
 action = "main"
 
-[node name="Image" type="Sprite2D" parent="Previous"]
+[node name="Image" type="Sprite2D" parent="Previous" unique_id=811393551]
 position = Vector2(-3.375, -6)
 scale = Vector2(-0.078, 0.101)
 texture = ExtResource("4_a76dx")

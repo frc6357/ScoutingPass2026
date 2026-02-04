@@ -1,15 +1,14 @@
-[gd_scene load_steps=54 format=3 uid="uid://qo77a3fgbfyq"]
+[gd_scene format=3 uid="uid://qo77a3fgbfyq"]
 
-[ext_resource type="Script" path="res://Scripts/match_scouting_2.gd" id="1_abj35"]
+[ext_resource type="Script" uid="uid://cxtaedsnyb53q" path="res://Scripts/match_scouting_2.gd" id="1_abj35"]
 [ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_73pei"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="3_vau7e"]
-[ext_resource type="Script" path="res://Scripts/data_storage.gd" id="4_qhi3p"]
-[ext_resource type="Script" path="res://Scripts/timer.gd" id="4_r62gf"]
+[ext_resource type="Script" uid="uid://d1tcpkljn2awi" path="res://Scripts/data_storage.gd" id="4_qhi3p"]
+[ext_resource type="Script" uid="uid://bt6cflbppyxlt" path="res://Scripts/timer.gd" id="4_r62gf"]
 [ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="5_b1js0"]
-[ext_resource type="Script" path="res://Scripts/disabled.gd" id="5_nuj6h"]
-[ext_resource type="Texture2D" uid="uid://ce1pw32vl8dq0" path="res://Assets/fouls.png" id="6_dd5k5"]
+[ext_resource type="Script" uid="uid://idfu2lgchh7t" path="res://Scripts/disabled.gd" id="5_nuj6h"]
 [ext_resource type="Texture2D" uid="uid://dw5vhhsnrqnv3" path="res://Assets/disabled_button.png" id="6_j6wy3"]
-[ext_resource type="Script" path="res://Scripts/defense.gd" id="6_rfpmv"]
+[ext_resource type="Script" uid="uid://bla55nuwmgu20" path="res://Scripts/defense.gd" id="6_rfpmv"]
 [ext_resource type="Texture2D" uid="uid://cndlrfbqlrqjg" path="res://Assets/happy_button.png" id="7_gawtn"]
 [ext_resource type="Texture2D" uid="uid://bxb7nfmddii8a" path="res://Assets/defense_button.png" id="10_2o2cp"]
 [ext_resource type="Texture2D" uid="uid://dgxktb01y1rsw" path="res://Assets/offense_button.png" id="11_tphem"]
@@ -18,18 +17,18 @@
 [ext_resource type="Texture2D" uid="uid://dfae4s0ohqldf" path="res://Assets/Fuel buttons.png" id="14_i80bh"]
 [ext_resource type="Texture2D" uid="uid://dpr8sh7wwv6y7" path="res://Assets/scale.png" id="14_jwefq"]
 [ext_resource type="Texture2D" uid="uid://ckew74hdxpglq" path="res://Assets/shot.png" id="17_66qr2"]
-[ext_resource type="Script" path="res://Scripts/climb.gd" id="18_1qhxq"]
+[ext_resource type="Script" uid="uid://co4s777p6phwi" path="res://Scripts/climb.gd" id="18_1qhxq"]
 [ext_resource type="Texture2D" uid="uid://kfwbqxtkqtij" path="res://Assets/climb_button.png" id="18_feivl"]
 [ext_resource type="Texture2D" uid="uid://b6dw47ew813kr" path="res://Assets/climb_button2.png" id="19_owdi5"]
 [ext_resource type="Texture2D" uid="uid://bl8cprb4q61ob" path="res://Assets/eeeeee.png" id="21_jdbke"]
 [ext_resource type="Texture2D" uid="uid://bfmnlhyre3gtx" path="res://Assets/eeeee.png" id="22_vojk2"]
 [ext_resource type="Texture2D" uid="uid://b3nhnwxg12h6a" path="res://Assets/pinning.png" id="24_eoqjh"]
+[ext_resource type="Texture2D" uid="uid://tpg34yspabk5" path="res://Assets/bump2.png" id="24_i8up4"]
+[ext_resource type="Texture2D" uid="uid://e4v8inl37p2r" path="res://Assets/bump1.png" id="25_vam4t"]
+[ext_resource type="Texture2D" uid="uid://bgkymjrps6cku" path="res://Assets/trench2.png" id="26_c8hpp"]
+[ext_resource type="Texture2D" uid="uid://c6pibwqynnufo" path="res://Assets/trench1.png" id="27_oy8ks"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5wm3b"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2dnv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqbex"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghwsc"]
 radius = 80.0
@@ -211,209 +210,228 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nac2t"]
 
-[node name="MatchScouting" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2dnv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqbex"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ed6ap"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_i8up4")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_vam4t")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_velmq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0qp2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_c8hpp")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_oy8ks")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7afm"]
+
+[node name="MatchScouting" type="Node2D" unique_id=1670459362]
 script = ExtResource("1_abj35")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2008289309]
 
-[node name="QR code generator" parent="." instance=ExtResource("2_73pei")]
+[node name="QR code generator" parent="." unique_id=920826680 instance=ExtResource("2_73pei")]
+position = Vector2(-1000, 0)
 
-[node name="DataStorage" parent="." instance=ExtResource("3_vau7e")]
+[node name="DataStorage" parent="." unique_id=1148188494 instance=ExtResource("3_vau7e")]
 script = ExtResource("4_qhi3p")
 
-[node name="Next" type="TouchScreenButton" parent="."]
+[node name="Next" type="TouchScreenButton" parent="." unique_id=365248956]
 position = Vector2(486, 236)
 scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_5wm3b")
 action = "endgame"
 
-[node name="Image" type="Sprite2D" parent="Next"]
+[node name="Image" type="Sprite2D" parent="Next" unique_id=1303218150]
 position = Vector2(2.5, -6.375)
 scale = Vector2(0.0775, 0.1005)
 texture = ExtResource("5_b1js0")
 
-[node name="Previous" type="TouchScreenButton" parent="."]
+[node name="Previous" type="TouchScreenButton" parent="." unique_id=1528326462]
 position = Vector2(-487, 239)
 scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_5wm3b")
 action = "auto"
 
-[node name="Image" type="Sprite2D" parent="Previous"]
+[node name="Image" type="Sprite2D" parent="Previous" unique_id=260048398]
 position = Vector2(-3.375, -6)
 scale = Vector2(-0.078, 0.101)
 texture = ExtResource("5_b1js0")
 
-[node name="Fouls" type="Node2D" parent="Previous"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Previous/Fouls"]
-position = Vector2(-362, 20)
-scale = Vector2(0.664, 0.664)
-texture = ExtResource("6_dd5k5")
-
-[node name="Label" type="Label" parent="Previous/Fouls"]
-offset_left = -418.0
-offset_top = -17.0
-offset_right = -313.0
-offset_bottom = 113.0
-theme_override_font_sizes/font_size = 70
-text = "0"
-horizontal_alignment = 1
-
-[node name="plus" type="TouchScreenButton" parent="Previous/Fouls"]
-position = Vector2(-243, 29)
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_d2dnv")
-action = "foul+"
-
-[node name="minus" type="TouchScreenButton" parent="Previous/Fouls"]
-position = Vector2(-491, 33)
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_eqbex")
-action = "foul-"
-
-[node name="Disabled" type="Node2D" parent="."]
+[node name="Disabled" type="Node2D" parent="." unique_id=1908785609]
 position = Vector2(0, -2)
 script = ExtResource("5_nuj6h")
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Disabled"]
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Disabled" unique_id=728206061]
 position = Vector2(473, -229)
 shape = SubResource("CircleShape2D_ghwsc")
 action = "disabled"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Disabled"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Disabled" unique_id=707420531]
 position = Vector2(473, -232)
 scale = Vector2(0.429, 0.429)
 sprite_frames = SubResource("SpriteFrames_hpiyv")
 animation = &"enabled"
 
-[node name="Defense" type="Node2D" parent="."]
+[node name="Defense" type="Node2D" parent="." unique_id=1575276462]
 position = Vector2(-431, -185)
 script = ExtResource("6_rfpmv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Defense"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Defense" unique_id=1818110066]
 position = Vector2(740, -44)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_tjnok")
 animation = &"offense"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Defense"]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Defense" unique_id=839316227]
 position = Vector2(782, 16)
 scale = Vector2(0.266, 0.266)
 sprite_frames = SubResource("SpriteFrames_tjnok")
 animation = &"defense"
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Defense"]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Defense" unique_id=1454034672]
 position = Vector2(692, 15)
 scale = Vector2(0.268, 0.266)
 sprite_frames = SubResource("SpriteFrames_tjnok")
 animation = &"shuttle"
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Defense"]
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Defense" unique_id=791744587]
 position = Vector2(692, 12)
 scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_lfs2e")
 action = "defense_p"
 
-[node name="TouchScreenButton2" type="TouchScreenButton" parent="Defense"]
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Defense" unique_id=1270369963]
 position = Vector2(785, 15)
 scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_lfs2e")
 action = "defense_n"
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1607555708]
 wait_time = 160.0
 autostart = true
 script = ExtResource("4_r62gf")
 
-[node name="Accuracy" type="Node2D" parent="."]
+[node name="Accuracy" type="Node2D" parent="." unique_id=1495746375]
 position = Vector2(-175, 14)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Accuracy"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Accuracy" unique_id=1825666135]
 position = Vector2(29, -19)
 scale = Vector2(0.722, 0.722)
 sprite_frames = SubResource("SpriteFrames_q3vre")
 
-[node name="0" type="TouchScreenButton" parent="Accuracy"]
+[node name="0" type="TouchScreenButton" parent="Accuracy" unique_id=955051737]
 position = Vector2(157, 116)
 rotation = -0.254818
 scale = Vector2(5, 1.25)
 shape = SubResource("CapsuleShape2D_pu4pa")
 action = "0"
 
-[node name="16" type="TouchScreenButton" parent="Accuracy"]
+[node name="16" type="TouchScreenButton" parent="Accuracy" unique_id=1029696975]
 position = Vector2(97, 85)
 rotation = -0.507891
 scale = Vector2(5, 2)
 shape = SubResource("CapsuleShape2D_gnnal")
 action = "16"
 
-[node name="33" type="TouchScreenButton" parent="Accuracy"]
+[node name="33" type="TouchScreenButton" parent="Accuracy" unique_id=926999046]
 position = Vector2(55, 48)
 rotation = -0.253073
 scale = Vector2(5, 2)
 shape = SubResource("CapsuleShape2D_ckdb1")
 action = "33"
 
-[node name="50" type="TouchScreenButton" parent="Accuracy"]
+[node name="50" type="TouchScreenButton" parent="Accuracy" unique_id=507252301]
 position = Vector2(50, 0)
 scale = Vector2(6, 3)
 shape = SubResource("RectangleShape2D_vftfh")
 action = "50"
 
-[node name="67" type="TouchScreenButton" parent="Accuracy"]
+[node name="67" type="TouchScreenButton" parent="Accuracy" unique_id=2132775254]
 position = Vector2(55, -63)
 rotation = 0.127409
 scale = Vector2(6, 2)
 shape = SubResource("CapsuleShape2D_geobo")
 action = "67"
 
-[node name="83" type="TouchScreenButton" parent="Accuracy"]
+[node name="83" type="TouchScreenButton" parent="Accuracy" unique_id=1073553506]
 position = Vector2(95, -98)
 rotation = 0.380482
 scale = Vector2(5, 1.7)
 shape = SubResource("CapsuleShape2D_twkno")
 action = "83"
 
-[node name="100" type="TouchScreenButton" parent="Accuracy"]
+[node name="100" type="TouchScreenButton" parent="Accuracy" unique_id=1408386120]
 position = Vector2(155, -120)
 rotation = 0.507891
 scale = Vector2(5, 1.5)
 shape = SubResource("CapsuleShape2D_53h7h")
 action = "100"
 
-[node name="Fuel" type="Node2D" parent="."]
+[node name="Fuel" type="Node2D" parent="." unique_id=1582793608]
 position = Vector2(-282, 3)
 
-[node name="Sprite2D" type="Sprite2D" parent="Fuel"]
+[node name="Sprite2D" type="Sprite2D" parent="Fuel" unique_id=330967442]
 position = Vector2(384, -8)
 scale = Vector2(0.752, 0.734)
 texture = ExtResource("14_i80bh")
 
-[node name="+10" type="TouchScreenButton" parent="Fuel"]
+[node name="+10" type="TouchScreenButton" parent="Fuel" unique_id=1127383612]
 position = Vector2(442, 27)
 scale = Vector2(9, 9)
 shape = SubResource("CircleShape2D_twqel")
 action = "fuel10"
 
-[node name="+4" type="TouchScreenButton" parent="Fuel"]
+[node name="+4" type="TouchScreenButton" parent="Fuel" unique_id=1697838465]
 position = Vector2(325, -57)
 scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_ca0hi")
 action = "fuel4"
 
-[node name="+1" type="TouchScreenButton" parent="Fuel"]
+[node name="+1" type="TouchScreenButton" parent="Fuel" unique_id=1177175878]
 position = Vector2(298, 49)
 scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_bkudm")
 action = "fuel1"
 
-[node name="-1" type="TouchScreenButton" parent="Fuel"]
+[node name="-1" type="TouchScreenButton" parent="Fuel" unique_id=1531976765]
 position = Vector2(341, 100)
 scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_bkudm")
 action = "fuel-1"
 
-[node name="Label" type="Label" parent="Fuel"]
+[node name="Label" type="Label" parent="Fuel" unique_id=1898459269]
 modulate = Color(0, 0, 0, 1)
 offset_left = 387.0
 offset_top = -116.0
@@ -424,100 +442,100 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="shots_image" type="Sprite2D" parent="Fuel"]
+[node name="shots_image" type="Sprite2D" parent="Fuel" unique_id=832748825]
 position = Vector2(320, 194)
 scale = Vector2(0.5, 0.3)
 texture = ExtResource("17_66qr2")
 
-[node name="cycles" type="TouchScreenButton" parent="Fuel"]
+[node name="cycles" type="TouchScreenButton" parent="Fuel" unique_id=2051458647]
 position = Vector2(320, 198)
 scale = Vector2(12, 3)
 shape = SubResource("RectangleShape2D_hujfe")
 action = "cycle"
 
-[node name="Node2D" type="Node2D" parent="Fuel"]
+[node name="Node2D" type="Node2D" parent="Fuel" unique_id=1446585637]
 
-[node name="Climb" type="Node2D" parent="."]
+[node name="Climb" type="Node2D" parent="." unique_id=846085887]
 script = ExtResource("18_1qhxq")
 
-[node name="L1" type="TouchScreenButton" parent="Climb"]
+[node name="L1" type="TouchScreenButton" parent="Climb" unique_id=1426409892]
 position = Vector2(-450, 100)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_j7vlw")
 action = "l1"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/L1"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/L1" unique_id=2014798156]
 position = Vector2(0, -4.2)
 scale = Vector2(0.085, 0.085)
 sprite_frames = SubResource("SpriteFrames_m2cg1")
 animation = &"no"
 
-[node name="L2" type="TouchScreenButton" parent="Climb"]
+[node name="L2" type="TouchScreenButton" parent="Climb" unique_id=1092431347]
 position = Vector2(-450, -20)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_70ek2")
 action = "l2"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/L2"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/L2" unique_id=2145817570]
 position = Vector2(0, -3.8)
 scale = Vector2(0.085, 0.085)
 sprite_frames = SubResource("SpriteFrames_mot2a")
 animation = &"no"
 
-[node name="L3" type="TouchScreenButton" parent="Climb"]
+[node name="L3" type="TouchScreenButton" parent="Climb" unique_id=1659242289]
 position = Vector2(-450, -147)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_myw4h")
 action = "l3"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/L3"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/L3" unique_id=1937699225]
 position = Vector2(0, -1.80011)
 scale = Vector2(0.085, 0.085)
 sprite_frames = SubResource("SpriteFrames_fn5eb")
 animation = &"yes"
 
-[node name="left" type="TouchScreenButton" parent="Climb"]
+[node name="left" type="TouchScreenButton" parent="Climb" unique_id=383017303]
 position = Vector2(-515, -240)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_dxtap")
 action = "left"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/left"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/left" unique_id=1065906536]
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_hdel7")
 animation = &"off"
 
-[node name="right" type="TouchScreenButton" parent="Climb"]
+[node name="right" type="TouchScreenButton" parent="Climb" unique_id=1482826438]
 position = Vector2(-395, -240)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_gtqjb")
 action = "right"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Climb/right"]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Climb/right" unique_id=1049124586]
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_hdel7")
 animation = &"on"
 
-[node name="center" type="TouchScreenButton" parent="Climb"]
+[node name="center" type="TouchScreenButton" parent="Climb" unique_id=496496369]
 position = Vector2(-455, -240)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_nac2t")
 action = "center"
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Climb/center"]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Climb/center" unique_id=1713504140]
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_hdel7")
 animation = &"on"
 
-[node name="Pinning" type="Node2D" parent="."]
+[node name="Pinning" type="Node2D" parent="." unique_id=1939324367]
 position = Vector2(360, -260)
 
-[node name="Sprite2D" type="Sprite2D" parent="Pinning"]
+[node name="Sprite2D" type="Sprite2D" parent="Pinning" unique_id=555106156]
 position = Vector2(-362, 20)
 scale = Vector2(0.664, 0.664)
 texture = ExtResource("24_eoqjh")
 
-[node name="Label" type="Label" parent="Pinning"]
+[node name="Label" type="Label" parent="Pinning" unique_id=211999187]
 offset_left = -418.0
 offset_top = -17.0
 offset_right = -313.0
@@ -526,14 +544,44 @@ theme_override_font_sizes/font_size = 70
 text = "0"
 horizontal_alignment = 1
 
-[node name="plus" type="TouchScreenButton" parent="Pinning"]
+[node name="plus" type="TouchScreenButton" parent="Pinning" unique_id=1518324878]
 position = Vector2(-243, 29)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_d2dnv")
 action = "pin+"
 
-[node name="minus" type="TouchScreenButton" parent="Pinning"]
+[node name="minus" type="TouchScreenButton" parent="Pinning" unique_id=1476221135]
 position = Vector2(-491, 33)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_eqbex")
 action = "pin-"
+
+[node name="Bump" type="Node2D" parent="." unique_id=720360721]
+position = Vector2(900, 120)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bump" unique_id=761028262]
+position = Vector2(-462, -165)
+scale = Vector2(0.404, 0.404)
+sprite_frames = SubResource("SpriteFrames_ed6ap")
+animation = &"yes"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Bump" unique_id=1166731224]
+position = Vector2(-461, -170)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_velmq")
+action = "bump"
+
+[node name="Trench" type="Node2D" parent="." unique_id=1002667637]
+position = Vector2(725, 260)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Trench" unique_id=1054951218]
+position = Vector2(-287, -170)
+scale = Vector2(0.415, 0.415)
+sprite_frames = SubResource("SpriteFrames_m0qp2")
+animation = &"no"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Trench" unique_id=1738419462]
+position = Vector2(-287, -174)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_x7afm")
+action = "trench"

@@ -4,17 +4,41 @@ extends Node2D
 @onready var defense: Node2D = $Defense
 @onready var label: Label = $Fuel/Label
 @onready var label2: Label = $Pinning/Label
+@onready var bump: AnimatedSprite2D = $Bump/AnimatedSprite2D
+@onready var trench: AnimatedSprite2D = $Trench/AnimatedSprite2D
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if data.bump:
+		bump.play("yes")
+	else:
+		bump.play("no")
+	if data.trench:
+		trench.play("yes")
+	else:
+		trench.play("no")
 	print("scouting2")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	label.text=str("Fuel Count: ", data.fuel_t)
+	if Input.is_action_just_pressed("trench"):
+		data.trench=not data.trench
+		if data.trench:
+			trench.play("yes")
+		else:
+			trench.play("no")
+	if Input.is_action_just_pressed("bump"):
+		data.bump=not data.bump
+
+		if data.bump:
+			bump.play("yes")
+		else:
+			bump.play("no")
+
 	if Input.is_action_just_pressed("auto"):
 		get_tree().change_scene_to_file("res://Scenes/match_scouting.tscn")
 	if Input.is_action_just_pressed("cycle"):

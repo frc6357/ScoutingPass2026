@@ -55,7 +55,7 @@ func _process(_delta: float) -> void:
 		data.l1=climb.l1
 		data.l2=climb.l2
 		data.l3=climb.l3
-		get_tree().change_scene_to_file("res://Scenes/match_scouting4.tscn")
+		get_tree().change_scene_to_file("res://Scenes/match_scouting_final.tscn")
 	if timer.time_left>20:
 		if Input.is_action_just_pressed("defense_n") and d==false:
 			if mode=="offense":
@@ -161,7 +161,7 @@ func _process(_delta: float) -> void:
 		data.l2=climb.l2
 		data.l3=climb.l3
 		data.climb_t=climb.points
-		get_tree().change_scene_to_file("res://Scenes/match_scouting4.tscn")
+		get_tree().change_scene_to_file("res://Scenes/match_scouting_final.tscn")
 func disabled():
 	#stops the timer for defense/offense/shuttling (depending on which is selected.
 	d=true

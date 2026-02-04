@@ -1,5 +1,6 @@
 extends Node2D
 @onready var data: Node2D = $"../DataStorage"
+@onready var qr_code: QRCodeRect = $QRCodeRect
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,6 +13,21 @@ func _process(_delta: float) -> void:
 	pass
 var e
 func generate():
+	qr_code._qr.put_byte(("http://localhost:5000/add-data?data="+
+	str(data.team)+","+str(data.fuel_a)+","+str(data.fuel_t)+
+	","+str(data.fuel_s)+","+str(data.shots)+
+	","+str(data.accuracy_a)+","+str(data.accuracy_t)+
+	","+str(data.time_defense)+","+str(data.time_offense)+
+	","+str(data.time_shuttle)+","+str(data.time_disabled)+
+	","+str(data.l1)+","+str(data.time_l1)+","+str(data.l2)+
+	","+str(data.time_l2)+","+str(data.l3)+","+str(data.time_l3)+
+	","+str(data.trench)+","+str(data.bump)+","+str(data.pins)
+	).to_utf8_buffer())
+	qr_code._update_qr()
+	
+		
+	print(qr_code.data)
+	'''
 	print("fuel auto: ",data.fuel_a)
 	print("fuel tele: ",data.fuel_t)
 	print("fuel total: ",data.fuel_t+data.fuel_a)
@@ -53,3 +69,4 @@ func generate():
 	if data.time_l3>0:
 		print("time left l3:",data.time_l3)
 	print("climb points tele: ", data.climb_t)
+	'''

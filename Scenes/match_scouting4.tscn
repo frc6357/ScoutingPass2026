@@ -1,17 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://rnrdje1vlgpy"]
+[gd_scene format=3 uid="uid://rnrdje1vlgpy"]
 
-[ext_resource type="Script" path="res://Scripts/match_scouting_4.gd" id="1_yeysk"]
+[ext_resource type="Script" uid="uid://cxl24bt8o1j77" path="res://Scripts/match_scouting_4.gd" id="1_yeysk"]
 [ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_8qnhp"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="3_wqrnt"]
-[ext_resource type="Script" path="res://Scripts/data_storage.gd" id="4_p2o4k"]
+[ext_resource type="Script" uid="uid://d1tcpkljn2awi" path="res://Scripts/data_storage.gd" id="4_p2o4k"]
 [ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="4_vtj0q"]
 [ext_resource type="Texture2D" uid="uid://ce1pw32vl8dq0" path="res://Assets/fouls.png" id="6_5eq86"]
-[ext_resource type="Script" path="res://Scripts/resid_f.gd" id="7_j4pgm"]
-[ext_resource type="Texture2D" uid="uid://tpg34yspabk5" path="res://Assets/bump2.png" id="7_rs2rd"]
-[ext_resource type="Script" path="res://Scenes/resid_c.gd" id="8_2bk4c"]
-[ext_resource type="Texture2D" uid="uid://e4v8inl37p2r" path="res://Assets/bump1.png" id="8_qyyr6"]
-[ext_resource type="Texture2D" uid="uid://bgkymjrps6cku" path="res://Assets/trench2.png" id="9_h7y04"]
-[ext_resource type="Texture2D" uid="uid://c6pibwqynnufo" path="res://Assets/trench1.png" id="10_8550g"]
+[ext_resource type="Script" uid="uid://b1eaalbnw830y" path="res://Scripts/resid_f.gd" id="7_j4pgm"]
+[ext_resource type="Script" uid="uid://d38qmuvwi1w8f" path="res://Scenes/resid_c.gd" id="8_2bk4c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rtdrl"]
 
@@ -19,88 +15,47 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cb8m1"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_nuet0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_rs2rd")
-}],
-"loop": true,
-"name": &"no",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_qyyr6")
-}],
-"loop": true,
-"name": &"yes",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_34416"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7j5n5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_h7y04")
-}],
-"loop": true,
-"name": &"no",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_8550g")
-}],
-"loop": true,
-"name": &"yes",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmhak"]
-
-[node name="MatchScouting" type="Node2D"]
+[node name="MatchScouting" type="Node2D" unique_id=816831113]
 script = ExtResource("1_yeysk")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1293754301]
 
-[node name="QR code generator" parent="." instance=ExtResource("2_8qnhp")]
+[node name="QR code generator" parent="." unique_id=881530312 instance=ExtResource("2_8qnhp")]
+position = Vector2(-1000, 0)
 
-[node name="DataStorage" parent="." instance=ExtResource("3_wqrnt")]
+[node name="DataStorage" parent="." unique_id=69524375 instance=ExtResource("3_wqrnt")]
 script = ExtResource("4_p2o4k")
 
-[node name="Next" type="TouchScreenButton" parent="."]
+[node name="Next" type="TouchScreenButton" parent="." unique_id=914097479]
 position = Vector2(486, 236)
 scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_rtdrl")
 action = "final"
 
-[node name="Image" type="Sprite2D" parent="Next"]
+[node name="Image" type="Sprite2D" parent="Next" unique_id=1394553953]
 position = Vector2(2.5, -6.375)
 scale = Vector2(0.0775, 0.1005)
 texture = ExtResource("4_vtj0q")
 
-[node name="Previous" type="TouchScreenButton" parent="."]
+[node name="Previous" type="TouchScreenButton" parent="." unique_id=788600068]
 position = Vector2(-487, 239)
 scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_rtdrl")
 action = "endgame"
 
-[node name="Image" type="Sprite2D" parent="Previous"]
+[node name="Image" type="Sprite2D" parent="Previous" unique_id=1269450866]
 position = Vector2(-3.375, -6)
 scale = Vector2(-0.078, 0.101)
 texture = ExtResource("4_vtj0q")
 
-[node name="Fouls" type="Node2D" parent="."]
+[node name="Fouls" type="Node2D" parent="." unique_id=704548915]
 
-[node name="Sprite2D" type="Sprite2D" parent="Fouls"]
+[node name="Sprite2D" type="Sprite2D" parent="Fouls" unique_id=1107969278]
 position = Vector2(-362, 20)
 scale = Vector2(0.664, 0.664)
 texture = ExtResource("6_5eq86")
 
-[node name="Label" type="Label" parent="Fouls"]
+[node name="Label" type="Label" parent="Fouls" unique_id=1302987015]
 offset_left = -418.0
 offset_top = -17.0
 offset_right = -313.0
@@ -109,29 +64,29 @@ theme_override_font_sizes/font_size = 70
 text = "0"
 horizontal_alignment = 1
 
-[node name="plus" type="TouchScreenButton" parent="Fouls"]
+[node name="plus" type="TouchScreenButton" parent="Fouls" unique_id=457630584]
 position = Vector2(-243, 29)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_b6mwx")
 action = "foul+"
 
-[node name="minus" type="TouchScreenButton" parent="Fouls"]
+[node name="minus" type="TouchScreenButton" parent="Fouls" unique_id=1172261451]
 position = Vector2(-491, 33)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_cb8m1")
 action = "foul-"
 
-[node name="ResidF" type="Node2D" parent="."]
+[node name="ResidF" type="Node2D" parent="." unique_id=1363654462]
 position = Vector2(373, -60)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("7_j4pgm")
 
-[node name="Sprite2D" type="Sprite2D" parent="ResidF"]
+[node name="Sprite2D" type="Sprite2D" parent="ResidF" unique_id=1229756571]
 position = Vector2(-362, 20)
 scale = Vector2(0.664, 0.664)
 texture = ExtResource("6_5eq86")
 
-[node name="Label" type="Label" parent="ResidF"]
+[node name="Label" type="Label" parent="ResidF" unique_id=1328314954]
 offset_left = -418.0
 offset_top = -17.0
 offset_right = -313.0
@@ -140,29 +95,29 @@ theme_override_font_sizes/font_size = 70
 text = "0"
 horizontal_alignment = 1
 
-[node name="plus" type="TouchScreenButton" parent="ResidF"]
+[node name="plus" type="TouchScreenButton" parent="ResidF" unique_id=365800420]
 position = Vector2(-243, 29)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_b6mwx")
 action = "f+"
 
-[node name="minus" type="TouchScreenButton" parent="ResidF"]
+[node name="minus" type="TouchScreenButton" parent="ResidF" unique_id=238212026]
 position = Vector2(-491, 33)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_cb8m1")
 action = "f-"
 
-[node name="ResidC" type="Node2D" parent="."]
+[node name="ResidC" type="Node2D" parent="." unique_id=332269467]
 position = Vector2(380, 167)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("8_2bk4c")
 
-[node name="Sprite2D" type="Sprite2D" parent="ResidC"]
+[node name="Sprite2D" type="Sprite2D" parent="ResidC" unique_id=1878321424]
 position = Vector2(-362, 20)
 scale = Vector2(0.664, 0.664)
 texture = ExtResource("6_5eq86")
 
-[node name="Label" type="Label" parent="ResidC"]
+[node name="Label" type="Label" parent="ResidC" unique_id=1633708013]
 offset_left = -418.0
 offset_top = -17.0
 offset_right = -313.0
@@ -171,98 +126,70 @@ theme_override_font_sizes/font_size = 70
 text = "0"
 horizontal_alignment = 1
 
-[node name="plus" type="TouchScreenButton" parent="ResidC"]
+[node name="plus" type="TouchScreenButton" parent="ResidC" unique_id=519042642]
 position = Vector2(-243, 29)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_b6mwx")
 action = "c+"
 
-[node name="minus" type="TouchScreenButton" parent="ResidC"]
+[node name="minus" type="TouchScreenButton" parent="ResidC" unique_id=2009647984]
 position = Vector2(-491, 33)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_cb8m1")
 action = "c-"
 
-[node name="Bump" type="Node2D" parent="."]
+[node name="Labels" type="Node2D" parent="." unique_id=1542084224]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bump"]
-position = Vector2(-462, -165)
-scale = Vector2(0.404, 0.404)
-sprite_frames = SubResource("SpriteFrames_nuet0")
-animation = &"yes"
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Bump"]
-position = Vector2(-461, -170)
-scale = Vector2(6, 6)
-shape = SubResource("RectangleShape2D_34416")
-action = "bump"
-
-[node name="Trench" type="Node2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Trench"]
-position = Vector2(-287, -170)
-scale = Vector2(0.415, 0.415)
-sprite_frames = SubResource("SpriteFrames_7j5n5")
-animation = &"no"
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Trench"]
-position = Vector2(-287, -174)
-scale = Vector2(6, 6)
-shape = SubResource("RectangleShape2D_lmhak")
-action = "trench"
-
-[node name="Labels" type="Node2D" parent="."]
-
-[node name="Fuel_A" type="Label" parent="Labels"]
+[node name="Fuel_A" type="Label" parent="Labels" unique_id=1498319411]
 offset_left = 112.0
 offset_top = -226.0
 offset_right = 409.0
 offset_bottom = -181.0
 text = "Fuel Scored Auto:"
 
-[node name="Fuel_T" type="Label" parent="Labels"]
+[node name="Fuel_T" type="Label" parent="Labels" unique_id=1166696612]
 offset_left = 110.0
 offset_top = -197.0
 offset_right = 407.0
 offset_bottom = -152.0
 text = "Fuel Scored Teleop:"
 
-[node name="Total" type="Label" parent="Labels"]
+[node name="Total" type="Label" parent="Labels" unique_id=136467337]
 offset_left = 109.0
 offset_top = -164.0
 offset_right = 406.0
 offset_bottom = -119.0
 text = "Fuel Scored Total:"
 
-[node name="R_F" type="Label" parent="Labels"]
+[node name="R_F" type="Label" parent="Labels" unique_id=1632072292]
 offset_left = 109.0
 offset_top = -130.0
 offset_right = 406.0
 offset_bottom = -85.0
 text = "Residual:"
 
-[node name="Climb_A" type="Label" parent="Labels"]
+[node name="Climb_A" type="Label" parent="Labels" unique_id=750110699]
 offset_left = 108.0
 offset_top = 22.0
 offset_right = 405.0
 offset_bottom = 67.0
 text = "Climb points Auto:"
 
-[node name="Climb_E" type="Label" parent="Labels"]
+[node name="Climb_E" type="Label" parent="Labels" unique_id=466200369]
 offset_left = 108.0
 offset_top = 54.0
 offset_right = 405.0
 offset_bottom = 99.0
 text = "Climb points Endgame:"
 
-[node name="Climb_T" type="Label" parent="Labels"]
+[node name="Climb_T" type="Label" parent="Labels" unique_id=458459584]
 offset_left = 107.0
 offset_top = 85.0
 offset_right = 404.0
 offset_bottom = 130.0
 text = "Climb points Total:"
 
-[node name="R_C" type="Label" parent="Labels"]
+[node name="R_C" type="Label" parent="Labels" unique_id=1059186571]
 offset_left = 108.0
 offset_top = 112.0
 offset_right = 405.0

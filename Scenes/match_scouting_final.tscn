@@ -1,41 +1,47 @@
-[gd_scene load_steps=7 format=3 uid="uid://0aql3ehp8yaf"]
+[gd_scene format=3 uid="uid://0aql3ehp8yaf"]
 
-[ext_resource type="Script" path="res://Scripts/match_scouting_final.gd" id="1_h0oje"]
+[ext_resource type="Script" uid="uid://bbdhf1hm3lw5v" path="res://Scripts/match_scouting_final.gd" id="1_h0oje"]
 [ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_e18bi"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="3_nuwcn"]
-[ext_resource type="Script" path="res://Scripts/data_storage.gd" id="4_1cruf"]
+[ext_resource type="Script" uid="uid://d1tcpkljn2awi" path="res://Scripts/data_storage.gd" id="4_1cruf"]
 [ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="4_70eiv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_04jwm"]
 
-[node name="MatchScouting" type="Node2D"]
+[node name="MatchScouting" type="Node2D" unique_id=1698301132]
 script = ExtResource("1_h0oje")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1247725803]
 
-[node name="QR code generator" parent="." instance=ExtResource("2_e18bi")]
+[node name="QR code generator" parent="." unique_id=2035174978 instance=ExtResource("2_e18bi")]
+position = Vector2(-113.000015, -106)
+scale = Vector2(5, 5)
 
-[node name="DataStorage" parent="." instance=ExtResource("3_nuwcn")]
+[node name="DataStorage" parent="." unique_id=514255231 instance=ExtResource("3_nuwcn")]
 script = ExtResource("4_1cruf")
 
-[node name="Next" type="TouchScreenButton" parent="."]
+[node name="Next" type="TouchScreenButton" parent="." unique_id=1590556473]
 position = Vector2(486, 236)
 scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_04jwm")
 action = "main"
 
-[node name="Image" type="Sprite2D" parent="Next"]
+[node name="Image" type="Sprite2D" parent="Next" unique_id=1129333453]
 position = Vector2(2.5, -6.375)
 scale = Vector2(0.0775, 0.1005)
 texture = ExtResource("4_70eiv")
 
-[node name="Previous" type="TouchScreenButton" parent="."]
+[node name="Node" type="Node" parent="Next" unique_id=606337122]
+
+[node name="Previous" type="TouchScreenButton" parent="." unique_id=2008097456]
 position = Vector2(-487, 239)
 scale = Vector2(8, 8)
 shape = SubResource("CircleShape2D_04jwm")
 action = "misc"
 
-[node name="Image" type="Sprite2D" parent="Previous"]
+[node name="Image" type="Sprite2D" parent="Previous" unique_id=1219673375]
 position = Vector2(-3.375, -6)
 scale = Vector2(-0.078, 0.101)
 texture = ExtResource("4_70eiv")
+
+[node name="Node" type="Node" parent="." unique_id=806506743]
