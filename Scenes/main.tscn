@@ -1,64 +1,81 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3v62nyafqopb"]
+[gd_scene format=3 uid="uid://b3v62nyafqopb"]
 
-[ext_resource type="Script" path="res://Scripts/main.gd" id="1_d4pt4"]
+[ext_resource type="Script" uid="uid://26tdouyoi1cd" path="res://Scripts/main.gd" id="1_d4pt4"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="2_cicmk"]
 [ext_resource type="Texture2D" uid="uid://cj4updg2snof4" path="res://Assets/button1.png" id="2_nl2lw"]
-[ext_resource type="Script" path="res://Scripts/data_storage.gd" id="4_nllc6"]
+[ext_resource type="Script" uid="uid://d1tcpkljn2awi" path="res://Scripts/data_storage.gd" id="4_nllc6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvxjn"]
 size = Vector2(60, 20)
 
-[node name="Main" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
+
+[node name="Main" type="Node2D" unique_id=67654157]
 script = ExtResource("1_d4pt4")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1123794902]
 
-[node name="buttons" type="Node2D" parent="."]
+[node name="buttons" type="Node2D" parent="." unique_id=951621231]
 
-[node name="Scouting" type="TouchScreenButton" parent="buttons"]
+[node name="Scouting" type="TouchScreenButton" parent="buttons" unique_id=1822975725]
 position = Vector2(-1, -248)
 scale = Vector2(8.8, 5.57)
 shape = SubResource("RectangleShape2D_qvxjn")
 action = "auto"
 
-[node name="Image" type="Sprite2D" parent="buttons/Scouting"]
+[node name="Image" type="Sprite2D" parent="buttons/Scouting" unique_id=1051814019]
 position = Vector2(0.227273, 8.79713)
 scale = Vector2(0.0729062, 0.0991438)
 texture = ExtResource("2_nl2lw")
 
-[node name="Pitscouting" type="TouchScreenButton" parent="buttons"]
+[node name="Pitscouting" type="TouchScreenButton" parent="buttons" unique_id=1887538557]
 position = Vector2(-1, -123)
 scale = Vector2(8.74347, 5.50977)
 shape = SubResource("RectangleShape2D_qvxjn")
 action = "pit"
 
-[node name="Image" type="Sprite2D" parent="buttons/Pitscouting"]
+[node name="Image" type="Sprite2D" parent="buttons/Pitscouting" unique_id=1163726631]
 
-[node name="Strategy" type="TouchScreenButton" parent="buttons"]
+[node name="Strategy" type="TouchScreenButton" parent="buttons" unique_id=391212590]
 position = Vector2(2, 4.99999)
 scale = Vector2(8.84, 5.64)
 shape = SubResource("RectangleShape2D_qvxjn")
 action = "strategy"
 
-[node name="Image" type="Sprite2D" parent="buttons/Strategy"]
+[node name="Image" type="Sprite2D" parent="buttons/Strategy" unique_id=615828881]
 
-[node name="Tools" type="TouchScreenButton" parent="buttons"]
+[node name="Tools" type="TouchScreenButton" parent="buttons" unique_id=802089420]
 position = Vector2(1, 131)
 scale = Vector2(8.65889, -5.64585)
 shape = SubResource("RectangleShape2D_qvxjn")
 action = "tools"
 
-[node name="Image" type="Sprite2D" parent="buttons/Tools"]
+[node name="Image" type="Sprite2D" parent="buttons/Tools" unique_id=43893154]
 
-[node name="MiniGame" type="TouchScreenButton" parent="buttons"]
+[node name="MiniGame" type="TouchScreenButton" parent="buttons" unique_id=1753634752]
 position = Vector2(1, 257)
 scale = Vector2(8.68, 5.68)
 shape = SubResource("RectangleShape2D_qvxjn")
 action = "minigame"
 
-[node name="Image" type="Sprite2D" parent="buttons/MiniGame"]
+[node name="Image" type="Sprite2D" parent="buttons/MiniGame" unique_id=1902394950]
 
-[node name="visuals" type="Node2D" parent="."]
+[node name="visuals" type="Node2D" parent="." unique_id=1758254552]
 
-[node name="DataStorage" parent="." instance=ExtResource("2_cicmk")]
+[node name="DataStorage" parent="." unique_id=146184140 instance=ExtResource("2_cicmk")]
 script = ExtResource("4_nllc6")
+
+[node name="Name" type="Node2D" parent="." unique_id=922287311]
+
+[node name="Label" type="Label" parent="Name" unique_id=207357284]
+offset_left = 334.0
+offset_top = -276.0
+offset_right = 515.0
+offset_bottom = -218.0
+text = "Scouter Name: N/A"
+
+[node name="name_button" type="TouchScreenButton" parent="Name" unique_id=764370017]
+position = Vector2(423.99994, -248.00002)
+scale = Vector2(10, 3)
+shape = SubResource("RectangleShape2D_jjvhh")
+action = "name"
