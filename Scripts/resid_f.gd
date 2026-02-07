@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#adds and subtracts from the displayed number based on input.
 	#Residual is the distance between the total points the scouters say were scored and the actual ammount.
 	if Input.is_action_just_pressed("f+"):

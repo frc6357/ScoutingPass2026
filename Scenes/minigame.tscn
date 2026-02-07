@@ -91,3 +91,9 @@ autoplay = &"passive"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fuel_clicker/AnimationPlayer" unique_id=1954003152]
 sprite_frames = SubResource("SpriteFrames_xcq3l")
+
+[node name="Label" type="Label" parent="." unique_id=1989175527]
+offset_left = -90.0
+offset_top = -275.0
+offset_right = 96.0
+offset_bottom = -207.0
