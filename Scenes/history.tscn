@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://mor4gfic4i0v"]
+
+[ext_resource type="Script" uid="uid://bc0631f722j4u" path="res://Scenes/history.gd" id="1_0uxmr"]
+[ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="1_oig27"]
+[ext_resource type="Script" uid="uid://d1tcpkljn2awi" path="res://Scripts/data_storage.gd" id="2_0uxmr"]
+[ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="3_d85y4"]
+[ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="4_i534w"]
+[ext_resource type="Texture2D" uid="uid://6wksducocnk1" path="res://Assets/button2.png" id="6_d85y4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ofyi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i534w"]
+radius = 237.02
+
+[node name="history" type="Node2D" unique_id=1960234655]
+script = ExtResource("1_0uxmr")
+
+[node name="DataStorage" parent="." unique_id=540420952 instance=ExtResource("1_oig27")]
+script = ExtResource("2_0uxmr")
+
+[node name="QR code generator" parent="." unique_id=1648695352 instance=ExtResource("3_d85y4")]
+position = Vector2(-100, 0)
+scale = Vector2(3, 3)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1316440644]
+
+[node name="Next" type="TouchScreenButton" parent="." unique_id=921949234]
+position = Vector2(486, 236)
+scale = Vector2(8, 8)
+shape = SubResource("CircleShape2D_1ofyi")
+action = "next"
+
+[node name="Image" type="Sprite2D" parent="Next" unique_id=734184999]
+position = Vector2(2.5, -6.375)
+scale = Vector2(0.0775, 0.1005)
+texture = ExtResource("4_i534w")
+
+[node name="Previous" type="TouchScreenButton" parent="." unique_id=205435312]
+position = Vector2(-487, 239)
+scale = Vector2(8, 8)
+shape = SubResource("CircleShape2D_1ofyi")
+action = "previous"
+
+[node name="Image" type="Sprite2D" parent="Previous" unique_id=1208378611]
+position = Vector2(-3.375, -6)
+scale = Vector2(-0.078, 0.101)
+texture = ExtResource("4_i534w")
+
+[node name="Label" type="Label" parent="." unique_id=261942896]
+offset_left = -446.0
+offset_top = -309.0
+offset_right = 443.0
+offset_bottom = -188.0
+theme_override_font_sizes/font_size = 40
+text = "Match 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="exit" type="TouchScreenButton" parent="." unique_id=1584481871]
+position = Vector2(346, -380)
+scale = Vector2(0.37499997, 0.37499997)
+texture_normal = ExtResource("6_d85y4")
+shape = SubResource("CircleShape2D_i534w")
+action = "main"
+
+[node name="Label2" type="Label" parent="." unique_id=917306894]
+offset_left = -320.0
+offset_top = -223.0
+offset_right = 314.0
+offset_bottom = -200.0
+text = "Team #"
+horizontal_alignment = 1

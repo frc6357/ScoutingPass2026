@@ -44,13 +44,13 @@ action = "strategy"
 
 [node name="Image" type="Sprite2D" parent="buttons/Strategy" unique_id=615828881]
 
-[node name="Tools" type="TouchScreenButton" parent="buttons" unique_id=802089420]
+[node name="History" type="TouchScreenButton" parent="buttons" unique_id=802089420]
 position = Vector2(1, 131)
 scale = Vector2(8.65889, -5.64585)
 shape = SubResource("RectangleShape2D_qvxjn")
-action = "tools"
+action = "history"
 
-[node name="Image" type="Sprite2D" parent="buttons/Tools" unique_id=43893154]
+[node name="Image" type="Sprite2D" parent="buttons/History" unique_id=43893154]
 
 [node name="MiniGame" type="TouchScreenButton" parent="buttons" unique_id=1753634752]
 position = Vector2(1, 257)

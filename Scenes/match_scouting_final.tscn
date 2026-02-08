@@ -15,7 +15,7 @@ script = ExtResource("1_h0oje")
 
 [node name="QR code generator" parent="." unique_id=2035174978 instance=ExtResource("2_e18bi")]
 position = Vector2(-113.000015, -106)
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 
 [node name="DataStorage" parent="." unique_id=514255231 instance=ExtResource("3_nuwcn")]
 script = ExtResource("4_1cruf")

@@ -16,8 +16,8 @@ func _process(_delta: float) -> void:
 		get_tree().change_scene_to_file("res://Scenes/pit_scouting.tscn")
 	if Input.is_action_just_pressed("strategy"):
 		get_tree().change_scene_to_file("res://Scenes/strategy.tscn")
-	if Input.is_action_just_pressed("tools"):
-		get_tree().change_scene_to_file("res://Scenes/tools.tscn")
+	if Input.is_action_just_pressed("history"):
+		get_tree().change_scene_to_file("res://Scenes/history.tscn")
 	if Input.is_action_just_pressed("minigame"):
 		get_tree().change_scene_to_file("res://Scenes/minigame.tscn")
 	if Input.is_action_just_pressed("name"):
