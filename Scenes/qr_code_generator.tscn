@@ -16,6 +16,7 @@ data = {
 image = SubResource("Image_h3hyh")
 
 [node name="QR code generator" type="Node2D" unique_id=1648695352]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_j6xmb")
 
 [node name="QRCodeRect" type="TextureRect" parent="." unique_id=2049808128]

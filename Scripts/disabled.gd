@@ -2,7 +2,6 @@ extends Node2D
 @onready var timer: Timer = $"../Timer"
 @onready var animate: AnimatedSprite2D = $AnimatedSprite2D
 @onready var defense: Node2D = $"../Defense"
-@onready var animate2: AnimatedSprite2D = $"../Defense/AnimatedSprite2D"
 @onready var data: Node2D = $"../DataStorage"
 
 

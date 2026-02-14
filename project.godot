@@ -65,10 +65,6 @@ final={
 "deadzone": 0.5,
 "events": []
 }
-defense_n={
-"deadzone": 0.5,
-"events": []
-}
 disabled={
 "deadzone": 0.5,
 "events": []
@@ -89,35 +85,11 @@ fuel-1={
 "deadzone": 0.5,
 "events": []
 }
-0={
-"deadzone": 0.5,
-"events": []
-}
-16={
-"deadzone": 0.5,
-"events": []
-}
-33={
-"deadzone": 0.5,
-"events": []
-}
 50={
 "deadzone": 0.5,
 "events": []
 }
-67={
-"deadzone": 0.5,
-"events": []
-}
-83={
-"deadzone": 0.5,
-"events": []
-}
 100={
-"deadzone": 0.5,
-"events": []
-}
-defense_p={
 "deadzone": 0.5,
 "events": []
 }
@@ -206,6 +178,30 @@ next={
 "events": []
 }
 previous={
+"deadzone": 0.2,
+"events": []
+}
+defense={
+"deadzone": 0.2,
+"events": []
+}
+offense={
+"deadzone": 0.2,
+"events": []
+}
+shuttle={
+"deadzone": 0.2,
+"events": []
+}
+fuel5={
+"deadzone": 0.2,
+"events": []
+}
+75={
+"deadzone": 0.2,
+"events": []
+}
+90={
 "deadzone": 0.2,
 "events": []
 }

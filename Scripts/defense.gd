@@ -1,15 +1,13 @@
 extends Node2D
 @onready var timer: Timer = $"../Timer"
-@onready var animate: AnimatedSprite2D = $AnimatedSprite2D
-@onready var animate2: AnimatedSprite2D = $AnimatedSprite2D2
-@onready var animate3: AnimatedSprite2D = $AnimatedSprite2D3
+@onready var mode_i: AnimatedSprite2D = $Mode
 @onready var data: Node2D = $"../DataStorage"
 @onready var disabled2: Node2D = $"../Disabled"
 @onready var climb: Node2D = $"../Climb"
 
 
 # Called when the node enters the scene tree for the first time.
-
+var done=false
 var ds_time=0 # time where the timer started for cycling
 var de_time=0 # time when the timer ended for cycling
 var cs_time=0 # time where the timer started for cycling
@@ -25,7 +23,7 @@ var sleeping=false
 var mode="offense"
 var d=false
 func _ready() -> void:
-	animate.play("offense")
+	mode_i.play("offense")
 	dtime=data.time_defense
 	ctime=data.time_shuttle
 	otime=data.time_offense
@@ -57,86 +55,57 @@ func _process(_delta: float) -> void:
 		data.l3=climb.l3
 		get_tree().change_scene_to_file("res://Scenes/match_scouting_final.tscn")
 	if timer.time_left>20:
-		if Input.is_action_just_pressed("defense_n") and d==false:
+		if Input.is_action_just_pressed("defense") and d==false and done==false:
 			if mode=="offense":
-				mode="defense"
-				order.append("defense")
-				animate.play("defense") #changes to defense animation
-				animate2.play("shuttle")
-				animate3.play("offense")
 				oe_time=timer.time_left
 				oe_time=(int(oe_time*10)) #rounds to the nearest tenth of a second
 				otime+=float(os_time-oe_time)/10#adds to the total time disabled. Decreases to appropriate time.
 				#sets the start time to the current time on the timer.
-				ds_time=timer.time_left
-				ds_time=(int(ds_time*10)) #rounds to the nearest tenth of a second
 				print("offense time:",otime)
-			elif mode=="defense":
-				mode="shuttle"
-				order.append("shuttle")
-				animate.play("shuttle") #changes to offense animation
-				animate2.play("offense")
-				animate3.play("defense")
+			elif mode=="shuttle":
+				ce_time=timer.time_left
+				ce_time=(int(ce_time*10)) #rounds to the nearest tenth of a second
+				ctime+=float(cs_time-ce_time)/10
+				print("shuttle time:",ctime)
+			mode="defense"
+			order.append("defense")
+			mode_i.play("defense") #changes to defense animation
+			ds_time=timer.time_left
+			ds_time=(int(ds_time*10)) #rounds to the nearest tenth of a second
+		if Input.is_action_just_pressed("offense") and d==false:
+			if mode=="defense":
 				de_time=timer.time_left
 				de_time=(int(de_time*10)) #rounds to the nearest tenth of a second
 				dtime+=float(ds_time-de_time)/10#adds to the total time disabled. Decreases to appropriate time.
 				#sets the start time to the current time on the timer.
-				cs_time=timer.time_left
-				cs_time=(int(cs_time*10)) #rounds to the nearest tenth of a second
 				print("defense time:",dtime)
 			elif mode=="shuttle":
-				mode="offense"
-				order.append("offense")
-				animate.play("offense") #changes to offense animation
-				animate2.play("defense")
-				animate3.play("shuttle")
 				ce_time=timer.time_left
 				ce_time=(int(ce_time*10)) #rounds to the nearest tenth of a second
-				ctime+=float(cs_time-ce_time)/10#adds to the total time disabled. Decreases to appropriate time.
-				#sets the start time to the current time on the timer.
-				os_time=timer.time_left
-				os_time=(int(os_time*10)) #rounds to the nearest tenth of a second
+				ctime+=float(cs_time-ce_time)/10
 				print("shuttle time:",ctime)
-		if Input.is_action_just_pressed("defense_p") and d==false:
-			if mode=="shuttle":
-				mode="defense"
-				order.append("defense")
-				animate.play("defense") #changes to defense animation
-				animate2.play("shuttle")
-				animate3.play("offense")
-				ce_time=timer.time_left
-				ce_time=(int(ce_time*10)) #rounds to the nearest tenth of a second
-				ctime+=float(cs_time-ce_time)/10#adds to the total time disabled. Decreases to appropriate time.
-				#sets the start time to the current time on the timer.
-				ds_time=timer.time_left
-				ds_time=(int(ds_time*10)) #rounds to the nearest tenth of a second
-				print("shuttle time:",ctime)
-			elif mode=="offense":
-				mode="shuttle"
-				order.append("shuttle")
-				animate.play("shuttle") #changes to offense animation
-				animate2.play("offense")
-				animate3.play("defense")
-				oe_time=timer.time_left
-				oe_time=(int(oe_time*10)) #rounds to the nearest tenth of a second
-				otime+=float(os_time-oe_time)/10#adds to the total time disabled. Decreases to appropriate time.
-				#sets the start time to the current time on the timer.
-				cs_time=timer.time_left
-				cs_time=(int(cs_time*10)) #rounds to the nearest tenth of a second
-				print("offense time:",otime)
-			elif mode=="defense":
-				mode="offense"
-				order.append("offense")
-				animate.play("offense") #changes to offense animation
-				animate2.play("defense")
-				animate3.play("shuttle")
+			mode="offense"
+			order.append("offense")
+			mode_i.play("offense") #changes to defense animation
+			os_time=timer.time_left
+			os_time=(int(os_time*10)) #rounds to the nearest tenth of a second
+		if Input.is_action_just_pressed("shuttle") and d==false:
+			if mode=="defense":
 				de_time=timer.time_left
 				de_time=(int(de_time*10)) #rounds to the nearest tenth of a second
 				dtime+=float(ds_time-de_time)/10#adds to the total time disabled. Decreases to appropriate time.
 				#sets the start time to the current time on the timer.
-				os_time=timer.time_left
-				os_time=(int(os_time*10)) #rounds to the nearest tenth of a second
 				print("defense time:",dtime)
+			elif mode=="offense":
+				oe_time=timer.time_left
+				oe_time=(int(oe_time*10)) #rounds to the nearest tenth of a second
+				otime+=float(os_time-oe_time)/10
+				print("offense time:",otime)
+			mode="shuttle"
+			order.append("shuttle")
+			mode_i.play("shuttle") #changes to defense animation
+			cs_time=timer.time_left
+			cs_time=(int(cs_time*10)) #rounds to the nearest tenth of a second
 	else:
 		if mode=="offense":
 			oe_time=timer.time_left
@@ -161,7 +130,7 @@ func _process(_delta: float) -> void:
 		data.l2=climb.l2
 		data.l3=climb.l3
 		data.climb_t=climb.points
-		get_tree().change_scene_to_file("res://Scenes/match_scouting_final.tscn")
+		done=true
 func disabled():
 	#stops the timer for defense/offense/shuttling (depending on which is selected.
 	d=true

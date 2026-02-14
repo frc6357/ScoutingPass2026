@@ -2,33 +2,101 @@
 
 [ext_resource type="Script" uid="uid://cxtaedsnyb53q" path="res://Scripts/match_scouting_2.gd" id="1_abj35"]
 [ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_73pei"]
+[ext_resource type="Texture2D" uid="uid://bvoj45mx76jqt" path="res://Assets/blank.png" id="2_qe6au"]
+[ext_resource type="Texture2D" uid="uid://cvah5tjosc16w" path="res://Assets/fire1.png" id="3_bwdrc"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="3_vau7e"]
 [ext_resource type="Script" uid="uid://d1tcpkljn2awi" path="res://Scripts/data_storage.gd" id="4_qhi3p"]
 [ext_resource type="Script" uid="uid://bt6cflbppyxlt" path="res://Scripts/timer.gd" id="4_r62gf"]
+[ext_resource type="Texture2D" uid="uid://r7lvoqs6rxl" path="res://Assets/fire2.png" id="4_skvx0"]
+[ext_resource type="Texture2D" uid="uid://ckxouj5wtp0fb" path="res://Assets/fire3.png" id="5_11saq"]
 [ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="5_b1js0"]
 [ext_resource type="Script" uid="uid://idfu2lgchh7t" path="res://Scripts/disabled.gd" id="5_nuj6h"]
+[ext_resource type="Texture2D" uid="uid://bl2qrnd2gljl6" path="res://Assets/fire4.png" id="6_2q4bh"]
 [ext_resource type="Texture2D" uid="uid://dw5vhhsnrqnv3" path="res://Assets/disabled_button.png" id="6_j6wy3"]
+[ext_resource type="Texture2D" uid="uid://fuat0gvq744j" path="res://Assets/sideSlot.png" id="6_oy8ks"]
 [ext_resource type="Script" uid="uid://bla55nuwmgu20" path="res://Scripts/defense.gd" id="6_rfpmv"]
 [ext_resource type="Texture2D" uid="uid://cndlrfbqlrqjg" path="res://Assets/happy_button.png" id="7_gawtn"]
-[ext_resource type="Texture2D" uid="uid://bxb7nfmddii8a" path="res://Assets/defense_button.png" id="10_2o2cp"]
-[ext_resource type="Texture2D" uid="uid://dgxktb01y1rsw" path="res://Assets/offense_button.png" id="11_tphem"]
+[ext_resource type="Texture2D" uid="uid://drbvsej23muor" path="res://Assets/accuracy4.png" id="11_3sure"]
+[ext_resource type="Texture2D" uid="uid://c6xppsai6a3dw" path="res://Assets/accuracy1.png" id="12_gxgta"]
 [ext_resource type="Texture2D" uid="uid://bh2ua7tp2v3e" path="res://Assets/sleeping button.png" id="12_n5yt1"]
-[ext_resource type="Texture2D" uid="uid://cbvk4607eodgq" path="res://Assets/shuttling_button.png" id="12_yantw"]
+[ext_resource type="Texture2D" uid="uid://bh1vfjrthrsqc" path="res://Assets/accuracy2.png" id="13_xabek"]
+[ext_resource type="Texture2D" uid="uid://cgrtbrbghs65p" path="res://Assets/accuracy3.png" id="14_4cb2a"]
 [ext_resource type="Texture2D" uid="uid://dfae4s0ohqldf" path="res://Assets/Fuel buttons.png" id="14_i80bh"]
-[ext_resource type="Texture2D" uid="uid://dpr8sh7wwv6y7" path="res://Assets/scale.png" id="14_jwefq"]
-[ext_resource type="Texture2D" uid="uid://ckew74hdxpglq" path="res://Assets/shot.png" id="17_66qr2"]
+[ext_resource type="Texture2D" uid="uid://lutgbr14nmvd" path="res://Assets/fuel.png" id="14_m0qp2"]
+[ext_resource type="Script" uid="uid://cns01kx6q5pj" path="res://Scenes/fuel.gd" id="15_x7afm"]
 [ext_resource type="Script" uid="uid://co4s777p6phwi" path="res://Scripts/climb.gd" id="18_1qhxq"]
 [ext_resource type="Texture2D" uid="uid://kfwbqxtkqtij" path="res://Assets/climb_button.png" id="18_feivl"]
 [ext_resource type="Texture2D" uid="uid://b6dw47ew813kr" path="res://Assets/climb_button2.png" id="19_owdi5"]
+[ext_resource type="Texture2D" uid="uid://dohgptvlg873w" path="res://Assets/ClimbON.png" id="20_vam4t"]
 [ext_resource type="Texture2D" uid="uid://bl8cprb4q61ob" path="res://Assets/eeeeee.png" id="21_jdbke"]
 [ext_resource type="Texture2D" uid="uid://bfmnlhyre3gtx" path="res://Assets/eeeee.png" id="22_vojk2"]
 [ext_resource type="Texture2D" uid="uid://b3nhnwxg12h6a" path="res://Assets/pinning.png" id="24_eoqjh"]
 [ext_resource type="Texture2D" uid="uid://tpg34yspabk5" path="res://Assets/bump2.png" id="24_i8up4"]
 [ext_resource type="Texture2D" uid="uid://e4v8inl37p2r" path="res://Assets/bump1.png" id="25_vam4t"]
 [ext_resource type="Texture2D" uid="uid://bgkymjrps6cku" path="res://Assets/trench2.png" id="26_c8hpp"]
+[ext_resource type="Texture2D" uid="uid://cl56xu4uk536h" path="res://Assets/bottomDisplay.png" id="26_ed6ap"]
+[ext_resource type="Texture2D" uid="uid://css8xt24b1nsp" path="res://Assets/Defense.png" id="27_ed6ap"]
 [ext_resource type="Texture2D" uid="uid://c6pibwqynnufo" path="res://Assets/trench1.png" id="27_oy8ks"]
+[ext_resource type="Texture2D" uid="uid://ckyao0fb2th4y" path="res://Assets/Offense.png" id="28_velmq"]
+[ext_resource type="Texture2D" uid="uid://by3ulss1dxih3" path="res://Assets/Shuttle.png" id="29_m0qp2"]
+[ext_resource type="Texture2D" uid="uid://cpr6goyfy56t4" path="res://Assets/fuelButtons.png" id="31_ed6ap"]
+[ext_resource type="Texture2D" uid="uid://d3edl1uqylas4" path="res://Assets/fire.png" id="34_x7afm"]
+[ext_resource type="Texture2D" uid="uid://svdytkbpest1" path="res://Assets/background.png" id="42_bwdrc"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5wm3b"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_10gef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qe6au")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qe6au")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bwdrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_skvx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_11saq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_11saq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2q4bh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_11saq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_11saq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_skvx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bwdrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qe6au")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m31vm"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sure"]
+size = Vector2(20, 18)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ghwsc"]
 radius = 80.0
@@ -52,73 +120,58 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tjnok"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_2o2cp")
-}],
-"loop": true,
-"name": &"defense",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_tphem")
-}],
-"loop": true,
-"name": &"offense",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_yantw")
-}],
-"loop": true,
-"name": &"shuttle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_n5yt1")
-}],
-"loop": true,
-"name": &"sleeping",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_lfs2e"]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_q3vre"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("14_jwefq")
+"texture": ExtResource("11_3sure")
 }],
 "loop": true,
-"name": &"default",
+"name": &"100",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_gxgta")
+}],
+"loop": true,
+"name": &"50",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_xabek")
+}],
+"loop": true,
+"name": &"75",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_4cb2a")
+}],
+"loop": true,
+"name": &"90",
 "speed": 5.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pu4pa"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gnnal"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ckdb1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vftfh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_geobo"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_twkno"]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53h7h"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_twqel"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cb2a"]
+size = Vector2(32, 25)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ca0hi"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxgta"]
+size = Vector2(32, 24)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bkudm"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h51i"]
+size = Vector2(32, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xabek"]
+size = Vector2(32, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hujfe"]
 
@@ -132,6 +185,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_vam4t")
+}],
+"loop": true,
+"name": &"top",
 "speed": 5.0
 }, {
 "frames": [{
@@ -157,6 +218,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("20_vam4t")
+}],
+"loop": true,
+"name": &"top",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("19_owdi5")
 }],
 "loop": true,
@@ -174,6 +243,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_vam4t")
+}],
+"loop": true,
+"name": &"top",
 "speed": 5.0
 }, {
 "frames": [{
@@ -256,8 +333,58 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7afm"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjnok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_ed6ap")
+}],
+"loop": true,
+"name": &"defense",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_velmq")
+}],
+"loop": true,
+"name": &"offense",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_m0qp2")
+}],
+"loop": true,
+"name": &"shuttle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_n5yt1")
+}],
+"loop": true,
+"name": &"sleeping",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oy8ks"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ed6ap"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0qp2"]
+
 [node name="MatchScouting" type="Node2D" unique_id=1670459362]
 script = ExtResource("1_abj35")
+
+[node name="fire_animation" type="AnimatedSprite2D" parent="." unique_id=1509149169]
+z_index = 4
+position = Vector2(17.549652, 1.9483778)
+scale = Vector2(0.33493203, 0.43340218)
+sprite_frames = SubResource("SpriteFrames_10gef")
+animation = &"fire"
+frame = 10
+frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2008289309]
 
@@ -268,29 +395,44 @@ position = Vector2(-1000, 0)
 script = ExtResource("4_qhi3p")
 
 [node name="Next" type="TouchScreenButton" parent="." unique_id=365248956]
-position = Vector2(486, 236)
+position = Vector2(500, 260)
 scale = Vector2(8, 8)
-shape = SubResource("CircleShape2D_5wm3b")
+shape = SubResource("RectangleShape2D_m31vm")
 action = "endgame"
 
 [node name="Image" type="Sprite2D" parent="Next" unique_id=1303218150]
-position = Vector2(2.5, -6.375)
+z_index = 7
+position = Vector2(3.25, -9.125)
 scale = Vector2(0.0775, 0.1005)
 texture = ExtResource("5_b1js0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Next" unique_id=751526603]
+z_index = 6
+position = Vector2(-4.75, -3.25)
+scale = Vector2(-0.023, 0.025)
+texture = ExtResource("6_oy8ks")
 
 [node name="Previous" type="TouchScreenButton" parent="." unique_id=1528326462]
 position = Vector2(-487, 239)
 scale = Vector2(8, 8)
-shape = SubResource("CircleShape2D_5wm3b")
+shape = SubResource("RectangleShape2D_3sure")
 action = "auto"
 
 [node name="Image" type="Sprite2D" parent="Previous" unique_id=260048398]
-position = Vector2(-3.375, -6)
+z_index = 7
+position = Vector2(-4.5, -6)
 scale = Vector2(-0.078, 0.101)
 texture = ExtResource("5_b1js0")
 
+[node name="Sprite2D" type="Sprite2D" parent="Previous" unique_id=1455670518]
+z_index = 6
+position = Vector2(3.625, -0.75)
+scale = Vector2(0.023, 0.025)
+texture = ExtResource("6_oy8ks")
+
 [node name="Disabled" type="Node2D" parent="." unique_id=1908785609]
-position = Vector2(0, -2)
+z_index = 6
+position = Vector2(-475, 450)
 script = ExtResource("5_nuj6h")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Disabled" unique_id=728206061]
@@ -304,158 +446,110 @@ scale = Vector2(0.429, 0.429)
 sprite_frames = SubResource("SpriteFrames_hpiyv")
 animation = &"enabled"
 
-[node name="Defense" type="Node2D" parent="." unique_id=1575276462]
-position = Vector2(-431, -185)
-script = ExtResource("6_rfpmv")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Defense" unique_id=1818110066]
-position = Vector2(740, -44)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_tjnok")
-animation = &"offense"
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Defense" unique_id=839316227]
-position = Vector2(782, 16)
-scale = Vector2(0.266, 0.266)
-sprite_frames = SubResource("SpriteFrames_tjnok")
-animation = &"defense"
-
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Defense" unique_id=1454034672]
-position = Vector2(692, 15)
-scale = Vector2(0.268, 0.266)
-sprite_frames = SubResource("SpriteFrames_tjnok")
-animation = &"shuttle"
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Defense" unique_id=791744587]
-position = Vector2(692, 12)
-scale = Vector2(4, 4)
-shape = SubResource("CircleShape2D_lfs2e")
-action = "defense_p"
-
-[node name="TouchScreenButton2" type="TouchScreenButton" parent="Defense" unique_id=1270369963]
-position = Vector2(785, 15)
-scale = Vector2(4, 4)
-shape = SubResource("CircleShape2D_lfs2e")
-action = "defense_n"
-
 [node name="Timer" type="Timer" parent="." unique_id=1607555708]
 wait_time = 160.0
 autostart = true
 script = ExtResource("4_r62gf")
 
 [node name="Accuracy" type="Node2D" parent="." unique_id=1495746375]
-position = Vector2(-175, 14)
+position = Vector2(700, 14)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Accuracy" unique_id=1825666135]
-position = Vector2(29, -19)
-scale = Vector2(0.722, 0.722)
+[node name="display" type="AnimatedSprite2D" parent="Accuracy" unique_id=1825666135]
+z_index = -1
+position = Vector2(-471, -78)
+scale = Vector2(0.17649998, 0.17649998)
 sprite_frames = SubResource("SpriteFrames_q3vre")
+animation = &"100"
 
-[node name="0" type="TouchScreenButton" parent="Accuracy" unique_id=955051737]
-position = Vector2(157, 116)
-rotation = -0.254818
-scale = Vector2(5, 1.25)
-shape = SubResource("CapsuleShape2D_pu4pa")
-action = "0"
+[node name="75" type="TouchScreenButton" parent="Accuracy" unique_id=507252301]
+position = Vector2(-486, -17)
+scale = Vector2(8, 5)
+shape = SubResource("RectangleShape2D_vftfh")
+action = "75"
 
-[node name="16" type="TouchScreenButton" parent="Accuracy" unique_id=1029696975]
-position = Vector2(97, 85)
-rotation = -0.507891
-scale = Vector2(5, 2)
-shape = SubResource("CapsuleShape2D_gnnal")
-action = "16"
-
-[node name="33" type="TouchScreenButton" parent="Accuracy" unique_id=926999046]
-position = Vector2(55, 48)
-rotation = -0.253073
-scale = Vector2(5, 2)
-shape = SubResource("CapsuleShape2D_ckdb1")
-action = "33"
-
-[node name="50" type="TouchScreenButton" parent="Accuracy" unique_id=507252301]
-position = Vector2(50, 0)
-scale = Vector2(6, 3)
+[node name="50" type="TouchScreenButton" parent="Accuracy" unique_id=1150946869]
+position = Vector2(-486, 87)
+scale = Vector2(8, 5)
 shape = SubResource("RectangleShape2D_vftfh")
 action = "50"
 
-[node name="67" type="TouchScreenButton" parent="Accuracy" unique_id=2132775254]
-position = Vector2(55, -63)
+[node name="90" type="TouchScreenButton" parent="Accuracy" unique_id=2132775254]
+position = Vector2(-488, -116.99999)
 rotation = 0.127409
-scale = Vector2(6, 2)
+scale = Vector2(8, 3.5)
 shape = SubResource("CapsuleShape2D_geobo")
-action = "67"
-
-[node name="83" type="TouchScreenButton" parent="Accuracy" unique_id=1073553506]
-position = Vector2(95, -98)
-rotation = 0.380482
-scale = Vector2(5, 1.7)
-shape = SubResource("CapsuleShape2D_twkno")
-action = "83"
+action = "90"
 
 [node name="100" type="TouchScreenButton" parent="Accuracy" unique_id=1408386120]
-position = Vector2(155, -120)
+position = Vector2(-455, -219)
 rotation = 0.507891
-scale = Vector2(5, 1.5)
+scale = Vector2(8, 4)
 shape = SubResource("CapsuleShape2D_53h7h")
 action = "100"
 
 [node name="Fuel" type="Node2D" parent="." unique_id=1582793608]
-position = Vector2(-282, 3)
+position = Vector2(500, 3)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fuel" unique_id=330967442]
-position = Vector2(384, -8)
+position = Vector2(638, 321)
 scale = Vector2(0.752, 0.734)
 texture = ExtResource("14_i80bh")
 
 [node name="+10" type="TouchScreenButton" parent="Fuel" unique_id=1127383612]
-position = Vector2(442, 27)
-scale = Vector2(9, 9)
-shape = SubResource("CircleShape2D_twqel")
+position = Vector2(-5, -280)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_4cb2a")
 action = "fuel10"
 
-[node name="+4" type="TouchScreenButton" parent="Fuel" unique_id=1697838465]
-position = Vector2(325, -57)
+[node name="+5" type="TouchScreenButton" parent="Fuel" unique_id=1697838465]
+position = Vector2(-5, -150)
 scale = Vector2(5, 5)
-shape = SubResource("CircleShape2D_ca0hi")
-action = "fuel4"
+shape = SubResource("RectangleShape2D_gxgta")
+action = "fuel5"
 
 [node name="+1" type="TouchScreenButton" parent="Fuel" unique_id=1177175878]
-position = Vector2(298, 49)
-scale = Vector2(3, 3)
-shape = SubResource("CircleShape2D_bkudm")
+position = Vector2(-4.9999847, -18.999985)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_5h51i")
 action = "fuel1"
 
 [node name="-1" type="TouchScreenButton" parent="Fuel" unique_id=1531976765]
-position = Vector2(341, 100)
-scale = Vector2(3, 3)
-shape = SubResource("CircleShape2D_bkudm")
+position = Vector2(-3.9999847, 117)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_xabek")
 action = "fuel-1"
 
-[node name="Label" type="Label" parent="Fuel" unique_id=1898459269]
-modulate = Color(0, 0, 0, 1)
-offset_left = 387.0
-offset_top = -116.0
-offset_right = 479.0
-offset_bottom = -70.0
-text = "Fuel Count:"
-horizontal_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="shots_image" type="Sprite2D" parent="Fuel" unique_id=832748825]
-position = Vector2(320, 194)
-scale = Vector2(0.5, 0.3)
-texture = ExtResource("17_66qr2")
-
 [node name="cycles" type="TouchScreenButton" parent="Fuel" unique_id=2051458647]
-position = Vector2(320, 198)
-scale = Vector2(12, 3)
+position = Vector2(-160, -78)
+scale = Vector2(5, 25)
 shape = SubResource("RectangleShape2D_hujfe")
 action = "cycle"
 
 [node name="Node2D" type="Node2D" parent="Fuel" unique_id=1446585637]
 
+[node name="Fuel" type="Sprite2D" parent="Fuel" unique_id=800651614]
+z_index = 5
+position = Vector2(-504, -27.000004)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("14_m0qp2")
+script = ExtResource("15_x7afm")
+
+[node name="Label" type="Label" parent="Fuel/Fuel" unique_id=1898459269]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+offset_left = -223.235
+offset_top = -110.0
+offset_right = 6.7649994
+offset_bottom = 27.0
+scale = Vector2(2, 2)
+theme_override_font_sizes/font_size = 100
+text = "790"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="Climb" type="Node2D" parent="." unique_id=846085887]
+position = Vector2(200, -30)
 script = ExtResource("18_1qhxq")
 
 [node name="L1" type="TouchScreenButton" parent="Climb" unique_id=1426409892]
@@ -465,10 +559,10 @@ shape = SubResource("RectangleShape2D_j7vlw")
 action = "l1"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/L1" unique_id=2014798156]
-position = Vector2(0, -4.2)
+position = Vector2(0, -3.4000092)
 scale = Vector2(0.085, 0.085)
 sprite_frames = SubResource("SpriteFrames_m2cg1")
-animation = &"no"
+animation = &"top"
 
 [node name="L2" type="TouchScreenButton" parent="Climb" unique_id=1092431347]
 position = Vector2(-450, -20)
@@ -480,7 +574,7 @@ action = "l2"
 position = Vector2(0, -3.8)
 scale = Vector2(0.085, 0.085)
 sprite_frames = SubResource("SpriteFrames_mot2a")
-animation = &"no"
+animation = &"top"
 
 [node name="L3" type="TouchScreenButton" parent="Climb" unique_id=1659242289]
 position = Vector2(-450, -147)
@@ -492,7 +586,7 @@ action = "l3"
 position = Vector2(0, -1.80011)
 scale = Vector2(0.085, 0.085)
 sprite_frames = SubResource("SpriteFrames_fn5eb")
-animation = &"yes"
+animation = &"top"
 
 [node name="left" type="TouchScreenButton" parent="Climb" unique_id=383017303]
 position = Vector2(-515, -240)
@@ -528,39 +622,46 @@ sprite_frames = SubResource("SpriteFrames_hdel7")
 animation = &"on"
 
 [node name="Pinning" type="Node2D" parent="." unique_id=1939324367]
-position = Vector2(360, -260)
+position = Vector2(-400, -260)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pinning" unique_id=555106156]
-position = Vector2(-362, 20)
+position = Vector2(395.00003, 31)
 scale = Vector2(0.664, 0.664)
 texture = ExtResource("24_eoqjh")
 
 [node name="Label" type="Label" parent="Pinning" unique_id=211999187]
-offset_left = -418.0
-offset_top = -17.0
-offset_right = -313.0
-offset_bottom = 113.0
+offset_left = 340.0
+offset_top = -3.0
+offset_right = 445.0
+offset_bottom = 127.0
 theme_override_font_sizes/font_size = 70
 text = "0"
 horizontal_alignment = 1
 
 [node name="plus" type="TouchScreenButton" parent="Pinning" unique_id=1518324878]
-position = Vector2(-243, 29)
+position = Vector2(516, 43)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_d2dnv")
 action = "pin+"
 
 [node name="minus" type="TouchScreenButton" parent="Pinning" unique_id=1476221135]
-position = Vector2(-491, 33)
+position = Vector2(268, 47)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_eqbex")
 action = "pin-"
 
+[node name="Bottom Display" type="Sprite2D" parent="." unique_id=1050310122]
+z_index = 5
+position = Vector2(11, 210.00002)
+scale = Vector2(0.16735, 0.21655095)
+texture = ExtResource("26_ed6ap")
+
 [node name="Bump" type="Node2D" parent="." unique_id=720360721]
-position = Vector2(900, 120)
+z_index = 6
+position = Vector2(160, 430)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bump" unique_id=761028262]
-position = Vector2(-462, -165)
+position = Vector2(-455.99988, -168)
 scale = Vector2(0.404, 0.404)
 sprite_frames = SubResource("SpriteFrames_ed6ap")
 animation = &"yes"
@@ -572,7 +673,8 @@ shape = SubResource("RectangleShape2D_velmq")
 action = "bump"
 
 [node name="Trench" type="Node2D" parent="." unique_id=1002667637]
-position = Vector2(725, 260)
+z_index = 6
+position = Vector2(580, 430)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Trench" unique_id=1054951218]
 position = Vector2(-287, -170)
@@ -585,3 +687,51 @@ position = Vector2(-287, -174)
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_x7afm")
 action = "trench"
+
+[node name="Defense" type="Node2D" parent="." unique_id=1575276462]
+z_index = 6
+position = Vector2(0, -185)
+script = ExtResource("6_rfpmv")
+
+[node name="Mode" type="AnimatedSprite2D" parent="Defense" unique_id=1818110066]
+z_index = -1
+position = Vector2(-451.00003, 112)
+scale = Vector2(0.2505, 0.2505)
+sprite_frames = SubResource("SpriteFrames_tjnok")
+animation = &"defense"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Defense" unique_id=791744587]
+position = Vector2(-474, 273)
+scale = Vector2(10, 7)
+shape = SubResource("RectangleShape2D_oy8ks")
+action = "defense"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Defense" unique_id=1270369963]
+position = Vector2(-476, 102)
+scale = Vector2(10, 8)
+shape = SubResource("RectangleShape2D_ed6ap")
+action = "offense"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Defense" unique_id=717175812]
+position = Vector2(-475, -59)
+scale = Vector2(10, 7)
+shape = SubResource("RectangleShape2D_m0qp2")
+action = "shuttle"
+
+[node name="FuelButtons" type="Sprite2D" parent="." unique_id=2115042241]
+z_index = 5
+position = Vector2(451.00003, -74.00001)
+scale = Vector2(0.25337496, 0.25337496)
+texture = ExtResource("31_ed6ap")
+
+[node name="Fire" type="Sprite2D" parent="." unique_id=506217168]
+z_index = -2
+position = Vector2(355, -55)
+scale = Vector2(0.21149996, 0.21149996)
+texture = ExtResource("34_x7afm")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1689145322]
+z_index = -10
+position = Vector2(4, 6)
+scale = Vector2(132.09999, 108.7)
+texture = ExtResource("42_bwdrc")

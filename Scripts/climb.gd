@@ -51,55 +51,100 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("l1"):
-		if l1 and not l2 and not l3:
-			l1=false
+		if not l1 or l2:
+			animate_l3.play("no")
+			animate_l2.play("no")
+			animate_l1.play("top")
+			points=10
+			l3=false
+			l2=false
+			l1=true
+			time_l1=int(timer.time_left*10)
+			time_l1=(float(time_l3))/10
+			time_l1-=20
+		else:
+			animate_l3.play("no")
+			animate_l2.play("no")
 			animate_l1.play("no")
 			points=0
-		else:
-			points=10
-			l1=true
-			animate_l1.play("yes")
-			time_l1=int(timer.time_left*10)
-			time_l1=(float(time_l1))/10
-			time_l1-=20
-	if Input.is_action_just_pressed("l2"):
-		if l2 and not l3:
-			l2=false
-			animate_l2.play("no")
-			points=10
-		elif l1:
-			points=20
-			l2=true
-			animate_l2.play("yes")
-			time_l2=int(timer.time_left*10)
-			time_l2=(float(time_l2))/10
-			time_l2-=20
-	if Input.is_action_just_pressed("l3"):
-		if l3:
-			points=20
 			l3=false
-			animate_l3.play("no")
-		elif l1 and l2:
-			points=30
-			l3=true
-			animate_l3.play("yes")
-			time_l3=int(timer.time_left*10)
-			time_l3=(float(time_l3))/10
-			time_l3-=20
+			l2=false
+			l1=false
+	if Input.is_action_just_pressed("l2"):
+		animate_l3.play("no")
+		animate_l2.play("top")
+		animate_l1.play("yes")
+		points=20
+		l3=false
+		l2=true
+		l1=true
+		time_l2=int(timer.time_left*10)
+		time_l2=(float(time_l3))/10
+		time_l2-=20
+	if Input.is_action_just_pressed("l3"):
+		points=30
+		l3=true
+		l2=true
+		l1=true
+		animate_l3.play("top")
+		animate_l2.play("yes")
+		animate_l1.play("yes")
+		time_l3=int(timer.time_left*10)
+		time_l3=(float(time_l3))/10
+		time_l3-=20
 	if Input.is_action_just_pressed("left"):
-		data.c_zone="left"
-		animate.play("on")
-		animate2.play("off")
-		animate3.play("off")
+		if data.c_zone=="center" or data.c_zone=="rightCenter":
+			data.c_zone="leftCenter"
+			animate.play("on")
+			animate3.play("on")
+			animate2.play("off")
+		elif data.c_zone=="left":
+			data.c_zone="none"
+			animate.play("off")
+		elif data.c_zone=="leftCenter":
+			data.c_zone="left"
+			animate3.play("off")
+		else:
+			data.c_zone="left"
+			animate.play("on")
+			animate2.play("off")
+			animate3.play("off")
 	if Input.is_action_just_pressed("right"):
-		data.c_zone="right"
-		animate2.play("on")
-		animate.play("off")
-		animate3.play("off")
+		if data.c_zone=="center" or data.c_zone=="leftCenter":
+			data.c_zone="rightCenter"
+			animate.play("off")
+			animate3.play("on")
+			animate2.play("on")
+		elif data.c_zone=="right":
+			data.c_zone="none"
+			animate2.play("off")
+		elif data.c_zone=="rightCenter":
+			data.c_zone="right"
+			animate3.play("off")
+		else:
+			data.c_zone="right"
+			animate2.play("on")
+			animate.play("off")
+			animate3.play("off")
 	if Input.is_action_just_pressed("center"):
-		data.c_zone="center"
-		animate3.play("on")
-		animate2.play("off")
-		animate.play("off")
+		if data.c_zone=="rightCenter" or data.c_zone=="leftCenter":
+			data.c_zone="center"
+			animate.play("off")
+			animate3.play("on")
+			animate2.play("off")
+		elif data.c_zone=="center":
+			data.c_zone="none"
+			animate3.play("off")
+		elif data.c_zone=="left":
+			data.c_zone="leftCenter"
+			animate3.play("on")
+		elif data.c_zone=="right":
+			data.c_zone="rightCenter"
+			animate3.play("on")
+		else:
+			data.c_zone="center"
+			animate3.play("on")
+			animate.play("off")
+			animate2.play("off")
 		
 		

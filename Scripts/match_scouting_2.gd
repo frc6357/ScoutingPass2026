@@ -2,15 +2,18 @@ extends Node2D
 @onready var data: Node2D = $DataStorage
 @onready var disabled: Node2D = $Disabled
 @onready var defense: Node2D = $Defense
-@onready var label: Label = $Fuel/Label
+@onready var label: Label = $Fuel/Fuel/Label
 @onready var label2: Label = $Pinning/Label
 @onready var bump: AnimatedSprite2D = $Bump/AnimatedSprite2D
 @onready var trench: AnimatedSprite2D = $Trench/AnimatedSprite2D
+@onready var display: AnimatedSprite2D = $Accuracy/display
+@onready var fire: AnimatedSprite2D = $fire_animation
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	display.play("75")
 	if data.bump:
 		bump.play("yes")
 	else:
@@ -24,7 +27,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	label.text=str("Fuel Count: ", data.fuel_t)
+	label.text=str(data.fuel_t)
+	if Input.is_action_just_pressed("cycle"):
+		fire.play("fire")
 	if Input.is_action_just_pressed("trench"):
 		data.trench=not data.trench
 		if data.trench:
@@ -62,11 +67,11 @@ func _process(_delta: float) -> void:
 		else:
 			data.fuel_s-=1
 		print(data.fuel_t)
-	if Input.is_action_just_pressed("fuel4"):
+	if Input.is_action_just_pressed("fuel5"):
 		if defense.mode=="offense":
-			data.fuel_t+=4
+			data.fuel_t+=5
 		else:
-			data.fuel_s+=4
+			data.fuel_s+=5
 		print(data.fuel_t)
 	if Input.is_action_just_pressed("fuel10"):
 		if defense.mode=="offense":
@@ -74,24 +79,19 @@ func _process(_delta: float) -> void:
 		else:
 			data.fuel_s+=10
 		print(data.fuel_t)
-	if Input.is_action_just_pressed("0"):
-		data.accuracy_t=0
-		print("0")
-	if Input.is_action_just_pressed("16"):
-		data.accuracy_t=.1667
-		print("16")
-	if Input.is_action_just_pressed("33"):
-		data.accuracy_t=.3333
-		print("33")
 	if Input.is_action_just_pressed("50"):
 		data.accuracy_t=.50
 		print("50")
-	if Input.is_action_just_pressed("67"):
-		data.accuracy_t=.6667
-		print("67")
-	if Input.is_action_just_pressed("83"):
-		data.accuracy_t=.8333
-		print("83")
+		display.play("50")
+	if Input.is_action_just_pressed("75"):
+		data.accuracy_t=.75
+		print("75")
+		display.play("75")
+	if Input.is_action_just_pressed("90"):
+		data.accuracy_t=.9
+		print("90")
+		display.play("90")
 	if Input.is_action_just_pressed("100"):
 		data.accuracy_t=1
 		print("100")
+		display.play("100")
