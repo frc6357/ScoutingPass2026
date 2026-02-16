@@ -16,16 +16,15 @@
 [ext_resource type="Texture2D" uid="uid://fuat0gvq744j" path="res://Assets/sideSlot.png" id="6_oy8ks"]
 [ext_resource type="Script" uid="uid://bla55nuwmgu20" path="res://Scripts/defense.gd" id="6_rfpmv"]
 [ext_resource type="Texture2D" uid="uid://cndlrfbqlrqjg" path="res://Assets/happy_button.png" id="7_gawtn"]
-[ext_resource type="Texture2D" uid="uid://drbvsej23muor" path="res://Assets/accuracy4.png" id="11_3sure"]
-[ext_resource type="Texture2D" uid="uid://c6xppsai6a3dw" path="res://Assets/accuracy1.png" id="12_gxgta"]
 [ext_resource type="Texture2D" uid="uid://bh2ua7tp2v3e" path="res://Assets/sleeping button.png" id="12_n5yt1"]
-[ext_resource type="Texture2D" uid="uid://bh1vfjrthrsqc" path="res://Assets/accuracy2.png" id="13_xabek"]
-[ext_resource type="Texture2D" uid="uid://cgrtbrbghs65p" path="res://Assets/accuracy3.png" id="14_4cb2a"]
-[ext_resource type="Texture2D" uid="uid://dfae4s0ohqldf" path="res://Assets/Fuel buttons.png" id="14_i80bh"]
 [ext_resource type="Texture2D" uid="uid://lutgbr14nmvd" path="res://Assets/fuel.png" id="14_m0qp2"]
 [ext_resource type="Script" uid="uid://cns01kx6q5pj" path="res://Scenes/fuel.gd" id="15_x7afm"]
+[ext_resource type="Texture2D" uid="uid://cpq5epl1qe8d" path="res://Assets/accuracy8.png" id="16_qe6au"]
+[ext_resource type="Texture2D" uid="uid://ca635maf4gcia" path="res://Assets/accuracy5.png" id="17_bwdrc"]
 [ext_resource type="Script" uid="uid://co4s777p6phwi" path="res://Scripts/climb.gd" id="18_1qhxq"]
 [ext_resource type="Texture2D" uid="uid://kfwbqxtkqtij" path="res://Assets/climb_button.png" id="18_feivl"]
+[ext_resource type="Texture2D" uid="uid://cjonw2s4f35iw" path="res://Assets/accuracy6.png" id="18_skvx0"]
+[ext_resource type="Texture2D" uid="uid://nj7b7w48vfk3" path="res://Assets/accuracy7.png" id="19_11saq"]
 [ext_resource type="Texture2D" uid="uid://b6dw47ew813kr" path="res://Assets/climb_button2.png" id="19_owdi5"]
 [ext_resource type="Texture2D" uid="uid://dohgptvlg873w" path="res://Assets/ClimbON.png" id="20_vam4t"]
 [ext_resource type="Texture2D" uid="uid://bl8cprb4q61ob" path="res://Assets/eeeeee.png" id="21_jdbke"]
@@ -124,7 +123,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_3sure")
+"texture": ExtResource("16_qe6au")
 }],
 "loop": true,
 "name": &"100",
@@ -132,7 +131,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_gxgta")
+"texture": ExtResource("17_bwdrc")
 }],
 "loop": true,
 "name": &"50",
@@ -140,7 +139,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("13_xabek")
+"texture": ExtResource("18_skvx0")
 }],
 "loop": true,
 "name": &"75",
@@ -148,7 +147,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("14_4cb2a")
+"texture": ExtResource("19_11saq")
 }],
 "loop": true,
 "name": &"90",
@@ -459,7 +458,7 @@ z_index = -1
 position = Vector2(-471, -78)
 scale = Vector2(0.17649998, 0.17649998)
 sprite_frames = SubResource("SpriteFrames_q3vre")
-animation = &"100"
+animation = &"50"
 
 [node name="75" type="TouchScreenButton" parent="Accuracy" unique_id=507252301]
 position = Vector2(-486, -17)
@@ -489,11 +488,6 @@ action = "100"
 
 [node name="Fuel" type="Node2D" parent="." unique_id=1582793608]
 position = Vector2(500, 3)
-
-[node name="Sprite2D" type="Sprite2D" parent="Fuel" unique_id=330967442]
-position = Vector2(638, 321)
-scale = Vector2(0.752, 0.734)
-texture = ExtResource("14_i80bh")
 
 [node name="+10" type="TouchScreenButton" parent="Fuel" unique_id=1127383612]
 position = Vector2(-5, -280)

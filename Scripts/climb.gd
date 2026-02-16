@@ -51,6 +51,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("l1"):
+		Input.vibrate_handheld(40)
 		if not l1 or l2:
 			animate_l3.play("no")
 			animate_l2.play("no")
@@ -71,6 +72,7 @@ func _process(_delta: float) -> void:
 			l2=false
 			l1=false
 	if Input.is_action_just_pressed("l2"):
+		Input.vibrate_handheld(80)
 		animate_l3.play("no")
 		animate_l2.play("top")
 		animate_l1.play("yes")
@@ -82,6 +84,7 @@ func _process(_delta: float) -> void:
 		time_l2=(float(time_l3))/10
 		time_l2-=20
 	if Input.is_action_just_pressed("l3"):
+		Input.vibrate_handheld(120)
 		points=30
 		l3=true
 		l2=true

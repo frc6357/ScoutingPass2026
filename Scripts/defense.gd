@@ -56,6 +56,7 @@ func _process(_delta: float) -> void:
 		get_tree().change_scene_to_file("res://Scenes/match_scouting_final.tscn")
 	if timer.time_left>20:
 		if Input.is_action_just_pressed("defense") and d==false and done==false:
+			Input.vibrate_handheld(75)
 			if mode=="offense":
 				oe_time=timer.time_left
 				oe_time=(int(oe_time*10)) #rounds to the nearest tenth of a second
@@ -73,6 +74,7 @@ func _process(_delta: float) -> void:
 			ds_time=timer.time_left
 			ds_time=(int(ds_time*10)) #rounds to the nearest tenth of a second
 		if Input.is_action_just_pressed("offense") and d==false:
+			Input.vibrate_handheld(100)
 			if mode=="defense":
 				de_time=timer.time_left
 				de_time=(int(de_time*10)) #rounds to the nearest tenth of a second
@@ -90,6 +92,7 @@ func _process(_delta: float) -> void:
 			os_time=timer.time_left
 			os_time=(int(os_time*10)) #rounds to the nearest tenth of a second
 		if Input.is_action_just_pressed("shuttle") and d==false:
+			Input.vibrate_handheld(50)
 			if mode=="defense":
 				de_time=timer.time_left
 				de_time=(int(de_time*10)) #rounds to the nearest tenth of a second

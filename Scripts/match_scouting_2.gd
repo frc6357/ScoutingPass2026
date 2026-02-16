@@ -30,13 +30,16 @@ func _process(_delta: float) -> void:
 	label.text=str(data.fuel_t)
 	if Input.is_action_just_pressed("cycle"):
 		fire.play("fire")
+		Input.vibrate_handheld(200)
 	if Input.is_action_just_pressed("trench"):
+		Input.vibrate_handheld(100)
 		data.trench=not data.trench
 		if data.trench:
 			trench.play("yes")
 		else:
 			trench.play("no")
 	if Input.is_action_just_pressed("bump"):
+		Input.vibrate_handheld(100)
 		data.bump=not data.bump
 
 		if data.bump:
@@ -50,9 +53,11 @@ func _process(_delta: float) -> void:
 		data.shots+=1
 		print("cycle")
 	if Input.is_action_just_pressed("pin+"):
+		Input.vibrate_handheld(100)
 		data.pins+=1
 		label2.text=str(data.pins)
 	if Input.is_action_just_pressed("pin-") and  data.pins>=1:
+		Input.vibrate_handheld(100)
 		data.pins-=1
 		label2.text=str(data.pins)
 	if Input.is_action_just_pressed("fuel1"):
@@ -61,6 +66,7 @@ func _process(_delta: float) -> void:
 		else:
 			data.fuel_s+=1
 		print(data.fuel_t)
+		Input.vibrate_handheld(40)
 	if Input.is_action_just_pressed("fuel-1"):
 		if defense.mode=="offense":
 			data.fuel_t-=1
@@ -73,25 +79,32 @@ func _process(_delta: float) -> void:
 		else:
 			data.fuel_s+=5
 		print(data.fuel_t)
+		Input.vibrate_handheld(70)
 	if Input.is_action_just_pressed("fuel10"):
 		if defense.mode=="offense":
 			data.fuel_t+=10
 		else:
 			data.fuel_s+=10
 		print(data.fuel_t)
+		Input.vibrate_handheld(100)
+			
 	if Input.is_action_just_pressed("50"):
+		Input.vibrate_handheld(50)
 		data.accuracy_t=.50
 		print("50")
 		display.play("50")
 	if Input.is_action_just_pressed("75"):
+		Input.vibrate_handheld(75)
 		data.accuracy_t=.75
 		print("75")
 		display.play("75")
 	if Input.is_action_just_pressed("90"):
+		Input.vibrate_handheld(90)
 		data.accuracy_t=.9
 		print("90")
 		display.play("90")
 	if Input.is_action_just_pressed("100"):
+		Input.vibrate_handheld(100)
 		data.accuracy_t=1
 		print("100")
 		display.play("100")
