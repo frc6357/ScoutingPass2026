@@ -8,8 +8,9 @@ extends Node2D
 @onready var trench: AnimatedSprite2D = $Trench/AnimatedSprite2D
 @onready var display: AnimatedSprite2D = $Accuracy/display
 @onready var fire: AnimatedSprite2D = $fire_animation
-
-
+var wait=0
+var change=0
+@onready var fuely: Sprite2D = $Fuel/Fuel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -48,6 +49,7 @@ func _process(_delta: float) -> void:
 			bump.play("no")
 
 	if Input.is_action_just_pressed("auto"):
+		Input.vibrate_handheld(75)
 		get_tree().change_scene_to_file("res://Scenes/match_scouting.tscn")
 	if Input.is_action_just_pressed("cycle"):
 		data.shots+=1
@@ -60,34 +62,34 @@ func _process(_delta: float) -> void:
 		Input.vibrate_handheld(100)
 		data.pins-=1
 		label2.text=str(data.pins)
-	if Input.is_action_just_pressed("fuel1"):
-		if defense.mode=="offense":
+	if Input.is_action_pressed("fuel1"):
+		if (wait==0 or (wait >40 and wait%5==0)):
 			data.fuel_t+=1
-		else:
-			data.fuel_s+=1
+			fuely.fuel1()
+		wait+=1
 		print(data.fuel_t)
 		Input.vibrate_handheld(40)
-	if Input.is_action_just_pressed("fuel-1"):
-		if defense.mode=="offense":
+	elif Input.is_action_pressed("fuel-1"):
+		if (wait==0 or (wait >40 and wait%5==0)) and data.fuel_t>0:
 			data.fuel_t-=1
-		else:
-			data.fuel_s-=1
+		wait+=1
 		print(data.fuel_t)
-	if Input.is_action_just_pressed("fuel5"):
-		if defense.mode=="offense":
+	elif Input.is_action_pressed("fuel5"):
+		if (wait==0 or (wait >40 and wait%8==0)):
+			fuely.fuel5()
 			data.fuel_t+=5
-		else:
-			data.fuel_s+=5
+		wait+=1
 		print(data.fuel_t)
 		Input.vibrate_handheld(70)
-	if Input.is_action_just_pressed("fuel10"):
-		if defense.mode=="offense":
+	elif Input.is_action_pressed("fuel10"):
+		if (wait==0 or (wait >40 and wait%11==0)):
 			data.fuel_t+=10
-		else:
-			data.fuel_s+=10
+			fuely.fuel10()
+		wait+=1
 		print(data.fuel_t)
 		Input.vibrate_handheld(100)
-			
+	else:
+		wait=0		
 	if Input.is_action_just_pressed("50"):
 		Input.vibrate_handheld(50)
 		data.accuracy_t=.50

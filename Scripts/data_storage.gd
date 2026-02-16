@@ -50,7 +50,7 @@ func update():
 			l1,time_l1,l2,time_l2,l3,time_l3,c_zone,
 			trench,bump,pins])
 		updated=true
-	if updated and matchNum>=1:
+	elif updated and matchNum>=1:
 		history[matchNum-1]=[
 			matchNum,scoutName,team,fuel_a,fuel_t,fuel_s,shots,
 			accuracy_a,accuracy_t,

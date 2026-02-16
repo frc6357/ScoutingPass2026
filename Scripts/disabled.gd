@@ -17,6 +17,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("disabled"):
 		if active==false:
+			Input.vibrate_handheld(500)
 			defense.disabled()
 			active=true
 			#sets the start time to the current time on the timer.

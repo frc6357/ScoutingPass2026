@@ -15,24 +15,6 @@ var sub=0
 var maxSub=.005
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("fuel1"):
-		if data.fuel_t>500:
-			extra+=.001
-		self.scale.x+=.005
-		self.scale.y+=.005
-		extra+=.004
-	if Input.is_action_just_pressed("fuel5"):
-		if data.fuel_t>500:
-			extra+=.005
-		self.scale.x+=.015
-		self.scale.y+=.015
-		extra+=.01
-	if Input.is_action_just_pressed("fuel10"):
-		if data.fuel_t>500:
-			extra+=.01
-		self.scale.x+=.03
-		self.scale.y+=.03
-		extra+=.02
 	if extra>0:
 		sub+=.00005
 		if sub>maxSub:
@@ -47,3 +29,22 @@ func _process(delta: float) -> void:
 		if self.scale.x>.6:
 			self.scale.x=.6
 			self.scale.y=.6
+func fuel1():
+	if data.fuel_t>500:
+		extra+=.001
+		self.scale.x+=.005
+		self.scale.y+=.005
+		extra+=.004
+func fuel5():
+	if data.fuel_t>500:
+		extra+=.005
+	self.scale.x+=.015
+	self.scale.y+=.015
+	extra+=.01
+func fuel10():
+	if data.fuel_t>500:
+		extra+=.01
+	self.scale.x+=.03
+	self.scale.y+=.03
+	extra+=.02
+	

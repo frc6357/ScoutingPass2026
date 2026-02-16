@@ -96,6 +96,7 @@ func _process(_delta: float) -> void:
 		time_l3=(float(time_l3))/10
 		time_l3-=20
 	if Input.is_action_just_pressed("left"):
+		Input.vibrate_handheld(75)
 		if data.c_zone=="center" or data.c_zone=="rightCenter":
 			data.c_zone="leftCenter"
 			animate.play("on")
@@ -113,6 +114,7 @@ func _process(_delta: float) -> void:
 			animate2.play("off")
 			animate3.play("off")
 	if Input.is_action_just_pressed("right"):
+		Input.vibrate_handheld(75)
 		if data.c_zone=="center" or data.c_zone=="leftCenter":
 			data.c_zone="rightCenter"
 			animate.play("off")
@@ -130,6 +132,7 @@ func _process(_delta: float) -> void:
 			animate.play("off")
 			animate3.play("off")
 	if Input.is_action_just_pressed("center"):
+		Input.vibrate_handheld(75)
 		if data.c_zone=="rightCenter" or data.c_zone=="leftCenter":
 			data.c_zone="center"
 			animate.play("off")

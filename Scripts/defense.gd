@@ -29,7 +29,8 @@ func _ready() -> void:
 	otime=data.time_offense
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("endgame"):
+	if Input.is_action_just_pressed("endgame") and timer.time_left<=158:
+		Input.vibrate_handheld(75)
 		if mode=="offense":
 			oe_time=timer.time_left
 			oe_time=(int(oe_time*10)) #rounds to the nearest tenth of a second
