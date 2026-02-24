@@ -38,3 +38,6 @@ action = "main"
 position = Vector2(-3.375, -6)
 scale = Vector2(-0.078, 0.101)
 texture = ExtResource("4_a76dx")
+
+[node name="Timer" type="Timer" parent="." unique_id=653646377]
+wait_time = 100.0

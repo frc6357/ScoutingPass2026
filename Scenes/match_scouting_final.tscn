@@ -45,3 +45,6 @@ scale = Vector2(-0.078, 0.101)
 texture = ExtResource("4_70eiv")
 
 [node name="Node" type="Node" parent="." unique_id=806506743]
+
+[node name="Timer" type="Timer" parent="." unique_id=1408253868]
+wait_time = 100.0

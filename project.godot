@@ -17,7 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="ScoutingPass2026"
 run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://doejfwmmx5c6k"
 
 [display]
 
@@ -208,6 +208,30 @@ fuel5={
 "events": []
 }
 90={
+"deadzone": 0.2,
+"events": []
+}
+help={
+"deadzone": 0.2,
+"events": []
+}
+match+={
+"deadzone": 0.2,
+"events": []
+}
+match-={
+"deadzone": 0.2,
+"events": []
+}
+yes={
+"deadzone": 0.2,
+"events": []
+}
+no={
+"deadzone": 0.2,
+"events": []
+}
+clear_data={
 "deadzone": 0.2,
 "events": []
 }

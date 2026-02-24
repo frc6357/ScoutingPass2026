@@ -8,11 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://bsmt0j86vl0so" path="res://Assets/Strategy.png" id="4_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://btpivolaqck8j" path="res://Assets/HistoryButton.png" id="5_hptm8"]
 [ext_resource type="Texture2D" uid="uid://1tpk36ktewt7" path="res://Assets/helpButton.png" id="6_344ge"]
+[ext_resource type="Script" uid="uid://dcgj6pq0byp2m" path="res://Scenes/text_edit.gd" id="10_hptm8"]
+[ext_resource type="Texture2D" uid="uid://c6kctf2d3xuio" path="res://Assets/arrow2.png" id="11_d1ilt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvxjn"]
 size = Vector2(60, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_6iyac"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fdnlq"]
+radius = 30.0
 
 [node name="Main" type="Node2D" unique_id=67654157]
 script = ExtResource("1_d4pt4")
@@ -69,13 +75,11 @@ texture = ExtResource("5_hptm8")
 position = Vector2(1, 257)
 scale = Vector2(8.68, 5.68)
 shape = SubResource("RectangleShape2D_qvxjn")
-action = "tools"
+action = "help"
 
 [node name="Image" type="Sprite2D" parent="buttons/Help" unique_id=1902394950]
 scale = Vector2(0.061, 0.067)
 texture = ExtResource("6_344ge")
-
-[node name="visuals" type="Node2D" parent="." unique_id=1758254552]
 
 [node name="DataStorage" parent="." unique_id=146184140 instance=ExtResource("2_cicmk")]
 script = ExtResource("4_nllc6")
@@ -83,14 +87,73 @@ script = ExtResource("4_nllc6")
 [node name="Name" type="Node2D" parent="." unique_id=922287311]
 
 [node name="Label" type="Label" parent="Name" unique_id=207357284]
-offset_left = 334.0
-offset_top = -276.0
-offset_right = 515.0
-offset_bottom = -218.0
-text = "Scouter Name: N/A"
+offset_left = 333.0
+offset_top = -246.0
+offset_right = 514.0
+offset_bottom = -188.0
+theme_override_font_sizes/font_size = 25
+text = "Scouter Name"
 
-[node name="name_button" type="TouchScreenButton" parent="Name" unique_id=764370017]
-position = Vector2(423.99994, -248.00002)
-scale = Vector2(10, 3)
-shape = SubResource("RectangleShape2D_jjvhh")
-action = "name"
+[node name="TextEdit" type="TextEdit" parent="Name" unique_id=461011697]
+offset_left = 286.0
+offset_top = -210.0
+offset_right = 558.0
+offset_bottom = -169.0
+script = ExtResource("10_hptm8")
+
+[node name="Robot" type="Node2D" parent="." unique_id=288357841]
+
+[node name="Label" type="Label" parent="Robot" unique_id=663210532]
+offset_left = 333.0
+offset_top = -51.0
+offset_right = 514.0
+offset_bottom = 7.0
+theme_override_font_sizes/font_size = 25
+text = "Robot Number"
+
+[node name="TextEdit" type="TextEdit" parent="Robot" unique_id=769271344]
+offset_left = 292.0
+offset_top = -14.0
+offset_right = 564.0
+offset_bottom = 27.0
+script = ExtResource("10_hptm8")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=390700420]
+
+[node name="Arrow3" type="Sprite2D" parent="Node2D" unique_id=740360349]
+position = Vector2(361, -92)
+rotation = 3.1415927
+scale = Vector2(0.195, -0.195)
+texture = ExtResource("11_d1ilt")
+
+[node name="Arrow2" type="Sprite2D" parent="Node2D" unique_id=330226362]
+position = Vector2(489, -95)
+scale = Vector2(0.19502316, 0.19502315)
+texture = ExtResource("11_d1ilt")
+
+[node name="match" type="Label" parent="Node2D" unique_id=2093020078]
+offset_left = 391.0
+offset_top = -114.0
+offset_right = 461.0
+offset_bottom = -59.0
+theme_override_font_sizes/font_size = 40
+text = "1"
+horizontal_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Node2D" unique_id=1869283979]
+position = Vector2(479, -92)
+shape = SubResource("CircleShape2D_6iyac")
+action = "match+"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Node2D" unique_id=431746316]
+position = Vector2(371, -91)
+shape = SubResource("CircleShape2D_fdnlq")
+action = "match-"
+
+[node name="Label" type="Label" parent="Node2D" unique_id=1658022205]
+offset_left = 330.0
+offset_top = -161.0
+offset_right = 513.0
+offset_bottom = -103.0
+theme_override_font_sizes/font_size = 25
+text = "Match Number"

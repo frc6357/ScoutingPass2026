@@ -1,0 +1,929 @@
+[gd_scene format=3 uid="uid://bm8bfed8xsg0e"]
+
+[ext_resource type="Script" uid="uid://kjneqxetpm2l" path="res://Scenes/help_tele.gd" id="1_h8gia"]
+[ext_resource type="Texture2D" uid="uid://bvoj45mx76jqt" path="res://Assets/blank.png" id="3_3gjut"]
+[ext_resource type="Texture2D" uid="uid://cvah5tjosc16w" path="res://Assets/fire1.png" id="4_nmilx"]
+[ext_resource type="Texture2D" uid="uid://r7lvoqs6rxl" path="res://Assets/fire2.png" id="5_i7xtv"]
+[ext_resource type="Texture2D" uid="uid://ckxouj5wtp0fb" path="res://Assets/fire3.png" id="6_y1pyw"]
+[ext_resource type="Texture2D" uid="uid://bl2qrnd2gljl6" path="res://Assets/fire4.png" id="7_vwcoc"]
+[ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="8_t2ats"]
+[ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="9_xxael"]
+[ext_resource type="Script" uid="uid://d1tcpkljn2awi" path="res://Scripts/data_storage.gd" id="10_42rwj"]
+[ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="11_pmpve"]
+[ext_resource type="Texture2D" uid="uid://fuat0gvq744j" path="res://Assets/sideSlot.png" id="12_w46l4"]
+[ext_resource type="Script" uid="uid://idfu2lgchh7t" path="res://Scripts/disabled.gd" id="13_7w5ff"]
+[ext_resource type="Texture2D" uid="uid://dw5vhhsnrqnv3" path="res://Assets/disabled_button.png" id="14_jy6ug"]
+[ext_resource type="Texture2D" uid="uid://cndlrfbqlrqjg" path="res://Assets/happy_button.png" id="15_8ckiy"]
+[ext_resource type="Script" uid="uid://bt6cflbppyxlt" path="res://Scripts/timer.gd" id="16_b5elw"]
+[ext_resource type="Texture2D" uid="uid://cpq5epl1qe8d" path="res://Assets/accuracy8.png" id="17_wwopl"]
+[ext_resource type="Texture2D" uid="uid://ca635maf4gcia" path="res://Assets/accuracy5.png" id="18_xye03"]
+[ext_resource type="Texture2D" uid="uid://cjonw2s4f35iw" path="res://Assets/accuracy6.png" id="19_c8vxb"]
+[ext_resource type="Texture2D" uid="uid://nj7b7w48vfk3" path="res://Assets/accuracy7.png" id="20_vwt0p"]
+[ext_resource type="Texture2D" uid="uid://lutgbr14nmvd" path="res://Assets/fuel.png" id="21_dnepk"]
+[ext_resource type="Script" uid="uid://cns01kx6q5pj" path="res://Scenes/fuel.gd" id="22_iktn3"]
+[ext_resource type="Script" uid="uid://co4s777p6phwi" path="res://Scripts/climb.gd" id="23_ov71r"]
+[ext_resource type="Texture2D" uid="uid://kfwbqxtkqtij" path="res://Assets/climb_button.png" id="24_67xu1"]
+[ext_resource type="Texture2D" uid="uid://dohgptvlg873w" path="res://Assets/ClimbON.png" id="25_eop3q"]
+[ext_resource type="Texture2D" uid="uid://b6dw47ew813kr" path="res://Assets/climb_button2.png" id="26_y4gsc"]
+[ext_resource type="Texture2D" uid="uid://bl8cprb4q61ob" path="res://Assets/eeeeee.png" id="27_tufb7"]
+[ext_resource type="Texture2D" uid="uid://bfmnlhyre3gtx" path="res://Assets/eeeee.png" id="28_3sltd"]
+[ext_resource type="Texture2D" uid="uid://b3nhnwxg12h6a" path="res://Assets/pinning.png" id="29_ibyax"]
+[ext_resource type="Texture2D" uid="uid://cl56xu4uk536h" path="res://Assets/bottomDisplay.png" id="30_0opuv"]
+[ext_resource type="Texture2D" uid="uid://tpg34yspabk5" path="res://Assets/bump2.png" id="31_w6rgr"]
+[ext_resource type="Texture2D" uid="uid://e4v8inl37p2r" path="res://Assets/bump1.png" id="32_2g2tb"]
+[ext_resource type="Texture2D" uid="uid://bgkymjrps6cku" path="res://Assets/trench2.png" id="33_nb3gc"]
+[ext_resource type="Texture2D" uid="uid://c6pibwqynnufo" path="res://Assets/trench1.png" id="34_uxn0r"]
+[ext_resource type="Script" uid="uid://bla55nuwmgu20" path="res://Scripts/defense.gd" id="35_8kuj5"]
+[ext_resource type="Texture2D" uid="uid://css8xt24b1nsp" path="res://Assets/Defense.png" id="36_7tba1"]
+[ext_resource type="Texture2D" uid="uid://ckyao0fb2th4y" path="res://Assets/Offense.png" id="37_d3cje"]
+[ext_resource type="Texture2D" uid="uid://by3ulss1dxih3" path="res://Assets/Shuttle.png" id="38_ebcek"]
+[ext_resource type="Texture2D" uid="uid://bh2ua7tp2v3e" path="res://Assets/sleeping button.png" id="39_jdffs"]
+[ext_resource type="Texture2D" uid="uid://cpr6goyfy56t4" path="res://Assets/fuelButtons.png" id="40_8nj3g"]
+[ext_resource type="Texture2D" uid="uid://d3edl1uqylas4" path="res://Assets/fire.png" id="41_rr720"]
+[ext_resource type="Texture2D" uid="uid://svdytkbpest1" path="res://Assets/background.png" id="42_ej38m"]
+[ext_resource type="Texture2D" uid="uid://iiuoewjkhhck" path="res://Assets/background2.png" id="42_mib8j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32d17"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3gjut")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3gjut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nmilx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i7xtv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y1pyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y1pyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vwcoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y1pyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y1pyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i7xtv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nmilx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3gjut")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8gia"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mib8j"]
+size = Vector2(20, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_voqqg"]
+radius = 80.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3gjut"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_jy6ug")
+}],
+"loop": true,
+"name": &"disabled",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_8ckiy")
+}],
+"loop": true,
+"name": &"enabled",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmilx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_wwopl")
+}],
+"loop": true,
+"name": &"100",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_xye03")
+}],
+"loop": true,
+"name": &"50",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_c8vxb")
+}],
+"loop": true,
+"name": &"75",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_vwt0p")
+}],
+"loop": true,
+"name": &"90",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7xtv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y1pyw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vwcoc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2ats"]
+size = Vector2(32, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxael"]
+size = Vector2(32, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42rwj"]
+size = Vector2(32, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmpve"]
+size = Vector2(32, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w46l4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7w5ff"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jy6ug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_67xu1")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_eop3q")
+}],
+"loop": true,
+"name": &"top",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_y4gsc")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ckiy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b5elw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_67xu1")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_eop3q")
+}],
+"loop": true,
+"name": &"top",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_y4gsc")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwopl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xye03"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_67xu1")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_eop3q")
+}],
+"loop": true,
+"name": &"top",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_y4gsc")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8vxb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vwt0p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_tufb7")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_3sltd")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnepk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iktn3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov71r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67xu1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eop3q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_w6rgr")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_2g2tb")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4gsc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tufb7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_nb3gc")
+}],
+"loop": true,
+"name": &"no",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_uxn0r")
+}],
+"loop": true,
+"name": &"yes",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sltd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ibyax"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_7tba1")
+}],
+"loop": true,
+"name": &"defense",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_d3cje")
+}],
+"loop": true,
+"name": &"offense",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_ebcek")
+}],
+"loop": true,
+"name": &"shuttle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_jdffs")
+}],
+"loop": true,
+"name": &"sleeping",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0opuv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6rgr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2g2tb"]
+
+[node name="MatchScouting" type="Node2D" unique_id=797715610]
+script = ExtResource("1_h8gia")
+metadata/_edit_horizontal_guides_ = [-391.0]
+
+[node name="fire_animation" type="AnimatedSprite2D" parent="." unique_id=1284296177]
+z_index = 4
+position = Vector2(17.549652, 1.9483778)
+scale = Vector2(0.33493203, 0.43340218)
+sprite_frames = SubResource("SpriteFrames_32d17")
+animation = &"fire"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1842948316]
+
+[node name="QR code generator" parent="." unique_id=1648695352 instance=ExtResource("8_t2ats")]
+position = Vector2(-1000, 0)
+
+[node name="DataStorage" parent="." unique_id=540420952 instance=ExtResource("9_xxael")]
+script = ExtResource("10_42rwj")
+
+[node name="Next" type="TouchScreenButton" parent="." unique_id=346768348]
+position = Vector2(500, 260)
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_h8gia")
+action = "main"
+
+[node name="Image" type="Sprite2D" parent="Next" unique_id=1366029585]
+z_index = 7
+position = Vector2(3.25, -9.125)
+scale = Vector2(0.0775, 0.1005)
+texture = ExtResource("11_pmpve")
+
+[node name="Sprite2D" type="Sprite2D" parent="Next" unique_id=1934648885]
+z_index = 6
+position = Vector2(-4.75, -3.25)
+scale = Vector2(-0.023, 0.025)
+texture = ExtResource("12_w46l4")
+
+[node name="Previous" type="TouchScreenButton" parent="." unique_id=795641482]
+position = Vector2(-487, 239)
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_mib8j")
+action = "auto"
+
+[node name="Image" type="Sprite2D" parent="Previous" unique_id=1409426899]
+z_index = 7
+position = Vector2(-4.5, -6)
+scale = Vector2(-0.078, 0.101)
+texture = ExtResource("11_pmpve")
+
+[node name="Sprite2D" type="Sprite2D" parent="Previous" unique_id=1069100982]
+z_index = 6
+position = Vector2(3.625, -0.75)
+scale = Vector2(0.023, 0.025)
+texture = ExtResource("12_w46l4")
+
+[node name="Disabled" type="Node2D" parent="." unique_id=1088320289]
+z_index = 6
+position = Vector2(-475, 450)
+script = ExtResource("13_7w5ff")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Disabled" unique_id=1336812145]
+position = Vector2(473, -229)
+shape = SubResource("CircleShape2D_voqqg")
+action = "disabled"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Disabled" unique_id=779465623]
+position = Vector2(473, -232)
+scale = Vector2(0.429, 0.429)
+sprite_frames = SubResource("SpriteFrames_3gjut")
+animation = &"enabled"
+
+[node name="Timer" type="Timer" parent="." unique_id=1395892724]
+wait_time = 160.0
+autostart = true
+script = ExtResource("16_b5elw")
+
+[node name="Accuracy" type="Node2D" parent="." unique_id=1588943876]
+position = Vector2(700, 14)
+
+[node name="display" type="AnimatedSprite2D" parent="Accuracy" unique_id=465954325]
+z_index = -1
+position = Vector2(-471, -78)
+scale = Vector2(0.17649998, 0.17649998)
+sprite_frames = SubResource("SpriteFrames_nmilx")
+animation = &"50"
+
+[node name="75" type="TouchScreenButton" parent="Accuracy" unique_id=67424476]
+position = Vector2(-486, -17)
+scale = Vector2(8, 5)
+shape = SubResource("RectangleShape2D_i7xtv")
+action = "75"
+
+[node name="50" type="TouchScreenButton" parent="Accuracy" unique_id=2019059557]
+position = Vector2(-486, 87)
+scale = Vector2(8, 5)
+shape = SubResource("RectangleShape2D_i7xtv")
+action = "50"
+
+[node name="90" type="TouchScreenButton" parent="Accuracy" unique_id=1609311202]
+position = Vector2(-488, -116.99999)
+rotation = 0.127409
+scale = Vector2(8, 3.5)
+shape = SubResource("CapsuleShape2D_y1pyw")
+action = "90"
+
+[node name="100" type="TouchScreenButton" parent="Accuracy" unique_id=808245863]
+position = Vector2(-455, -219)
+rotation = 0.507891
+scale = Vector2(8, 4)
+shape = SubResource("CapsuleShape2D_vwcoc")
+action = "100"
+
+[node name="Fuel" type="Node2D" parent="." unique_id=1913389328]
+position = Vector2(500, 3)
+
+[node name="+10" type="TouchScreenButton" parent="Fuel" unique_id=1615435241]
+position = Vector2(-5, -280)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_t2ats")
+action = "fuel10"
+
+[node name="+5" type="TouchScreenButton" parent="Fuel" unique_id=1107389262]
+position = Vector2(-5, -150)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_xxael")
+action = "fuel5"
+
+[node name="+1" type="TouchScreenButton" parent="Fuel" unique_id=624045206]
+position = Vector2(-4.9999847, -18.999985)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_42rwj")
+action = "fuel1"
+
+[node name="-1" type="TouchScreenButton" parent="Fuel" unique_id=1957242774]
+position = Vector2(-3.9999847, 117)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_pmpve")
+action = "fuel-1"
+
+[node name="cycles" type="TouchScreenButton" parent="Fuel" unique_id=760970739]
+position = Vector2(-160, -78)
+scale = Vector2(5, 25)
+shape = SubResource("RectangleShape2D_w46l4")
+action = "cycle"
+
+[node name="Node2D" type="Node2D" parent="Fuel" unique_id=733999417]
+
+[node name="Fuel" type="Sprite2D" parent="Fuel" unique_id=981086380]
+z_index = 5
+position = Vector2(-504, -27.000004)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("21_dnepk")
+script = ExtResource("22_iktn3")
+
+[node name="Label" type="Label" parent="Fuel/Fuel" unique_id=1831736040]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+offset_left = -223.235
+offset_top = -110.0
+offset_right = 6.7649994
+offset_bottom = 27.0
+scale = Vector2(2, 2)
+theme_override_font_sizes/font_size = 100
+text = "790"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Climb" type="Node2D" parent="." unique_id=2026557344]
+position = Vector2(200, -30)
+script = ExtResource("23_ov71r")
+
+[node name="L1" type="TouchScreenButton" parent="Climb" unique_id=1267314616]
+position = Vector2(-450, 100)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_7w5ff")
+action = "l1"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/L1" unique_id=200372879]
+position = Vector2(0, -3.4000092)
+scale = Vector2(0.085, 0.085)
+sprite_frames = SubResource("SpriteFrames_jy6ug")
+animation = &"top"
+
+[node name="L2" type="TouchScreenButton" parent="Climb" unique_id=1962289152]
+position = Vector2(-450, -20)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_8ckiy")
+action = "l2"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/L2" unique_id=2062490382]
+position = Vector2(0, -3.8)
+scale = Vector2(0.085, 0.085)
+sprite_frames = SubResource("SpriteFrames_b5elw")
+animation = &"top"
+
+[node name="L3" type="TouchScreenButton" parent="Climb" unique_id=286447672]
+position = Vector2(-450, -147)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_wwopl")
+action = "l3"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/L3" unique_id=279216859]
+position = Vector2(0, -1.80011)
+scale = Vector2(0.085, 0.085)
+sprite_frames = SubResource("SpriteFrames_xye03")
+animation = &"top"
+
+[node name="left" type="TouchScreenButton" parent="Climb" unique_id=1127252291]
+position = Vector2(-515, -240)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_c8vxb")
+action = "left"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Climb/left" unique_id=130992580]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_vwt0p")
+animation = &"off"
+
+[node name="right" type="TouchScreenButton" parent="Climb" unique_id=1252970762]
+position = Vector2(-395, -240)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_dnepk")
+action = "right"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Climb/right" unique_id=838432971]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_vwt0p")
+animation = &"on"
+
+[node name="center" type="TouchScreenButton" parent="Climb" unique_id=692926428]
+position = Vector2(-455, -240)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_iktn3")
+action = "center"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Climb/center" unique_id=179784736]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_vwt0p")
+animation = &"on"
+
+[node name="Pinning" type="Node2D" parent="." unique_id=4310080]
+position = Vector2(-400, -260)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pinning" unique_id=1258589233]
+position = Vector2(395.00003, 31)
+scale = Vector2(0.664, 0.664)
+texture = ExtResource("29_ibyax")
+
+[node name="Label" type="Label" parent="Pinning" unique_id=1440050160]
+offset_left = 340.0
+offset_top = -3.0
+offset_right = 445.0
+offset_bottom = 127.0
+theme_override_font_sizes/font_size = 70
+text = "0"
+horizontal_alignment = 1
+
+[node name="plus" type="TouchScreenButton" parent="Pinning" unique_id=1239799770]
+position = Vector2(516, 43)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_ov71r")
+action = "pin+"
+
+[node name="minus" type="TouchScreenButton" parent="Pinning" unique_id=831967561]
+position = Vector2(268, 47)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_67xu1")
+action = "pin-"
+
+[node name="Bottom Display" type="Sprite2D" parent="." unique_id=1504516139]
+z_index = 5
+position = Vector2(11, 210.00002)
+scale = Vector2(0.16735, 0.21655095)
+texture = ExtResource("30_0opuv")
+
+[node name="Bump" type="Node2D" parent="." unique_id=1761268907]
+z_index = 6
+position = Vector2(160, 430)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bump" unique_id=1282264899]
+position = Vector2(-455.99988, -168)
+scale = Vector2(0.404, 0.404)
+sprite_frames = SubResource("SpriteFrames_eop3q")
+animation = &"yes"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Bump" unique_id=429940738]
+position = Vector2(-461, -170)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_y4gsc")
+action = "bump"
+
+[node name="Trench" type="Node2D" parent="." unique_id=462232009]
+z_index = 6
+position = Vector2(580, 430)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Trench" unique_id=1823337988]
+position = Vector2(-287, -170)
+scale = Vector2(0.415, 0.415)
+sprite_frames = SubResource("SpriteFrames_tufb7")
+animation = &"no"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Trench" unique_id=1913326838]
+position = Vector2(-287, -174)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_3sltd")
+action = "trench"
+
+[node name="Defense" type="Node2D" parent="." unique_id=1565627992]
+z_index = 6
+position = Vector2(0, -185)
+script = ExtResource("35_8kuj5")
+
+[node name="Mode" type="AnimatedSprite2D" parent="Defense" unique_id=1434116545]
+z_index = -1
+position = Vector2(-451.00003, 112)
+scale = Vector2(0.2505, 0.2505)
+sprite_frames = SubResource("SpriteFrames_ibyax")
+animation = &"defense"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Defense" unique_id=1879611133]
+position = Vector2(-474, 273)
+scale = Vector2(10, 7)
+shape = SubResource("RectangleShape2D_0opuv")
+action = "defense"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Defense" unique_id=89502805]
+position = Vector2(-476, 102)
+scale = Vector2(10, 8)
+shape = SubResource("RectangleShape2D_w6rgr")
+action = "offense"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Defense" unique_id=977832504]
+position = Vector2(-475, -59)
+scale = Vector2(10, 7)
+shape = SubResource("RectangleShape2D_2g2tb")
+action = "shuttle"
+
+[node name="FuelButtons" type="Sprite2D" parent="." unique_id=846578665]
+z_index = 5
+position = Vector2(451.00003, -74.00001)
+scale = Vector2(0.25337496, 0.25337496)
+texture = ExtResource("40_8nj3g")
+
+[node name="Fire" type="Sprite2D" parent="." unique_id=416451090]
+z_index = -2
+position = Vector2(355, -55)
+scale = Vector2(0.21149996, 0.21149996)
+texture = ExtResource("41_rr720")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=351477459]
+z_index = -10
+position = Vector2(4, 6)
+scale = Vector2(132.09999, 108.7)
+texture = ExtResource("42_ej38m")
+
+[node name="Fuel_text" type="Label" parent="." unique_id=1220367689]
+visible = false
+z_index = 10
+offset_left = 280.0
+offset_top = -137.0
+offset_right = 396.0
+offset_bottom = -26.0
+theme_override_font_sizes/font_size = 25
+text = "Adds  X 
+to the
+ total fuel"
+horizontal_alignment = 1
+
+[node name="image" type="Sprite2D" parent="Fuel_text" unique_id=1898894805]
+z_index = -1
+position = Vector2(61.2222, 62.500008)
+scale = Vector2(0.06689814, 0.13055556)
+texture = ExtResource("42_mib8j")
+
+[node name="Fire_text" type="Label" parent="." unique_id=217897693]
+visible = false
+z_index = 10
+offset_left = 127.0
+offset_top = -183.0
+offset_right = 295.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Press as soon
+as a the robot
+starts firing
+to show that
+it has 
+completed
+ a cycle."
+horizontal_alignment = 1
+
+[node name="image" type="Sprite2D" parent="Fire_text" unique_id=1025652663]
+z_index = -1
+position = Vector2(86, 143)
+scale = Vector2(0.092824064, 0.26967594)
+texture = ExtResource("42_mib8j")
+
+[node name="accuracy_text" type="Label" parent="." unique_id=1486685195]
+visible = false
+z_index = 10
+offset_top = -137.0
+offset_right = 116.0
+offset_bottom = -26.0
+theme_override_font_sizes/font_size = 25
+text = "Changes
+the robot's
+approximent
+accuracy"
+horizontal_alignment = 1
+
+[node name="image" type="Sprite2D" parent="accuracy_text" unique_id=1002076931]
+z_index = -1
+position = Vector2(79.49999, 78.5)
+scale = Vector2(0.08593751, 0.15648147)
+texture = ExtResource("42_mib8j")
+
+[node name="disabled_text" type="Label" parent="." unique_id=1765836576]
+visible = false
+z_index = 10
+offset_left = -308.0
+offset_top = 60.0
+offset_right = 326.0
+offset_bottom = 209.0
+theme_override_font_sizes/font_size = 25
+text = "Press when the robot starts or stops being disabled. 
+Green = enabled. Red = disabled"
+horizontal_alignment = 1
+
+[node name="image" type="Sprite2D" parent="disabled_text" unique_id=2093085548]
+z_index = -1
+position = Vector2(313.49997, 31.75)
+scale = Vector2(0.3411458, 0.12083332)
+texture = ExtResource("42_mib8j")
+
+[node name="bump_text" type="Label" parent="." unique_id=1404471617]
+visible = false
+z_index = 10
+offset_left = -618.0
+offset_top = 122.0
+offset_right = 16.0
+offset_bottom = 271.0
+theme_override_font_sizes/font_size = 25
+text = "Shows whether or not the
+ robot can go over the bump."
+horizontal_alignment = 1
+
+[node name="image" type="Sprite2D" parent="bump_text" unique_id=1105571033]
+z_index = -1
+position = Vector2(319.5, 34.500008)
+scale = Vector2(0.19427082, 0.0787037)
+texture = ExtResource("42_mib8j")
+
+[node name="trench_text" type="Label" parent="." unique_id=1962377367]
+visible = false
+z_index = 10
+offset_left = -18.0
+offset_top = 119.0
+offset_right = 616.0
+offset_bottom = 268.0
+theme_override_font_sizes/font_size = 25
+text = "Shows whether or not the
+ robot can go under the trench"
+horizontal_alignment = 1
+
+[node name="image" type="Sprite2D" parent="trench_text" unique_id=1918601417]
+z_index = -1
+position = Vector2(315, 35.124996)
+scale = Vector2(0.21197915, 0.076157406)
+texture = ExtResource("42_mib8j")
+
+[node name="foul_text" type="Label" parent="." unique_id=1943106445]
+visible = false
+z_index = 10
+offset_left = -325.0
+offset_top = -136.0
+offset_right = 309.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 25
+text = "Shows the number of 
+collision based fouls 
+commited by the robot 
+(pinning, entering robot)"
+horizontal_alignment = 1
+
+[node name="image" type="Sprite2D" parent="foul_text" unique_id=766176337]
+z_index = -1
+position = Vector2(321.99988, 74.5625)
+scale = Vector2(0.17291667, 0.15474537)
+texture = ExtResource("42_mib8j")
+
+[node name="climb_text" type="Label" parent="." unique_id=2015744776]
+visible = false
+z_index = 10
+offset_left = -433.0
+offset_top = -136.0
+offset_right = 326.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 25
+text = "Used to mark the
+ layer to which the
+ robot is currently 
+climbed."
+horizontal_alignment = 1
+
+[node name="image" type="Sprite2D" parent="climb_text" unique_id=207182102]
+z_index = -1
+position = Vector2(378.75, 76.5)
+scale = Vector2(0.13463545, 0.16203703)
+texture = ExtResource("42_mib8j")
+
+[node name="zone_text" type="Label" parent="." unique_id=23752025]
+visible = false
+z_index = 10
+offset_left = -648.0
+offset_top = -230.0
+offset_right = 111.0
+offset_bottom = -5.0
+theme_override_font_sizes/font_size = 25
+text = "used to mark the
+ position where the 
+robot is climbing
+relitive to driver
+stations
+(left, center, right)"
+horizontal_alignment = 1
+
+[node name="image" type="Sprite2D" parent="zone_text" unique_id=1834019228]
+z_index = -1
+position = Vector2(378.75, 118.500015)
+scale = Vector2(0.13463545, 0.23981483)
+texture = ExtResource("42_mib8j")
+
+[node name="mode_text" type="Label" parent="." unique_id=864314640]
+visible = false
+z_index = 10
+offset_left = -599.0
+offset_top = -175.0
+offset_right = 160.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 25
+text = "Used to set the 
+robot's current mode:
+cycle (top)
+offense (center)
+defense (bottom)"
+horizontal_alignment = 1
+
+[node name="image" type="Sprite2D" parent="mode_text" unique_id=1599086992]
+z_index = -1
+position = Vector2(384.37497, 95.99999)
+scale = Vector2(0.14440106, 0.18148151)
+texture = ExtResource("42_mib8j")

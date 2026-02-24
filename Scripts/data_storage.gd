@@ -2,9 +2,17 @@ extends Node2D
 
 
 #all data is stored here as static variables. Any data not stored here will be deleted when changing files.
-#all of this data should be changed with seasons.
-static var team=null
-static var pos=null
+
+#This data should be consistently used
+static var team="" #team number displayed here
+static var pos=null #position on field (r1,b2,r3,etc...)
+static var history=[] #stores the history of all recorded matches
+static var matchNum=1 #which match number is currently active.
+static var scoutName=""
+static var updated #shows wheither or not the data has been updated
+static var loaded=false #true once history is loaded (or not loaded if it doesn't exist) from file
+
+#This data should be changed with seasons.
 static var fuel=0
 static var fuel_a=0
 static var fuel_t=0
@@ -29,38 +37,43 @@ static var l3
 static var fouls
 static var trench=false
 static var bump=false
-static var residual_f
-static var residual_c
-static var history=[]
-static var matchNum=0
-static var scoutName="none"
-static var updated=true
-
-static var fuel_g=0 #fuel generated in idle game
-static var growth=0 #increase of fuel in idle game per second
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func _ready() -> void:
+	if not loaded:
+		load_data()
+		loaded=true
 func _process(delta: float) -> void:
-	fuel_g+=delta*growth
+	pass
+
 func update():
-	if not updated:
+	updated=false
+	for i in range(len(history)):
+		#searches the list for a match of the number provided
+		if matchNum==history[i][0]:
+			updated=true
+			
+			#if the match number allready exists, replaces it with the new data
+			history[i]=[
+				matchNum,scoutName,team,fuel_a,fuel_t,fuel_s,shots,
+				accuracy_a,accuracy_t,
+				time_defense, time_offense,time_shuttle,time_disabled,
+				l1,time_l1,l2,time_l2,l3,time_l3,c_zone,
+				trench,bump,pins]
+
+	if updated==false:
+		#if no duplicate was found, adds data to the end of the list.
 		history.append([matchNum,scoutName,team,fuel_a,fuel_t,fuel_s,shots,
 			accuracy_a,accuracy_t,
 			time_defense, time_offense,time_shuttle,time_disabled,
 			l1,time_l1,l2,time_l2,l3,time_l3,c_zone,
 			trench,bump,pins])
-		updated=true
-	elif updated and matchNum>=1:
-		history[matchNum-1]=[
-			matchNum,scoutName,team,fuel_a,fuel_t,fuel_s,shots,
-			accuracy_a,accuracy_t,
-			time_defense, time_offense,time_shuttle,time_disabled,
-			l1,time_l1,l2,time_l2,l3,time_l3,c_zone,
-			trench,bump,pins]
 	for i in history:
 		print (i)
+	save_data()
 var hfile
 func unwrap(num):
+	#sets variables to their appropriate values from a specific match
 	hfile=history[num]
 	matchNum=hfile[0]
 	scoutName=hfile[1]
@@ -85,11 +98,9 @@ func unwrap(num):
 	bump=hfile[20]
 	trench=hfile[21]
 	pins=hfile[22]
-func reset():
-	updated=false #shows that the history has not been updated with new data.
-	#this function sets all data to it's default setting.
+func reset(change=true):
+	print("e")
 	fuel=fuel_a+fuel_t
-	matchNum+=1
 	fuel=0
 	fuel_a=0
 	fuel_t=0
@@ -107,8 +118,6 @@ func reset():
 	time_l2=0
 	time_l3=0
 	
-	residual_f=0
-	residual_c=0
 	pins=0
 	l1=false
 	l2=false
@@ -119,5 +128,33 @@ func reset():
 	c_zone="none"
 	
 	pos="r1"
-	team=0000
-	get_tree().change_scene_to_file("res://Scenes/match_scouting.tscn")
+	if change:
+		get_tree().change_scene_to_file("res://Scenes/match_scouting.tscn")
+
+
+static var SAVE_PATH="user://scouting_history.dat"
+var file
+var loaded_history
+func save_data():
+	file=FileAccess.open(SAVE_PATH,FileAccess.WRITE)
+	if file:
+		file.store_var(history)
+		file.close()
+		print("Array saved successfully!")
+	else:
+		print("Failed to open file for saving: ", FileAccess.get_open_error())
+
+func load_data():
+	if FileAccess.file_exists(SAVE_PATH):
+		file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+		if file:
+			loaded_history = file.get_var()
+			file.close()
+			print("Data loaded successfully: ", loaded_history)
+			history=loaded_history
+			matchNum=len(history)+1
+		else:
+			print("Failed to open file for loading: ", FileAccess.get_open_error())
+	else:
+		print("Save file does not exist.")
+	

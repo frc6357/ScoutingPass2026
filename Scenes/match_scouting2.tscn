@@ -514,7 +514,7 @@ shape = SubResource("RectangleShape2D_xabek")
 action = "fuel-1"
 
 [node name="cycles" type="TouchScreenButton" parent="Fuel" unique_id=2051458647]
-position = Vector2(-160, -78)
+position = Vector2(-150, -78)
 scale = Vector2(5, 25)
 shape = SubResource("RectangleShape2D_hujfe")
 action = "cycle"
