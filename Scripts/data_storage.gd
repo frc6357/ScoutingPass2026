@@ -13,6 +13,7 @@ static var updated #shows wheither or not the data has been updated
 static var loaded=false #true once history is loaded (or not loaded if it doesn't exist) from file
 
 #This data should be changed with seasons.
+#match scouting
 static var fuel=0
 static var fuel_a=0
 static var fuel_t=0
@@ -37,7 +38,10 @@ static var l3
 static var fouls
 static var trench=false
 static var bump=false
-
+#pit scouting
+static var storage_capacity="0"
+static var turret=false
+static var multi_launcher=false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready() -> void:
 	if not loaded:

@@ -13,6 +13,11 @@ func _process(_delta: float) -> void:
 	pass
 var e
 var storedData
+func generate_pit():
+	storedData=(data.team+","+data.storage_capacity+","+str(data.turret)+","+str(data.multi_launcher)).to_utf8_buffer()
+	qr_code._qr.put_byte(storedData)
+	qr_code._update_qr()
+	print(qr_code.data)
 func generate():
 	storedData=("http://localhost:5000/add-data?data="+
 	str(data.scoutName)+","+str(data.matchNum)+","+str(data.team)+","+str(data.fuel_a)+","+str(data.fuel_t)+

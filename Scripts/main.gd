@@ -7,6 +7,7 @@ var changeName=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	DisplayServer.screen_set_orientation(DisplayServer.SCREEN_LANDSCAPE)
 	#sets the displays to their appropriate default values
 	text_edit.text=data.scoutName
 	text_edit2.text=str(data.team)

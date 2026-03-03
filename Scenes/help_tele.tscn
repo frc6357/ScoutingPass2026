@@ -927,3 +927,107 @@ z_index = -1
 position = Vector2(384.37497, 95.99999)
 scale = Vector2(0.14440106, 0.18148151)
 texture = ExtResource("42_mib8j")
+
+[node name="Subtitles" type="Node2D" parent="." unique_id=2027584693]
+z_index = 100
+
+[node name="Label" type="Label" parent="Subtitles" unique_id=1827612208]
+offset_left = -308.0
+offset_top = -321.0
+offset_right = -196.0
+offset_bottom = -298.0
+text = "Climb Position"
+
+[node name="Label2" type="Label" parent="Subtitles" unique_id=189142080]
+offset_left = -514.0
+offset_top = -197.0
+offset_right = -402.0
+offset_bottom = -174.0
+text = "Shuttling"
+
+[node name="Label3" type="Label" parent="Subtitles" unique_id=353022013]
+offset_left = -516.0
+offset_top = -33.0
+offset_right = -404.0
+offset_bottom = -10.0
+text = "Scoring"
+
+[node name="Label4" type="Label" parent="Subtitles" unique_id=1413378839]
+offset_left = -515.0
+offset_top = 132.0
+offset_right = -403.0
+offset_bottom = 155.0
+text = "Defending"
+
+[node name="Label5" type="Label" parent="Subtitles" unique_id=1336132936]
+offset_left = -119.0
+offset_top = 299.0
+offset_right = 113.0
+offset_bottom = 322.0
+text = "Green: Enabled, Red: Disabled"
+
+[node name="Label6" type="Label" parent="Subtitles" unique_id=827650474]
+offset_left = -322.0
+offset_top = 175.0
+offset_right = -265.0
+offset_bottom = 198.0
+text = "Bump"
+
+[node name="Label7" type="Label" parent="Subtitles" unique_id=1329598069]
+offset_left = 266.0
+offset_top = 169.0
+offset_right = 323.0
+offset_bottom = 192.0
+text = "Trench"
+
+[node name="Label8" type="Label" parent="Subtitles" unique_id=142533220]
+offset_left = -119.0
+offset_top = -320.0
+offset_right = 98.0
+offset_bottom = -297.0
+text = "Major collisions and Pinning"
+
+[node name="Label9" type="Label" parent="Subtitles" unique_id=1737310999]
+offset_left = 107.0
+offset_top = 74.0
+offset_right = 324.0
+offset_bottom = 97.0
+rotation = -1.538052
+text = "Accuracy (relative)"
+
+[node name="Label12" type="Label" parent="Subtitles" unique_id=1895765335]
+offset_left = -183.0
+offset_top = -65.0
+offset_right = -165.0
+offset_bottom = -42.0
+text = "L2"
+
+[node name="Label15" type="Label" parent="Subtitles" unique_id=24041883]
+offset_left = -180.0
+offset_top = 57.0
+offset_right = -162.0
+offset_bottom = 80.0
+text = "L1"
+
+[node name="Label14" type="Label" parent="Subtitles" unique_id=627043014]
+offset_left = -186.0
+offset_top = -175.0
+offset_right = -168.0
+offset_bottom = -152.0
+text = "L3"
+
+[node name="Label10" type="Label" parent="Subtitles" unique_id=782958516]
+offset_left = 441.0
+offset_top = -328.0
+offset_right = 531.0
+offset_bottom = -305.0
+text = "Fuel Scored"
+
+[node name="Label11" type="Label" parent="Subtitles" unique_id=1481393413]
+offset_left = 280.0
+offset_top = -256.0
+offset_right = 410.0
+offset_bottom = -207.0
+text = "Starts 
+Launching"
+horizontal_alignment = 1
