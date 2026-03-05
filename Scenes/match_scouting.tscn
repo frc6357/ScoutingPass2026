@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://gursfwnwlies" path="res://Scripts/match_scouting.gd" id="1_u2ron"]
 [ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_77k5n"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="3_rvlpy"]
+[ext_resource type="Script" uid="uid://d1tcpkljn2awi" path="res://Scripts/data_storage.gd" id="4_1il56"]
 [ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="4_a76dx"]
+[ext_resource type="Texture2D" uid="uid://cbqnoskkt4st8" path="res://Assets/Screenshot 2026-03-04 170207.png" id="5_a00hh"]
+[ext_resource type="Texture2D" uid="uid://cpr6goyfy56t4" path="res://Assets/fuelButtons.png" id="7_c214x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6majs"]
 
@@ -16,6 +19,7 @@ script = ExtResource("1_u2ron")
 position = Vector2(-1000, 0)
 
 [node name="DataStorage" parent="." unique_id=2082699722 instance=ExtResource("3_rvlpy")]
+script = ExtResource("4_1il56")
 
 [node name="Next" type="TouchScreenButton" parent="." unique_id=1575683134]
 position = Vector2(486, 236)
@@ -41,3 +45,92 @@ texture = ExtResource("4_a76dx")
 
 [node name="Timer" type="Timer" parent="." unique_id=653646377]
 wait_time = 100.0
+
+[node name="Canvas" type="Sprite2D" parent="." unique_id=241311500]
+position = Vector2(-4.0000076, 0)
+scale = Vector2(1.1549586, 1.1549587)
+texture = ExtResource("5_a00hh")
+
+[node name="ColorPicker" type="ColorPickerButton" parent="." unique_id=1516603185]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="BrushSlider" type="HSlider" parent="." unique_id=907670658]
+offset_right = 8.0
+offset_bottom = 16.0
+
+[node name="SaveButton" type="Button" parent="." unique_id=1131670888]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="TeamNumberInput" type="LineEdit" parent="." unique_id=219558741]
+offset_left = -536.0
+offset_top = -72.0
+offset_right = -425.5
+offset_bottom = -6.0
+
+[node name="MatchNumberInput" type="LineEdit" parent="." unique_id=1367803292]
+offset_left = -537.0
+offset_top = 50.0
+offset_right = -426.5
+offset_bottom = 116.0
+
+[node name="TeamNumberLabel" type="Label" parent="." unique_id=218846471]
+offset_left = -534.0
+offset_top = -100.0
+offset_right = -425.0
+offset_bottom = -77.0
+text = "Team number"
+
+[node name="MatchNumberLabel" type="Label" parent="." unique_id=2011383047]
+offset_left = -535.0
+offset_top = 25.0
+offset_right = -420.0
+offset_bottom = 48.0
+text = "Match number"
+
+[node name="ClimbLabel" type="Label" parent="." unique_id=588614820]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="FuelLabel" type="Label" parent="." unique_id=1720725593]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BeachedLabel" type="Label" parent="." unique_id=1919248692]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Buttons" type="Node2D" parent="." unique_id=1144444586]
+
+[node name="FuelMinus1" type="TextureButton" parent="Buttons" unique_id=1907874259]
+offset_left = -51.0
+offset_top = -59.0
+offset_right = 40.0
+offset_bottom = 40.0
+action_mode = 0
+
+[node name="FuelPlus1" type="TextureButton" parent="Buttons" unique_id=678479022]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FuelPlus5" type="TextureButton" parent="Buttons" unique_id=1655968022]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FuelPlus10" type="TextureButton" parent="Buttons" unique_id=653640157]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BeachedButton" type="TextureButton" parent="Buttons" unique_id=147650379]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ClimbButton" type="TextureButton" parent="Buttons" unique_id=1874798282]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FuelButtons" type="Sprite2D" parent="." unique_id=1602972729]
+position = Vector2(457.00006, -82)
+scale = Vector2(0.24187498, 0.24187498)
+texture = ExtResource("7_c214x")
