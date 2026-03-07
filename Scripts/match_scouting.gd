@@ -16,8 +16,8 @@ extends Node2D
 
 # Canvas
 @onready var canvas: Sprite2D = $Canvas
-@onready var color_picker: ColorPickerButton = $ColorPicker
-@onready var brush_slider: HSlider = $BrushSlider
+@onready var color_picker: ColorPickerButton = $Canvas/ColorPicker
+@onready var brush_slider: HSlider = $Canvas/BrushSlider
 @onready var save_button: Button = $SaveButton
 
 # Auto Fuel Buttons
@@ -35,11 +35,13 @@ var paint_color := Color.RED
 var img: Image
 var drawing := false
 @export var canvas_img_path := "res://my_image.png"
-@export var canvas_size := Vector2i(512, 512)
+@export var canvas_size := Vector2i(550, 266)
 @export var archive_path := "user://archive/"
 
 func _ready():
 	# --- Initialize Canvas ---
+	canvas.texture = ImageTexture.new()
+	'''
 	var tex: ImageTexture
 	if FileAccess.file_exists(canvas_img_path):
 		tex = load(canvas_img_path)
@@ -50,7 +52,7 @@ func _ready():
 		img.create(canvas_size.x, canvas_size.y, false, Image.FORMAT_RGBA8)
 		img.fill(Color.WHITE)
 	canvas.texture = ImageTexture.create_from_image(img)
-
+	'''
 	# Connect signals
 	team_input.connect("text_entered", Callable(self, "_on_team_entered"))
 	match_input.connect("text_entered", Callable(self, "_on_match_entered"))
@@ -133,9 +135,9 @@ func _draw_motion(event):
 	var distance = prev.distance_to(pos)
 	var steps = ceil(distance)
 	for i in range(steps):
-		var interp = prev.linear_interpolate(pos, i / steps)
+		var interp = prev.lerp(pos, i / steps)
 		_paint(interp)
-	canvas.texture.update(img)
+	#canvas.texture.update(img)
 
 func _paint(pos: Vector2):
 	# Draw smooth circle at position

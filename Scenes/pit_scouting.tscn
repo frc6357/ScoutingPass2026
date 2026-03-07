@@ -37,7 +37,6 @@ animations = [{
 }]
 
 [node name="pit_scouting" type="Node2D" unique_id=1155759669]
-scale = Vector2(1.6, 1.6)
 script = ExtResource("1_obrrj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1019542629]
@@ -60,17 +59,17 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Height2" type="TextEdit" parent="." unique_id=1631629423]
 offset_left = -124.0
-offset_top = -264.50003
+offset_top = -258.50003
 offset_right = 148.0
-offset_bottom = -223.50003
+offset_bottom = -217.50003
 script = ExtResource("2_g324h")
 metadata/_edit_use_anchors_ = true
 
 [node name="Width" type="TextEdit" parent="." unique_id=104664470]
 offset_left = -250.0
-offset_top = -206.24997
+offset_top = -198.24997
 offset_right = -21.0
-offset_bottom = -165.24997
+offset_bottom = -157.24997
 script = ExtResource("2_g324h")
 metadata/_edit_use_anchors_ = true
 
@@ -91,23 +90,23 @@ script = ExtResource("2_g324h")
 metadata/_edit_use_anchors_ = true
 
 [node name="Favorite" type="TextEdit" parent="." unique_id=312034244]
-offset_left = -258.00003
-offset_top = 161.0
-offset_right = 259.99997
-offset_bottom = 228.0
+offset_left = -258.0
+offset_top = 147.0
+offset_right = 260.0
+offset_bottom = 214.0
 script = ExtResource("2_g324h")
 metadata/_edit_use_anchors_ = true
 
 [node name="Lenth" type="TextEdit" parent="." unique_id=1658022483]
 offset_left = 92.0
-offset_top = -206.24997
+offset_top = -198.24997
 offset_right = 324.0
-offset_bottom = -165.24997
+offset_bottom = -157.24997
 script = ExtResource("2_g324h")
 metadata/_edit_use_anchors_ = true
 
 [node name="exit" type="TouchScreenButton" parent="." unique_id=1361062276]
-position = Vector2(111.999985, -460.75)
+position = Vector2(347, -385.00003)
 scale = Vector2(0.37499997, 0.37499997)
 texture_normal = ExtResource("3_mcuh8")
 shape = SubResource("CircleShape2D_nc53u")
@@ -145,9 +144,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="width" type="Label" parent="." unique_id=1631676882]
 offset_left = -341.00003
-offset_top = -204.5
+offset_top = -195.5
 offset_right = -246.00003
-offset_bottom = -170.5
+offset_bottom = -161.5
 theme_override_font_sizes/font_size = 24
 text = "Width:"
 horizontal_alignment = 1
@@ -155,9 +154,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="length" type="Label" parent="." unique_id=1626810649]
 offset_left = -17.0
-offset_top = -204.25
+offset_top = -197.25
 offset_right = 84.0
-offset_bottom = -170.25
+offset_bottom = -163.25
 theme_override_font_sizes/font_size = 24
 text = "Length:"
 horizontal_alignment = 1
@@ -214,17 +213,17 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Storage8" type="Label" parent="." unique_id=870086706]
-offset_left = -277.00003
-offset_top = 94.500015
-offset_right = 235.99997
-offset_bottom = 128.50002
+offset_left = -255.00003
+offset_top = 106.500015
+offset_right = 257.99997
+offset_bottom = 140.50002
 theme_override_font_sizes/font_size = 24
 text = "What is your favorite thing about this robot?"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Done" type="TouchScreenButton" parent="." unique_id=1006497787]
-position = Vector2(-165, 246.00003)
+position = Vector2(-156.00002, 219)
 scale = Vector2(1.6500002, 1.6500002)
 texture_normal = ExtResource("4_nc53u")
 shape = SubResource("RectangleShape2D_rlk0v")

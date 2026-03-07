@@ -3,6 +3,8 @@ extends Node2D
 @onready var matchD: Label = $Node2D/match
 @onready var text_edit: TextEdit = $Name/TextEdit
 @onready var text_edit2: TextEdit = $Robot/TextEdit
+@onready var settings: TouchScreenButton = $Settings/TouchScreenButton
+
 var changeName=false
 
 # Called when the node enters the scene tree for the first time.
@@ -19,7 +21,8 @@ func _process(_delta: float) -> void:
 	#sets the values in data storage to the values displayed in the text.
 	data.scoutName=text_edit.text
 	data.team=text_edit2.text
-	
+	if settings.is_pressed():
+		get_tree().change_scene_to_file("res://Scenes/settings.tscn")
 	if Input.is_action_just_pressed("match+"):
 		#adds 1 to the match number
 		data.matchNum+=1

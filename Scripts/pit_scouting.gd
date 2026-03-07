@@ -85,10 +85,10 @@ func _process(delta: float) -> void:
 	
 	team=number.text
 	e_height=height_2.text
-	u_height=height_1.text
+	data.height=height_1.text
 	w=width.text
 	l=length.text
 	fav=favorite.text
 	storage=capacity.text
 	data.storage_capacity=capacity.text
-	drive=drive_train.text
+	data.drive=drive_train.text

@@ -96,17 +96,17 @@ func _process(_delta: float) -> void:
 		print("50")
 		display.play("50")
 	if Input.is_action_just_pressed("75"):
-		Input.vibrate_handheld(75)
-		data.accuracy_t=.75
+		Input.vibrate_handheld(65)
+		data.accuracy_t=.65
 		print("75")
-		display.play("75")
+		display.play("65")
 	if Input.is_action_just_pressed("90"):
-		Input.vibrate_handheld(90)
-		data.accuracy_t=.9
+		Input.vibrate_handheld(80)
+		data.accuracy_t=.8
 		print("90")
-		display.play("90")
+		display.play("80")
 	if Input.is_action_just_pressed("100"):
-		Input.vibrate_handheld(100)
-		data.accuracy_t=1
+		Input.vibrate_handheld(95)
+		data.accuracy_t=.95
 		print("100")
-		display.play("100")
+		display.play("95")

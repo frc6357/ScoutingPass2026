@@ -19,12 +19,12 @@
 [ext_resource type="Texture2D" uid="uid://bh2ua7tp2v3e" path="res://Assets/sleeping button.png" id="12_n5yt1"]
 [ext_resource type="Texture2D" uid="uid://lutgbr14nmvd" path="res://Assets/fuel.png" id="14_m0qp2"]
 [ext_resource type="Script" uid="uid://cns01kx6q5pj" path="res://Scenes/fuel.gd" id="15_x7afm"]
-[ext_resource type="Texture2D" uid="uid://cpq5epl1qe8d" path="res://Assets/accuracy8.png" id="16_qe6au"]
-[ext_resource type="Texture2D" uid="uid://ca635maf4gcia" path="res://Assets/accuracy5.png" id="17_bwdrc"]
+[ext_resource type="Texture2D" uid="uid://drbvsej23muor" path="res://Assets/accuracy4.png" id="16_qe6au"]
+[ext_resource type="Texture2D" uid="uid://cgrtbrbghs65p" path="res://Assets/accuracy3.png" id="17_bwdrc"]
 [ext_resource type="Script" uid="uid://co4s777p6phwi" path="res://Scripts/climb.gd" id="18_1qhxq"]
 [ext_resource type="Texture2D" uid="uid://kfwbqxtkqtij" path="res://Assets/climb_button.png" id="18_feivl"]
-[ext_resource type="Texture2D" uid="uid://cjonw2s4f35iw" path="res://Assets/accuracy6.png" id="18_skvx0"]
-[ext_resource type="Texture2D" uid="uid://nj7b7w48vfk3" path="res://Assets/accuracy7.png" id="19_11saq"]
+[ext_resource type="Texture2D" uid="uid://bh1vfjrthrsqc" path="res://Assets/accuracy2.png" id="18_skvx0"]
+[ext_resource type="Texture2D" uid="uid://c6xppsai6a3dw" path="res://Assets/accuracy1.png" id="19_11saq"]
 [ext_resource type="Texture2D" uid="uid://b6dw47ew813kr" path="res://Assets/climb_button2.png" id="19_owdi5"]
 [ext_resource type="Texture2D" uid="uid://dohgptvlg873w" path="res://Assets/ClimbON.png" id="20_vam4t"]
 [ext_resource type="Texture2D" uid="uid://bl8cprb4q61ob" path="res://Assets/eeeeee.png" id="21_jdbke"]
@@ -126,7 +126,7 @@ animations = [{
 "texture": ExtResource("16_qe6au")
 }],
 "loop": true,
-"name": &"100",
+"name": &"50",
 "speed": 5.0
 }, {
 "frames": [{
@@ -134,7 +134,7 @@ animations = [{
 "texture": ExtResource("17_bwdrc")
 }],
 "loop": true,
-"name": &"50",
+"name": &"65",
 "speed": 5.0
 }, {
 "frames": [{
@@ -142,7 +142,7 @@ animations = [{
 "texture": ExtResource("18_skvx0")
 }],
 "loop": true,
-"name": &"75",
+"name": &"80",
 "speed": 5.0
 }, {
 "frames": [{
@@ -150,7 +150,7 @@ animations = [{
 "texture": ExtResource("19_11saq")
 }],
 "loop": true,
-"name": &"90",
+"name": &"95",
 "speed": 5.0
 }]
 
@@ -458,7 +458,7 @@ z_index = -1
 position = Vector2(-471, -78)
 scale = Vector2(0.17649998, 0.17649998)
 sprite_frames = SubResource("SpriteFrames_q3vre")
-animation = &"50"
+animation = &"80"
 
 [node name="75" type="TouchScreenButton" parent="Accuracy" unique_id=507252301]
 position = Vector2(-486, -17)
@@ -514,8 +514,9 @@ shape = SubResource("RectangleShape2D_xabek")
 action = "fuel-1"
 
 [node name="cycles" type="TouchScreenButton" parent="Fuel" unique_id=2051458647]
-position = Vector2(-150, -78)
-scale = Vector2(5, 25)
+z_index = 5
+position = Vector2(-160, -78)
+scale = Vector2(4.5, 25)
 shape = SubResource("RectangleShape2D_hujfe")
 action = "cycle"
 
@@ -726,6 +727,6 @@ texture = ExtResource("34_x7afm")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1689145322]
 z_index = -10
-position = Vector2(4, 6)
+position = Vector2(4, -10)
 scale = Vector2(132.09999, 108.7)
 texture = ExtResource("42_bwdrc")

@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://btpivolaqck8j" path="res://Assets/HistoryButton.png" id="5_hptm8"]
 [ext_resource type="Texture2D" uid="uid://1tpk36ktewt7" path="res://Assets/helpButton.png" id="6_344ge"]
 [ext_resource type="Script" uid="uid://dcgj6pq0byp2m" path="res://Scenes/text_edit.gd" id="10_hptm8"]
+[ext_resource type="Texture2D" uid="uid://be2r412xww81q" path="res://Assets/Settings.png" id="11_6iyac"]
 [ext_resource type="Texture2D" uid="uid://c6kctf2d3xuio" path="res://Assets/arrow2.png" id="11_d1ilt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvxjn"]
@@ -19,6 +20,9 @@ radius = 30.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fdnlq"]
 radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdnlq"]
+size = Vector2(500, 500)
 
 [node name="Main" type="Node2D" unique_id=67654157]
 script = ExtResource("1_d4pt4")
@@ -157,3 +161,11 @@ offset_right = 513.0
 offset_bottom = -103.0
 theme_override_font_sizes/font_size = 25
 text = "Match Number"
+
+[node name="Settings" type="Sprite2D" parent="." unique_id=920291905]
+position = Vector2(-445.00003, -199)
+scale = Vector2(0.3265, 0.3265)
+texture = ExtResource("11_6iyac")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Settings" unique_id=877140890]
+shape = SubResource("RectangleShape2D_fdnlq")

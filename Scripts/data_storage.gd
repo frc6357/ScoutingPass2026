@@ -11,7 +11,9 @@ static var matchNum=1 #which match number is currently active.
 static var scoutName=""
 static var updated #shows wheither or not the data has been updated
 static var loaded=false #true once history is loaded (or not loaded if it doesn't exist) from file
-
+static var customPrefix=""
+static var prefix ="curl http://localhost:5000/add-data?data="
+static var export="command"
 #This data should be changed with seasons.
 #match scouting
 static var fuel=0
@@ -38,10 +40,13 @@ static var l3
 static var fouls
 static var trench=false
 static var bump=false
+static var height=0
+static var drive ="none"
 #pit scouting
 static var storage_capacity="0"
 static var turret=false
 static var multi_launcher=false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready() -> void:
 	if not loaded:

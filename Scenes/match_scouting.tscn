@@ -47,15 +47,14 @@ texture = ExtResource("4_a76dx")
 wait_time = 100.0
 
 [node name="Canvas" type="Sprite2D" parent="." unique_id=241311500]
-position = Vector2(-4.0000076, 0)
 scale = Vector2(1.1549586, 1.1549587)
 texture = ExtResource("5_a00hh")
 
-[node name="ColorPicker" type="ColorPickerButton" parent="." unique_id=1516603185]
+[node name="ColorPicker" type="ColorPickerButton" parent="Canvas" unique_id=1516603185]
 offset_right = 8.0
 offset_bottom = 8.0
 
-[node name="BrushSlider" type="HSlider" parent="." unique_id=907670658]
+[node name="BrushSlider" type="HSlider" parent="Canvas" unique_id=907670658]
 offset_right = 8.0
 offset_bottom = 16.0
 
@@ -102,6 +101,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Buttons" type="Node2D" parent="." unique_id=1144444586]
+position = Vector2(0, 300)
 
 [node name="FuelMinus1" type="TextureButton" parent="Buttons" unique_id=1907874259]
 offset_left = -51.0
@@ -131,6 +131,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="FuelButtons" type="Sprite2D" parent="." unique_id=1602972729]
-position = Vector2(457.00006, -82)
+position = Vector2(457, -82)
 scale = Vector2(0.24187498, 0.24187498)
 texture = ExtResource("7_c214x")
