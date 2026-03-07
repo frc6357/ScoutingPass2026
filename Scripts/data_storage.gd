@@ -13,6 +13,7 @@ static var updated #shows wheither or not the data has been updated
 static var loaded=false #true once history is loaded (or not loaded if it doesn't exist) from file
 static var customPrefix=""
 static var prefix ="curl http://localhost:5000/add-data?data="
+static var prefix2="curl http://localhost:5000/add-pit-data?data="
 static var export="command"
 #This data should be changed with seasons.
 #match scouting

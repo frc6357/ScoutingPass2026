@@ -15,7 +15,7 @@ func _process(_delta: float) -> void:
 var e
 var storedData
 func generate_pit():
-	storedData=(data.team+","+data.storage_capacity+","+str(data.turret)+","+str(data.multi_launcher)+","+str(data.height)+","+str(data.drive)).to_utf8_buffer()
+	storedData=(data.prefix2+data.team+","+data.storage_capacity+","+str(data.turret)+","+str(data.multi_launcher)+","+str(data.height)+","+str(data.drive)).to_utf8_buffer()
 	qr_code._qr.put_byte(storedData)
 	qr_code._update_qr()
 	print(qr_code.data)

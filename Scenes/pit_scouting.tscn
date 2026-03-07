@@ -42,26 +42,29 @@ script = ExtResource("1_obrrj")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1019542629]
 
 [node name="Number" type="TextEdit" parent="." unique_id=1433225647]
-offset_left = -123.0
-offset_top = -387.50003
-offset_right = 149.0
-offset_bottom = -346.50003
+offset_left = 19.0
+offset_top = -306.0
+offset_right = 291.0
+offset_bottom = -265.0
+scale = Vector2(0.5999988, 1)
 script = ExtResource("2_g324h")
 metadata/_edit_use_anchors_ = true
 
 [node name="Height1" type="TextEdit" parent="." unique_id=1051903975]
-offset_left = -120.0
-offset_top = -324.5
-offset_right = 152.0
-offset_bottom = -283.5
+offset_left = -200.0
+offset_top = -251.0
+offset_right = 72.0
+offset_bottom = -210.0
+scale = Vector2(0.5600003, 1)
 script = ExtResource("2_g324h")
 metadata/_edit_use_anchors_ = true
 
 [node name="Height2" type="TextEdit" parent="." unique_id=1631629423]
-offset_left = -124.0
-offset_top = -258.50003
-offset_right = 148.0
-offset_bottom = -217.50003
+offset_left = 198.99998
+offset_top = -252.0
+offset_right = 471.0
+offset_bottom = -211.0
+scale = Vector2(0.5600003, 1)
 script = ExtResource("2_g324h")
 metadata/_edit_use_anchors_ = true
 
@@ -113,30 +116,29 @@ shape = SubResource("CircleShape2D_nc53u")
 action = "main"
 
 [node name="Team" type="Label" parent="." unique_id=916798328]
-offset_left = -308.0
-offset_top = -384.50003
-offset_right = -135.0
-offset_bottom = -350.50003
+offset_left = -173.0
+offset_top = -303.0
+offset_bottom = -269.0
 theme_override_font_sizes/font_size = 24
 text = "Team Number:"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="U_height" type="Label" parent="." unique_id=681052157]
-offset_left = -386.0
-offset_top = -322.5
-offset_right = -107.0
-offset_bottom = -288.5
+offset_left = -466.0
+offset_top = -247.0
+offset_right = -187.0
+offset_bottom = -213.0
 theme_override_font_sizes/font_size = 24
 text = "Unextended Height:"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="E_height" type="Label" parent="." unique_id=1074921879]
-offset_left = -369.0
-offset_top = -262.50003
-offset_right = -90.0
-offset_bottom = -228.50003
+offset_left = -52.0
+offset_top = -251.0
+offset_right = 227.0
+offset_bottom = -217.0
 theme_override_font_sizes/font_size = 24
 text = "Extended Height:"
 horizontal_alignment = 1

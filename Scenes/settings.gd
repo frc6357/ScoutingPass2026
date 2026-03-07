@@ -31,14 +31,18 @@ func _process(delta: float) -> void:
 	if co_button.is_pressed():
 		data.export="command"
 		data.prefix="curl http://localhost:5000/add-data?data="
+		data.prefix2="curl http://localhost:5000/add-pit-data?data="
 	if s_button.is_pressed():
 		data.export="server"
 		data.prefix="http://localhost:5000/add-data?data="
+		data.prefix2="http://localhost:5000/add-pit-data?data="
 	if r_button.is_pressed():
 		data.export="raw"
 		data.prefix=""
+		data.prefix2=""
 	if data.export=="custom":
 		data.prefix=input.text
+		data.prefix2=input.text
 		custom.play("on")
 	if data.export=="command":
 		command.play("on")
