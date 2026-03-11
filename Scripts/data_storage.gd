@@ -34,6 +34,7 @@ static var time_l1=0
 static var time_l2=0
 static var time_l3=0
 static var pins=0
+static var beached=false
 static var c_zone="none"
 static var l1
 static var l2

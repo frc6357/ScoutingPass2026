@@ -14,7 +14,7 @@ var change=0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	display.play("75")
+	display.play("65")
 	if data.bump:
 		bump.play("yes")
 	else:
