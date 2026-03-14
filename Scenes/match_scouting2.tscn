@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://qo77a3fgbfyq"]
+[gd_scene format=3 uid="uid://ciayn34l25wa0"]
 
 [ext_resource type="Script" uid="uid://cxtaedsnyb53q" path="res://Scripts/match_scouting_2.gd" id="1_abj35"]
 [ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://Scenes/qr_code_generator.tscn" id="2_73pei"]
@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cvah5tjosc16w" path="res://Assets/fire1.png" id="3_bwdrc"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="3_vau7e"]
 [ext_resource type="Script" uid="uid://d1tcpkljn2awi" path="res://Scripts/data_storage.gd" id="4_qhi3p"]
-[ext_resource type="Script" uid="uid://bt6cflbppyxlt" path="res://Scripts/timer.gd" id="4_r62gf"]
+[ext_resource type="Script" path="res://Scripts/timer.gd" id="4_r62gf"]
 [ext_resource type="Texture2D" uid="uid://r7lvoqs6rxl" path="res://Assets/fire2.png" id="4_skvx0"]
 [ext_resource type="Texture2D" uid="uid://ckxouj5wtp0fb" path="res://Assets/fire3.png" id="5_11saq"]
 [ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="5_b1js0"]
-[ext_resource type="Script" uid="uid://idfu2lgchh7t" path="res://Scripts/disabled.gd" id="5_nuj6h"]
+[ext_resource type="Script" path="res://Scripts/disabled.gd" id="5_nuj6h"]
 [ext_resource type="Texture2D" uid="uid://bl2qrnd2gljl6" path="res://Assets/fire4.png" id="6_2q4bh"]
 [ext_resource type="Texture2D" uid="uid://dw5vhhsnrqnv3" path="res://Assets/disabled_button.png" id="6_j6wy3"]
 [ext_resource type="Texture2D" uid="uid://fuat0gvq744j" path="res://Assets/sideSlot.png" id="6_oy8ks"]
@@ -18,10 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://cndlrfbqlrqjg" path="res://Assets/happy_button.png" id="7_gawtn"]
 [ext_resource type="Texture2D" uid="uid://bh2ua7tp2v3e" path="res://Assets/sleeping button.png" id="12_n5yt1"]
 [ext_resource type="Texture2D" uid="uid://lutgbr14nmvd" path="res://Assets/fuel.png" id="14_m0qp2"]
-[ext_resource type="Script" uid="uid://cns01kx6q5pj" path="res://Scenes/fuel.gd" id="15_x7afm"]
+[ext_resource type="Script" path="res://Scenes/fuel.gd" id="15_x7afm"]
 [ext_resource type="Texture2D" uid="uid://drbvsej23muor" path="res://Assets/accuracy4.png" id="16_qe6au"]
 [ext_resource type="Texture2D" uid="uid://cgrtbrbghs65p" path="res://Assets/accuracy3.png" id="17_bwdrc"]
-[ext_resource type="Script" uid="uid://co4s777p6phwi" path="res://Scripts/climb.gd" id="18_1qhxq"]
+[ext_resource type="Script" path="res://Scripts/climb.gd" id="18_1qhxq"]
 [ext_resource type="Texture2D" uid="uid://kfwbqxtkqtij" path="res://Assets/climb_button.png" id="18_feivl"]
 [ext_resource type="Texture2D" uid="uid://bh1vfjrthrsqc" path="res://Assets/accuracy2.png" id="18_skvx0"]
 [ext_resource type="Texture2D" uid="uid://c6xppsai6a3dw" path="res://Assets/accuracy1.png" id="19_11saq"]
@@ -435,7 +435,7 @@ position = Vector2(-475, 450)
 script = ExtResource("5_nuj6h")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Disabled" unique_id=728206061]
-position = Vector2(473, -229)
+position = Vector2(472.99997, -229)
 shape = SubResource("CircleShape2D_ghwsc")
 action = "disabled"
 
@@ -446,7 +446,7 @@ sprite_frames = SubResource("SpriteFrames_hpiyv")
 animation = &"enabled"
 
 [node name="Timer" type="Timer" parent="." unique_id=1607555708]
-wait_time = 160.0
+wait_time = 2000.0
 autostart = true
 script = ExtResource("4_r62gf")
 

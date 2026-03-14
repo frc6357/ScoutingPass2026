@@ -71,7 +71,6 @@ func _ready():
 	match_input.text_submitted.connect(_on_match_entered)
 	color_picker.color_changed.connect(_on_color_changed)
 	brush_slider.value_changed.connect(_on_brush_changed)
-	save_button.pressed.connect(_on_save_pressed)
 	climb_button.pressed.connect(_on_Climb_pressed)
 
 	# Create archive folder
@@ -99,10 +98,12 @@ func _process(_delta):
 
 	if Input.is_action_just_pressed("main") and timer.time_left <= 98:
 		Input.vibrate_handheld(75)
+		save()
 		get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
 	if Input.is_action_just_pressed("teleop") and timer.time_left <= 98:
 		Input.vibrate_handheld(75)
+		save()
 		get_tree().change_scene_to_file("res://Scenes/match_scouting2.tscn")
 	if Input.is_action_just_pressed("fuel1"):
 		data.fuel_a+=1
@@ -203,7 +204,7 @@ func _paint(pos: Vector2):
 
 
 # --- Save Canvas + Dataset ---
-func _on_save_pressed():
+func save():
 
 	var timestamp = str(Time.get_unix_time_from_system())
 

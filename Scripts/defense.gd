@@ -12,7 +12,7 @@ var ds_time=0 # time where the timer started for cycling
 var de_time=0 # time when the timer ended for cycling
 var cs_time=0 # time where the timer started for cycling
 var ce_time=0 # time when the timer ended for cycling
-var os_time=1600 # time where the timer started for offense
+var os_time=20000 # time where the timer started for offense *10
 var oe_time=0 # time when the timer ended for offense
 var order=["offense"]
 var dtime=0 #total time elapsed
@@ -29,7 +29,7 @@ func _ready() -> void:
 	otime=data.time_offense
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("endgame") and timer.time_left<=158:
+	if Input.is_action_just_pressed("endgame") and timer.time_left<=198:
 		Input.vibrate_handheld(75)
 		if mode=="offense":
 			oe_time=timer.time_left

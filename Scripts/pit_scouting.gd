@@ -83,7 +83,7 @@ func _process(delta: float) -> void:
 		my.play("off")
 		data.multi_launcher=false
 	
-	team=number.text
+	data.team=number.text
 	e_height=height_2.text
 	data.height=height_1.text
 	w=width.text
