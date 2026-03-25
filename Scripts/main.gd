@@ -47,7 +47,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("strategy"):
 		#moves to strategy file
 		Input.vibrate_handheld(100)
-		get_tree().change_scene_to_file("res://Scenes/strategy.tscn")
+		#get_tree().change_scene_to_file("res://Scenes/strategy.tscn")
 		
 	if Input.is_action_just_pressed("history"):
 		#moves to the history file

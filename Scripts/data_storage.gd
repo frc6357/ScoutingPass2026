@@ -7,6 +7,7 @@ extends Node2D
 static var team="" #team number displayed here
 static var pos=null #position on field (r1,b2,r3,etc...)
 static var history=[] #stores the history of all recorded matches
+static var pit_history=[] #stores the history of all recorded matches
 static var matchNum=1 #which match number is currently active.
 static var scoutName=""
 static var updated #shows wheither or not the data has been updated
@@ -17,6 +18,8 @@ static var prefix2="curl http://localhost:5000/add-pit-data?data="
 static var export="command"
 #This data should be changed with seasons.
 #match scouting
+static var intake
+static var climb=false
 static var fuel=0
 static var fuel_a=0
 static var fuel_t=0
@@ -48,13 +51,13 @@ static var drive ="none"
 static var storage_capacity="0"
 static var turret=false
 static var multi_launcher=false
-
+static var favorite
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready() -> void:
 	if not loaded:
 		load_data()
 		loaded=true
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func update():
@@ -82,7 +85,36 @@ func update():
 	for i in history:
 		print (i)
 	save_data()
+func update_pit():
+	updated=false
+	for i in range(len(pit_history)):
+		#searches the list for a match of the number provided
+		if str(team)==pit_history[i][0]:
+			updated=true
+			
+			#if the match number allready exists, replaces it with the new data
+			pit_history[i]=[
+				team,storage_capacity,turret,multi_launcher,height,drive,climb,intake,favorite]
+
+	if updated==false:
+		#if no duplicate was found, adds data to the end of the list.
+		pit_history.append([
+				team,storage_capacity,turret,multi_launcher,height,drive,climb,intake,favorite])
+	for i in pit_history:
+		print (i)
+	save_data()
 var hfile
+func unwrap_pit(num):
+	hfile=pit_history[num]
+	team=hfile[0]
+	storage_capacity=hfile[1]
+	turret=hfile[2]
+	multi_launcher=hfile[3]
+	height=hfile[4]
+	drive=hfile[5]
+	climb=hfile[6]
+	intake=hfile[7]
+	favorite=hfile[8]
 func unwrap(num):
 	#sets variables to their appropriate values from a specific match
 	hfile=history[num]
@@ -135,6 +167,8 @@ func reset(change=true):
 	l3=false
 	trench=false
 	bump=false
+	climb=false
+	intake=false
 	fouls=0
 	c_zone="none"
 	
@@ -149,12 +183,11 @@ var loaded_history
 func save_data():
 	file=FileAccess.open(SAVE_PATH,FileAccess.WRITE)
 	if file:
-		file.store_var(history)
+		file.store_var([history,pit_history])
 		file.close()
 		print("Array saved successfully!")
 	else:
 		print("Failed to open file for saving: ", FileAccess.get_open_error())
-
 func load_data():
 	if FileAccess.file_exists(SAVE_PATH):
 		file = FileAccess.open(SAVE_PATH, FileAccess.READ)
@@ -162,7 +195,8 @@ func load_data():
 			loaded_history = file.get_var()
 			file.close()
 			print("Data loaded successfully: ", loaded_history)
-			history=loaded_history
+			history=loaded_history[0]
+			pit_history=loaded_history[1]
 			matchNum=len(history)+1
 		else:
 			print("Failed to open file for loading: ", FileAccess.get_open_error())

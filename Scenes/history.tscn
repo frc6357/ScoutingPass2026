@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://mor4gfic4i0v"]
+[gd_scene format=3 uid="uid://dmsrojmwlabg6"]
 
 [ext_resource type="Script" uid="uid://bc0631f722j4u" path="res://Scenes/history.gd" id="1_0uxmr"]
 [ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://Scenes/data_storage.tscn" id="1_oig27"]
@@ -7,10 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="4_i534w"]
 [ext_resource type="Texture2D" uid="uid://6wksducocnk1" path="res://Assets/button2.png" id="6_d85y4"]
 [ext_resource type="Texture2D" uid="uid://dowi8a3sw2w5f" path="res://Assets/clearData.png" id="7_4ipw6"]
-[ext_resource type="Script" uid="uid://ylatvpwyqck5" path="res://Scenes/c_lear_data.gd" id="7_enxr6"]
+[ext_resource type="Script" path="res://Scenes/c_lear_data.gd" id="7_enxr6"]
 [ext_resource type="Texture2D" uid="uid://dxytdbvim0svr" path="res://Assets/yesOrNo.xcf.png" id="8_enxr6"]
 [ext_resource type="Texture2D" uid="uid://spapn017d34n" path="res://Assets/no.png" id="9_gnqan"]
 [ext_resource type="Texture2D" uid="uid://iiuoewjkhhck" path="res://Assets/background2.png" id="11_gnqan"]
+[ext_resource type="Texture2D" uid="uid://b18w8qlowwv34" path="res://Scenes/MatchMode.png" id="12_ogxjo"]
+[ext_resource type="Texture2D" uid="uid://s36s5agcojam" path="res://Scenes/PitMode.png" id="13_wfb45"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ofyi"]
 
@@ -26,6 +28,28 @@ size = Vector2(450, 180)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogxjo"]
 size = Vector2(450, 180)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_wxvb8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ogxjo")
+}],
+"loop": true,
+"name": &"match",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_wfb45")
+}],
+"loop": true,
+"name": &"pit",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnqan"]
+size = Vector2(600, 160)
+
 [node name="history" type="Node2D" unique_id=1960234655]
 script = ExtResource("1_0uxmr")
 
@@ -33,8 +57,9 @@ script = ExtResource("1_0uxmr")
 script = ExtResource("2_0uxmr")
 
 [node name="QR code generator" parent="." unique_id=1648695352 instance=ExtResource("3_d85y4")]
+z_index = 1
 position = Vector2(-100, 0)
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1316440644]
 
@@ -101,6 +126,7 @@ scale = Vector2(0.36861983, 0.33472225)
 texture = ExtResource("7_4ipw6")
 
 [node name="activated display" type="Node2D" parent="CLearData" unique_id=1081599151]
+visible = false
 
 [node name="No" type="TouchScreenButton" parent="CLearData/activated display" unique_id=1505899340]
 position = Vector2(-299, 188)
@@ -136,3 +162,14 @@ horizontal_alignment = 1
 z_index = -1
 position = Vector2(78, 14)
 texture = ExtResource("11_gnqan")
+
+[node name="Pit" type="AnimatedSprite2D" parent="." unique_id=1098150574]
+position = Vector2(4, 270)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_wxvb8")
+animation = &"pit"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Pit" unique_id=666493320]
+position = Vector2(8, -2)
+shape = SubResource("RectangleShape2D_gnqan")
+action = "pit"

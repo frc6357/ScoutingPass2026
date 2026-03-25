@@ -22,6 +22,7 @@ extends Node2D
 @onready var data: Node2D = $DataStorage
 @onready var done: TouchScreenButton = $Done
 @onready var exit: TouchScreenButton = $exit
+@onready var intake: TextEdit = $Intake
 
 var team =""
 var e_height =""
@@ -48,18 +49,18 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if exit.is_pressed():
 		get_tree().change_scene_to_file("res://Scenes/main.tscn")
 	if done.is_pressed():
 		print("done")
 		get_tree().change_scene_to_file("res://Scenes/pit_2.tscn")
 	if c_yes.is_pressed():
-		climb=true
+		data.climb=true
 		cy.play("on")
 		cn.play("off")
 	if c_no.is_pressed():
-		climb=false
+		data.climb=false
 		cn.play("on")
 		cy.play("off")
 	if t_yes.is_pressed():
@@ -92,3 +93,5 @@ func _process(delta: float) -> void:
 	storage=capacity.text
 	data.storage_capacity=capacity.text
 	data.drive=drive_train.text
+	data.favorite=favorite.text
+	data.intake=intake.text

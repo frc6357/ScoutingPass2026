@@ -77,10 +77,18 @@ script = ExtResource("2_g324h")
 metadata/_edit_use_anchors_ = true
 
 [node name="DriveTrain" type="TextEdit" parent="." unique_id=1527155540]
-offset_left = -54.0
-offset_top = -145.49997
-offset_right = 170.0
-offset_bottom = -104.49997
+offset_left = -259.0
+offset_top = -149.0
+offset_right = -35.0
+offset_bottom = -108.0
+script = ExtResource("2_g324h")
+metadata/_edit_use_anchors_ = true
+
+[node name="Intake" type="TextEdit" parent="." unique_id=1418607024]
+offset_left = 150.0
+offset_top = -149.0
+offset_right = 374.0
+offset_bottom = -108.0
 script = ExtResource("2_g324h")
 metadata/_edit_use_anchors_ = true
 
@@ -165,12 +173,22 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Storage" type="Label" parent="." unique_id=2144226697]
-offset_left = -224.0
-offset_top = -145.49997
-offset_right = -27.0
-offset_bottom = -111.49997
+offset_left = -434.0
+offset_top = -149.0
+offset_right = -237.0
+offset_bottom = -115.0
 theme_override_font_sizes/font_size = 24
 text = "Drive train:"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Storage2" type="Label" parent="." unique_id=2027012038]
+offset_left = -25.0
+offset_top = -146.0
+offset_right = 172.0
+offset_bottom = -112.0
+theme_override_font_sizes/font_size = 24
+text = "Intake type:"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -185,12 +203,12 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Storage5" type="Label" parent="." unique_id=302025142]
-offset_left = -246.0
-offset_top = -45.49999
-offset_right = 173.0
-offset_bottom = -8.499989
+offset_left = -241.0
+offset_top = -45.0
+offset_right = 178.0
+offset_bottom = -8.0
 theme_override_font_sizes/font_size = 24
-text = "Climb in auto?            yes                   no"
+text = "Climb?            yes                   no"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -231,12 +249,12 @@ texture_normal = ExtResource("4_nc53u")
 shape = SubResource("RectangleShape2D_rlk0v")
 
 [node name="cYes" type="TouchScreenButton" parent="." unique_id=1713519780]
-position = Vector2(74, -27.5)
+position = Vector2(17, -27)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_awhb8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="cYes" unique_id=1427434542]
-position = Vector2(0.5, 0.5)
+position = Vector2(1, -0.5)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_bm5af")
 animation = &"off"
@@ -264,7 +282,7 @@ sprite_frames = SubResource("SpriteFrames_bm5af")
 animation = &"off"
 
 [node name="cNo" type="TouchScreenButton" parent="." unique_id=2016480963]
-position = Vector2(218, -27.5)
+position = Vector2(155, -27.5)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_awhb8")
 
