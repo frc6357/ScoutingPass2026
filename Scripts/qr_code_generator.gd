@@ -14,12 +14,29 @@ func _process(_delta: float) -> void:
 
 var e
 var storedData
-func generate_pit():
+func generate_pit(): #generates a qr code for 1 robot's pit scouting data
 	storedData=(data.prefix2+data.team+","+data.storage_capacity+","+str(data.turret)+","+str(data.multi_launcher)+","+str(data.height)+","+str(data.drive)+","+str(data.climb)+","+str(data.intake)+","+str(data.favorite)).to_utf8_buffer()
 	qr_code._qr.put_byte(storedData)
 	qr_code._update_qr()
 	print(qr_code.data)
+var combinedData
+func generate_all_pit(): #generates a qr code for ALL pit scouting data
+	combinedData=''
+	#puts all pit data into one list with individual teams seperated by ` (can be replaced with \n if needed)
+	for i in range(len(data.pit_history)):
+		combinedData+=str(data.pit_history[i])
+		if i<len(data.pit_history)-1:
+			combinedData+="`"
+	#removes unnessisary characters which can cause issues with http server (or other exporting methoods)
+	combinedData=combinedData.replace("[","").replace("]","").replace('"',"").replace(" ","")
+	combinedData=data.prefix2+combinedData
+	print("combined data: "+combinedData)
+	storedData=(combinedData).to_utf8_buffer() #puts the data into a form in which it can be stored in a qr code
+	qr_code._qr.put_byte(storedData)
+	qr_code._update_qr()
+	print("data: "+qr_code.data)
 func generate():
+	#this is the data that will be put in the qr code MAKE SURE TO KEEP THE PREFIX
 	storedData=(data.prefix+
 	str(data.scoutName)+","+str(data.matchNum)+","+str(data.team)+","+str(data.fuel_a)+","+str(data.fuel_t)+
 	","+str(data.fuel_s)+","+str(data.shots)+
@@ -33,46 +50,4 @@ func generate():
 	qr_code._qr.put_byte(storedData)
 	qr_code._update_qr()
 	print(qr_code.data)
-	'''
-	print("fuel auto: ",data.fuel_a)
-	print("fuel tele: ",data.fuel_t)
-	print("fuel total: ",data.fuel_t+data.fuel_a)
-	print("defense time: ",data.time_defense)
-	print("offense time: ",data.time_offense)
-	print("shuttle time: ",data.time_shuttle)
-	print("disabled time: ",data.time_disabled)
-	print("accuracy tele: ",str(float(data.accuracy_t)*100),"%")
-	print("shots taken: ",data.shots)
-	print("fuel shuttled: ", data.fuel_s)
-	if data.shots>0:
-		e=(data.time_offense/data.shots)*100
-		e=int(e)
-		e=float(e)
-		e=e/100
-	else:
-		e=0
-	print("seconds per cycle: ",e)
-	if data.shots>0:
-		e=((data.fuel_t+data.fuel_a)/data.shots)*100
-		e=int(e)
-		e=float(e)
-		e=e/100
-	else:
-		e=0
-	print("points per cycle: ",e)
-	if data.time_shuttle>0:
-		e=((data.fuel_s)/data.time_shuttle)*100
-		e=int(e)
-		e=float(e)
-		e=e/100
-	else:
-		e=0
-	print("fuel shuttled per second: ",e)
-	if data.time_l1>0:
-		print("time left l1:",data.time_l1)
-	if data.time_l2>0:
-		print("time left l2:",data.time_l2)
-	if data.time_l3>0:
-		print("time left l3:",data.time_l3)
-	print("climb points tele: ", data.climb_t)
-	'''
+	

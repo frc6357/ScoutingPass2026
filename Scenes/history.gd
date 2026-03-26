@@ -34,6 +34,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if mode=="match":
+		qr.scale.x=2
+		qr.scale.y=2
 	if Input.is_action_just_pressed("main") and not clearing:
 		get_tree().change_scene_to_file("res://Scenes/main.tscn")
 	if Input.is_action_just_pressed("pit")and len(data.pit_history)>=1:
@@ -67,28 +70,57 @@ func _process(_delta: float) -> void:
 			num+=1
 			if num >=len(data.history): #warps to the front of the list if at the end.
 				num=0
-			data.unwrap(num)
+			data.unwrap(num) #sets the data in the data storage file to match that of the desired match
 			label_2.text="Team "+str(data.team)
-			qr.generate()
+			qr.generate() #generates a qr code for the match
 			label.text="Match "+str(data.matchNum)
 	elif mode=="pit":
 		if Input.is_action_just_pressed("previous") and len(data.pit_history)>=1 and not clearing:
 			num-=1
-			if num <0: #warps to the end of the list if at the begining.
-				num=len(data.pit_history)-1 
-			data.unwrap_pit(num) #sets the displayed data to the data in pit_history
-			label.text="Team "+str(data.team)
-			qr.generate_pit()
-			label_2.text="Pit Data"
+			if num==-1:
+				#decreases the scale of the qr code for larger ammounts of data
+				#this allows for easier scanning
+				qr.scale.x=2.5-(.10*len(data.pit_history))
+				qr.scale.y=2.5-(.10*len(data.pit_history))
+				if qr.scale.x<1:
+					qr.scale.x=1
+					qr.scale.y=1
+				
+				label.text="ALL"
+				qr.generate_all_pit() #generates a qr code for all pit data
+				label_2.text="Pit Data"
+			else:
+				qr.scale.x=2.5
+				qr.scale.y=2.5
+				if num <-1: #warps to the end of the list if at the begining.
+					num=len(data.pit_history)-1 
+				data.unwrap_pit(num) #sets the displayed data to the data in pit_history
+				label.text="Team "+str(data.team)
+				qr.generate_pit()
+				label_2.text="Pit Data"
 
 		if Input.is_action_just_pressed("next") and len(data.pit_history)>=1 and not clearing:
 			num+=1
 			if num >=len(data.pit_history): #warps to the front of the list if at the end.
-				num=0
-			data.unwrap_pit(num) #sets the displayed data to the data in pit_history
-			label.text="Team "+str(data.team)
-			qr.generate_pit()
-			label_2.text="Pit Data"
+				label.text="ALL"
+				qr.generate_all_pit() #generates a qr code for all pit data
+				label_2.text="Pit Data"
+				num=-1
+				
+				#decreases the scale of the qr code for larger ammounts of data
+				#this allows for easier scanning
+				qr.scale.x=2.5-(.1*len(data.pit_history))
+				qr.scale.y=2.5-(.1*len(data.pit_history))
+				if qr.scale.x<1:
+					qr.scale.x=1
+					qr.scale.y=1
+			else:
+				qr.scale.x=2.5
+				qr.scale.y=2.5
+				data.unwrap_pit(num) #sets the displayed data to the data in pit_history
+				label.text="Team "+str(data.team)
+				qr.generate_pit()
+				label_2.text="Pit Data"
 func clear():
 	data.history=[]
 	data.pit_history=[]

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://Assets/arrow.png" id="4_i534w"]
 [ext_resource type="Texture2D" uid="uid://6wksducocnk1" path="res://Assets/button2.png" id="6_d85y4"]
 [ext_resource type="Texture2D" uid="uid://dowi8a3sw2w5f" path="res://Assets/clearData.png" id="7_4ipw6"]
-[ext_resource type="Script" path="res://Scenes/c_lear_data.gd" id="7_enxr6"]
+[ext_resource type="Script" uid="uid://ylatvpwyqck5" path="res://Scenes/c_lear_data.gd" id="7_enxr6"]
 [ext_resource type="Texture2D" uid="uid://dxytdbvim0svr" path="res://Assets/yesOrNo.xcf.png" id="8_enxr6"]
 [ext_resource type="Texture2D" uid="uid://spapn017d34n" path="res://Assets/no.png" id="9_gnqan"]
 [ext_resource type="Texture2D" uid="uid://iiuoewjkhhck" path="res://Assets/background2.png" id="11_gnqan"]
@@ -58,7 +58,7 @@ script = ExtResource("2_0uxmr")
 
 [node name="QR code generator" parent="." unique_id=1648695352 instance=ExtResource("3_d85y4")]
 z_index = 1
-position = Vector2(-100, 0)
+position = Vector2(-76, -36)
 scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1316440644]
