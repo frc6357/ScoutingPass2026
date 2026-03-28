@@ -36,6 +36,8 @@ func generate_all_pit(): #generates a qr code for ALL pit scouting data
 	qr_code._update_qr()
 	print("data: "+qr_code.data)
 func generate():
+	qr_code.scale.x=1
+	qr_code.scale.y=1
 	#this is the data that will be put in the qr code MAKE SURE TO KEEP THE PREFIX
 	storedData=(data.prefix+
 	str(data.scoutName)+","+str(data.matchNum)+","+str(data.team)+","+str(data.fuel_a)+","+str(data.fuel_t)+
@@ -50,4 +52,24 @@ func generate():
 	qr_code._qr.put_byte(storedData)
 	qr_code._update_qr()
 	print(qr_code.data)
-	
+func generate_between(first,last):
+	combinedData=''
+	if first.is_valid_int() and last.is_valid_int():
+		first=int(first)
+		last=int(last)
+		for _match in data.history:
+			if first<=int(_match[1]) and int(_match[1]<=last):
+				combinedData+=str(_match)+"`"
+		combinedData=combinedData.left(-1) #removes the last "`" from the string
+		combinedData=combinedData.replace("[","").replace("]","").replace('"',"").replace(" ","")
+		print(data.prefix+combinedData)
+		combinedData=(data.prefix+combinedData).to_utf8_buffer()
+		qr_code._qr.put_byte(combinedData)
+		qr_code.scale.x=1-.1*(last-first)
+		qr_code.scale.y=1-.1*(last-first)
+		if qr_code.scale.x<.25:
+			qr_code.scale.x=.25
+			qr_code.scale.y=.25
+		qr_code._update_qr()
+	else:
+		generate()

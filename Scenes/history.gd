@@ -8,13 +8,20 @@ extends Node2D
 @onready var label_2: Label = $Label2
 @onready var pit: TouchScreenButton = $Pit/TouchScreenButton
 @onready var animate_pit: AnimatedSprite2D = $Pit
+@onready var multi_display: AnimatedSprite2D = $MultiScan/Yes
+@onready var multi_input: TextEdit = $MultiScan/Input
+@onready var text: Label = $MultiScan/text
 
+
+var multiscan=false
 # Called when the node enters the scene tree for the first time.
 var matchNum=1
 var num=0
 var clearing=false
 var mode
 func _ready() -> void:
+	text.visible=false
+	multi_input.visible=false
 	mode="match"
 	animate_pit.play("match")
 	if len(data.history)>=1: #checks to see if any data has been recorded
@@ -57,6 +64,16 @@ func _process(_delta: float) -> void:
 			qr.generate_pit()
 			label.text="Team "+str(data.team)
 	if mode=="match":
+		if Input.is_action_just_pressed("multi"):
+			multiscan=not multiscan
+			if multiscan:
+				multi_display.play("on")
+				text.visible=true
+				multi_input.visible=true
+			else:
+				multi_display.play("off")
+				text.visible=false
+				multi_input.visible=false
 		if Input.is_action_just_pressed("previous") and len(data.history)>=1 and not clearing:
 			num-=1
 			if num <0: #warps to the end of the list if at the begining.
@@ -129,3 +146,4 @@ func clear():
 	label.position.y=-200
 	label.text="You have not recorded data yet"
 	label_2.text=""
+	

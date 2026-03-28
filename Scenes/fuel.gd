@@ -14,7 +14,7 @@ var extra=0
 var sub=0
 var maxSub=.005
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if extra>0:
 		sub+=.00005
 		if sub>maxSub:

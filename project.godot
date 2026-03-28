@@ -235,6 +235,10 @@ clear_data={
 "deadzone": 0.2,
 "events": []
 }
+multi={
+"deadzone": 0.2,
+"events": []
+}
 
 [rendering]
 

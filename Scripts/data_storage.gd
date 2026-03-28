@@ -64,12 +64,12 @@ func update():
 	updated=false
 	for i in range(len(history)):
 		#searches the list for a match of the number provided
-		if matchNum==history[i][0]:
+		if matchNum==history[i][1]:
 			updated=true
 			
 			#if the match number allready exists, replaces it with the new data
 			history[i]=[
-				matchNum,scoutName,team,fuel_a,fuel_t,fuel_s,shots,
+				scoutName,matchNum,team,fuel_a,fuel_t,fuel_s,shots,
 				accuracy_a,accuracy_t,
 				time_defense, time_offense,time_shuttle,time_disabled,
 				l1,time_l1,l2,time_l2,l3,time_l3,c_zone,
@@ -77,7 +77,7 @@ func update():
 
 	if updated==false:
 		#if no duplicate was found, adds data to the end of the list.
-		history.append([matchNum,scoutName,team,fuel_a,fuel_t,fuel_s,shots,
+		history.append([scoutName,matchNum,team,fuel_a,fuel_t,fuel_s,shots,
 			accuracy_a,accuracy_t,
 			time_defense, time_offense,time_shuttle,time_disabled,
 			l1,time_l1,l2,time_l2,l3,time_l3,c_zone,
@@ -118,8 +118,8 @@ func unwrap_pit(num):
 func unwrap(num):
 	#sets variables to their appropriate values from a specific match
 	hfile=history[num]
-	matchNum=hfile[0]
-	scoutName=hfile[1]
+	scoutName=hfile[0]
+	matchNum=hfile[1]
 	team=hfile[2]
 	fuel_a=hfile[3]
 	fuel_t=hfile[4]

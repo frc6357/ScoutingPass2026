@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://iiuoewjkhhck" path="res://Assets/background2.png" id="11_gnqan"]
 [ext_resource type="Texture2D" uid="uid://b18w8qlowwv34" path="res://Scenes/MatchMode.png" id="12_ogxjo"]
 [ext_resource type="Texture2D" uid="uid://s36s5agcojam" path="res://Scenes/PitMode.png" id="13_wfb45"]
+[ext_resource type="Texture2D" uid="uid://bl8cprb4q61ob" path="res://Assets/eeeeee.png" id="14_h0iwv"]
+[ext_resource type="Texture2D" uid="uid://bfmnlhyre3gtx" path="res://Assets/eeeee.png" id="15_fasme"]
+[ext_resource type="Script" uid="uid://yq20y84vo2eo" path="res://Scenes/input.gd" id="16_h0iwv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ofyi"]
 
@@ -49,6 +52,28 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnqan"]
 size = Vector2(600, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5aic3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_h0iwv")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_fasme")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_800jw"]
+size = Vector2(45, 45)
 
 [node name="history" type="Node2D" unique_id=1960234655]
 script = ExtResource("1_0uxmr")
@@ -173,3 +198,48 @@ animation = &"pit"
 position = Vector2(8, -2)
 shape = SubResource("RectangleShape2D_gnqan")
 action = "pit"
+
+[node name="MultiScan" type="Label" parent="." unique_id=2141855880]
+offset_left = 160.0
+offset_top = -118.0
+offset_right = 590.0
+offset_bottom = -81.0
+theme_override_font_sizes/font_size = 24
+text = "Multi-Scan"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Yes" type="AnimatedSprite2D" parent="MultiScan" unique_id=418679504]
+position = Vector2(317, 18)
+scale = Vector2(0.11645001, 0.11645001)
+sprite_frames = SubResource("SpriteFrames_5aic3")
+animation = &"off"
+
+[node name="text" type="Label" parent="MultiScan" unique_id=8849384]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 1.5405406
+anchor_right = 0.1
+anchor_bottom = 1.5405406
+offset_right = 430.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 24
+text = "Which matches to scan?
+(first#-last#)"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="TouchScreenButton" parent="MultiScan" unique_id=755589717]
+position = Vector2(318, 16)
+shape = SubResource("RectangleShape2D_800jw")
+action = "multi"
+
+[node name="Input" type="TextEdit" parent="MultiScan" unique_id=1565258041]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 142.0
+offset_right = 258.5
+offset_bottom = 180.5
+scale = Vector2(2, 2)
+script = ExtResource("16_h0iwv")
