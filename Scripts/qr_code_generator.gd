@@ -47,7 +47,7 @@ func generate():
 	","+str(data.time_shuttle)+","+str(data.time_disabled)+
 	","+str(data.l1)+","+str(data.time_l1)+","+str(data.l2)+
 	","+str(data.time_l2)+","+str(data.l3)+","+str(data.time_l3)+","+str(data.c_zone)+
-	","+str(data.trench)+","+str(data.bump)+","+str(data.pins)+",~~~~~~~~~~~~~~~~~~~~~~~").to_utf8_buffer() #The QR code has an error where the program crashes when the size of stored data is exactly 112. To fix this, I added ~ to the end of it (which are removed automatically by the HTTP Server) 
+	","+str(data.trench)+","+str(data.bump)+","+str(data.pins)+","+str(data.defends)+",~~~~~~~~~~~~~~~~~~~~~~~").to_utf8_buffer() #The QR code has an error where the program crashes when the size of stored data is exactly 112. To fix this, I added ~ to the end of it (which are removed automatically by the HTTP Server) 
 	#storedData=("http://localhost:5000/add-data?data=none,0,0,0,33,0,0,0.9,1,0,3.7,0,0,false,0,false,0,false,0,none,false,false,0").to_utf8_buffer()
 	qr_code._qr.put_byte(storedData)
 	qr_code._update_qr()

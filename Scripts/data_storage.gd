@@ -25,6 +25,8 @@ static var fuel_a=0
 static var fuel_t=0
 static var time_disabled=0
 static var time_defense=0
+static var defense
+static var defends=false
 static var time_offense=0
 static var time_shuttle=0
 static var accuracy_t=-1
@@ -73,7 +75,7 @@ func update():
 				accuracy_a,accuracy_t,
 				time_defense, time_offense,time_shuttle,time_disabled,
 				l1,time_l1,l2,time_l2,l3,time_l3,c_zone,
-				trench,bump,pins]
+				trench,bump,pins,defends]
 
 	if updated==false:
 		#if no duplicate was found, adds data to the end of the list.
@@ -81,7 +83,7 @@ func update():
 			accuracy_a,accuracy_t,
 			time_defense, time_offense,time_shuttle,time_disabled,
 			l1,time_l1,l2,time_l2,l3,time_l3,c_zone,
-			trench,bump,pins])
+			trench,bump,pins,defends])
 	for i in history:
 		print (i)
 	save_data()
@@ -141,6 +143,7 @@ func unwrap(num):
 	bump=hfile[20]
 	trench=hfile[21]
 	pins=hfile[22]
+	defends=hfile[23]
 func reset(change=true):
 	print("e")
 	fuel=fuel_a+fuel_t
@@ -160,7 +163,7 @@ func reset(change=true):
 	time_l1=0
 	time_l2=0
 	time_l3=0
-	
+	defends=false
 	pins=0
 	l1=false
 	l2=false

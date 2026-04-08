@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cndlrfbqlrqjg" path="res://Assets/happy_button.png" id="7_gawtn"]
 [ext_resource type="Texture2D" uid="uid://bh2ua7tp2v3e" path="res://Assets/sleeping button.png" id="12_n5yt1"]
 [ext_resource type="Texture2D" uid="uid://lutgbr14nmvd" path="res://Assets/fuel.png" id="14_m0qp2"]
-[ext_resource type="Script" path="res://Scenes/fuel.gd" id="15_x7afm"]
+[ext_resource type="Script" uid="uid://cns01kx6q5pj" path="res://Scenes/fuel.gd" id="15_x7afm"]
 [ext_resource type="Texture2D" uid="uid://drbvsej23muor" path="res://Assets/accuracy4.png" id="16_qe6au"]
 [ext_resource type="Texture2D" uid="uid://cgrtbrbghs65p" path="res://Assets/accuracy3.png" id="17_bwdrc"]
 [ext_resource type="Script" path="res://Scripts/climb.gd" id="18_1qhxq"]
@@ -730,3 +730,15 @@ z_index = -10
 position = Vector2(4, -10)
 scale = Vector2(132.09999, 108.7)
 texture = ExtResource("42_bwdrc")
+
+[node name="defense?" type="TouchScreenButton" parent="." unique_id=209800488]
+z_index = 5
+position = Vector2(-543, 126.99997)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_dxtap")
+action = "defends"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="defense?" unique_id=566138198]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_hdel7")
+animation = &"off"

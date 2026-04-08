@@ -11,10 +11,15 @@ extends Node2D
 var wait=0
 var change=0
 @onready var fuely: Sprite2D = $Fuel/Fuel
-
+@onready var defends: AnimatedSprite2D = $"defense?/AnimatedSprite2D"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	display.play("65")
+	if data.defends:
+		defends.play("on")
+	else:
+		defends.play("off")
+			
 	if data.bump:
 		bump.play("yes")
 	else:
@@ -58,7 +63,7 @@ func _process(_delta: float) -> void:
 		Input.vibrate_handheld(100)
 		data.pins+=1
 		label2.text=str(data.pins)
-	if Input.is_action_just_pressed("pin-") and  data.pins>=1:
+	if Input.is_action_just_pressed("pin-") and data.pins>0:
 		Input.vibrate_handheld(100)
 		data.pins-=1
 		label2.text=str(data.pins)
@@ -110,3 +115,10 @@ func _process(_delta: float) -> void:
 		data.accuracy_t=.95
 		print("100")
 		display.play("95")
+	if Input.is_action_just_pressed("defends"):
+		data.defends=not data.defends
+		if data.defends:
+			defends.play("on")
+		else:
+			defends.play("off")
+			
