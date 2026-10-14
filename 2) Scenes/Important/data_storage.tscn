@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b4uye4bit4uft"]
+
+[ext_resource type="Script" uid="uid://d1tcpkljn2awi" path="res://3) Scripts/Important/data_storage.gd" id="1_gx8ng"]
+
+[node name="DataStorage" type="Node2D" unique_id=540420952]
+script = ExtResource("1_gx8ng")

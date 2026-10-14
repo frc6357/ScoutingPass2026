@@ -1,0 +1,156 @@
+extends Node2D
+#this file sets the information displayed in the qr code 
+#DO NOT CHANGE OR DELETE THIS FILE AT THE START OF A NEW SEASON.
+
+
+@onready var data: Node2D = $DataStorage
+@onready var qr: Node2D = $"QR code generator"
+@onready var label: Label = $Label
+@onready var label_2: Label = $Label2
+@onready var pit: TouchScreenButton = $Pit/TouchScreenButton
+@onready var animate_pit: AnimatedSprite2D = $Pit
+@onready var multi_display: AnimatedSprite2D = $MultiScan/Yes
+@onready var multi_input: TextEdit = $MultiScan/Input
+@onready var text: Label = $MultiScan/text
+
+
+var multiscan=false #represents whiether or not the user wants to scan multiple matches
+var matchNum=1 #The currently displayed match number
+var num=0 #placeholder variable for a number
+var clearing=false #represents whiether or not the user is attampting to clear data
+var mode #switches between pit scouting or match scouting mode
+
+#triggers once this scene is opened
+func _ready() -> void:
+	text.visible=false
+	multi_input.visible=false
+	
+	#Tells the system to display match data
+	mode="match"
+	animate_pit.play("match")
+	
+	if len(data.history)>=1: #checks to see if any match data has been recorded
+		
+		data.unwrap(num) #sets the variables in data to the values that were recorded in a given match
+		
+		label.text="Match "+str(data.matchNum)
+		label_2.text="Team "+str(data.team) 
+		qr.generate() #generates a QR code with the data
+		label.position.y=-300
+	else:
+		#Since it can't collect data that doesn't exist, it will move the qr code and 
+		#display an error message
+		label.position.y=-200
+		qr.position.x=-1000
+		label.text="You have not recorded data yet"
+		label_2.text=""
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	if mode=="match":
+		qr.scale.x=2
+		qr.scale.y=2
+	if Input.is_action_just_pressed("main") and not clearing:
+		get_tree().change_scene_to_file("res://2) Scenes/Important/main.tscn")
+	if Input.is_action_just_pressed("pit")and len(data.pit_history)>=1:
+		if mode=="pit":
+			animate_pit.play("match")
+			mode="match"
+			num=0
+			data.unwrap(num)
+			label_2.text="Team "+str(data.team)
+			qr.generate()
+			label.text="Match "+str(data.matchNum)
+		else:
+			animate_pit.play("pit")
+			num=0
+			mode="pit"
+			data.unwrap_pit(num)
+			label_2.text="Pit Data"
+			qr.generate_pit()
+			label.text="Team "+str(data.team)
+	if mode=="match":
+		if Input.is_action_just_pressed("multi"):
+			multiscan=not multiscan
+			if multiscan:
+				multi_display.play("on")
+				text.visible=true
+				multi_input.visible=true
+			else:
+				multi_display.play("off")
+				text.visible=false
+				multi_input.visible=false
+		if Input.is_action_just_pressed("previous") and len(data.history)>=1 and not clearing:
+			num-=1
+			if num <0: #warps to the end of the list if at the begining.
+				num=len(data.history)-1 
+			data.unwrap(num)
+			label_2.text="Team "+str(data.team)
+			qr.generate()
+			label.text="Match "+str(data.matchNum)
+
+		if Input.is_action_just_pressed("next") and len(data.history)>=1 and not clearing:
+			num+=1
+			if num >=len(data.history): #warps to the front of the list if at the end.
+				num=0
+			data.unwrap(num) #sets the data in the data storage file to match that of the desired match
+			label_2.text="Team "+str(data.team)
+			qr.generate() #generates a qr code for the match
+			label.text="Match "+str(data.matchNum)
+	elif mode=="pit":
+		if Input.is_action_just_pressed("previous") and len(data.pit_history)>=1 and not clearing:
+			num-=1
+			if num==-1:
+				#decreases the scale of the qr code for larger ammounts of data
+				#this allows for easier scanning
+				qr.scale.x=2.5-(.10*len(data.pit_history))
+				qr.scale.y=2.5-(.10*len(data.pit_history))
+				if qr.scale.x<1:
+					qr.scale.x=1
+					qr.scale.y=1
+				
+				label.text="ALL"
+				qr.generate_all_pit() #generates a qr code for all pit data
+				label_2.text="Pit Data"
+			else:
+				qr.scale.x=2.5
+				qr.scale.y=2.5
+				if num <-1: #warps to the end of the list if at the begining.
+					num=len(data.pit_history)-1 
+				data.unwrap_pit(num) #sets the displayed data to the data in pit_history
+				label.text="Team "+str(data.team)
+				qr.generate_pit()
+				label_2.text="Pit Data"
+
+		if Input.is_action_just_pressed("next") and len(data.pit_history)>=1 and not clearing:
+			num+=1
+			if num >=len(data.pit_history): #warps to the front of the list if at the end.
+				label.text="ALL"
+				qr.generate_all_pit() #generates a qr code for all pit data
+				label_2.text="Pit Data"
+				num=-1
+				
+				#decreases the scale of the qr code for larger ammounts of data
+				#this allows for easier scanning
+				qr.scale.x=2.5-(.1*len(data.pit_history))
+				qr.scale.y=2.5-(.1*len(data.pit_history))
+				if qr.scale.x<1:
+					qr.scale.x=1
+					qr.scale.y=1
+			else:
+				qr.scale.x=2.5
+				qr.scale.y=2.5
+				data.unwrap_pit(num) #sets the displayed data to the data in pit_history
+				label.text="Team "+str(data.team)
+				qr.generate_pit()
+				label_2.text="Pit Data"
+func clear():
+	data.history=[]
+	data.pit_history=[]
+	data.save_data()
+	qr.position.x=-1500
+	label.position.y=-200
+	label.text="You have not recorded data yet"
+	label_2.text=""
+	

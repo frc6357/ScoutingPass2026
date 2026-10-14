@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c1liiu4cqqrdr"]
+
+[ext_resource type="Script" uid="uid://bbdhf1hm3lw5v" path="res://3) Scripts/General/match_scouting_final.gd" id="1_jac4n"]
+[ext_resource type="PackedScene" uid="uid://dyich51qwix0q" path="res://2) Scenes/Important/qr_code_generator.tscn" id="2_2uw2o"]
+[ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://2) Scenes/Important/data_storage.tscn" id="3_8n8l4"]
+[ext_resource type="Texture2D" uid="uid://c7c1g1oahybe7" path="res://1) Assets/General/arrow.png" id="5_dbcd0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_04jwm"]
+
+[node name="MatchScouting" type="Node2D" unique_id=1698301132]
+script = ExtResource("1_jac4n")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1247725803]
+
+[node name="QR code generator" parent="." unique_id=2035174978 instance=ExtResource("2_2uw2o")]
+position = Vector2(-85, -48)
+scale = Vector2(3, 3)
+
+[node name="DataStorage" parent="." unique_id=514255231 instance=ExtResource("3_8n8l4")]
+
+[node name="Next" type="TouchScreenButton" parent="." unique_id=1590556473]
+position = Vector2(486, 236)
+scale = Vector2(8, 8)
+shape = SubResource("CircleShape2D_04jwm")
+action = "main"
+
+[node name="Image" type="Sprite2D" parent="Next" unique_id=1129333453]
+position = Vector2(2.5, -6.375)
+scale = Vector2(0.0775, 0.1005)
+texture = ExtResource("5_dbcd0")
+
+[node name="Node" type="Node" parent="Next" unique_id=606337122]
+
+[node name="Previous" type="TouchScreenButton" parent="." unique_id=2008097456]
+position = Vector2(-487, 239)
+scale = Vector2(8, 8)
+shape = SubResource("CircleShape2D_04jwm")
+action = "misc"
+
+[node name="Image" type="Sprite2D" parent="Previous" unique_id=1219673375]
+position = Vector2(-3.375, -6)
+scale = Vector2(-0.078, 0.101)
+texture = ExtResource("5_dbcd0")
+
+[node name="Node" type="Node" parent="." unique_id=806506743]
+
+[node name="Timer" type="Timer" parent="." unique_id=1408253868]
+wait_time = 100.0

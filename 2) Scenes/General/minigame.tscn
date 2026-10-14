@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://dah3g7k0b3elt"]
+
+[ext_resource type="Script" uid="uid://d0xcdfykk2du6" path="res://3) Scripts/General/minigame.gd" id="1_lfhgs"]
+[ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://2) Scenes/Important/data_storage.tscn" id="2_14ex8"]
+[ext_resource type="Texture2D" uid="uid://6wksducocnk1" path="res://1) Assets/General/button2.png" id="2_gimsa"]
+[ext_resource type="Script" uid="uid://d1tcpkljn2awi" path="res://3) Scripts/Important/data_storage.gd" id="4_xt64r"]
+[ext_resource type="Texture2D" uid="uid://cndlrfbqlrqjg" path="res://1) Assets/Season Specific Assets/happy_button.png" id="5_iqey4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_so5ne"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iqey4"]
+
+[sub_resource type="Animation" id="Animation_id8w1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_yx24v"]
+resource_name = "passive"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.3490658503988659, -0.3490658503988659, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_255i5"]
+_data = {
+&"RESET": SubResource("Animation_id8w1"),
+&"passive": SubResource("Animation_yx24v")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xcq3l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_iqey4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="minigame" type="Node2D" unique_id=402469342]
+script = ExtResource("1_lfhgs")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1247295562]
+
+[node name="StartScouting" type="TouchScreenButton" parent="Camera2D" unique_id=254740663]
+position = Vector2(474, -221)
+scale = Vector2(8, 8)
+shape = SubResource("CircleShape2D_so5ne")
+action = "scouting"
+
+[node name="Image" type="Sprite2D" parent="Camera2D/StartScouting" unique_id=1066426133]
+position = Vector2(0.5, 1.125)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_gimsa")
+
+[node name="DataStorage" parent="." unique_id=1340906334 instance=ExtResource("2_14ex8")]
+script = ExtResource("4_xt64r")
+
+[node name="Fuel_clicker" type="TouchScreenButton" parent="." unique_id=1259236837]
+z_index = 1
+rotation = -2.1757028
+scale = Vector2(20, 20)
+shape = SubResource("CircleShape2D_iqey4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fuel_clicker" unique_id=699824964]
+root_node = NodePath("AnimatedSprite2D")
+libraries/ = SubResource("AnimationLibrary_255i5")
+autoplay = &"passive"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fuel_clicker/AnimationPlayer" unique_id=1954003152]
+sprite_frames = SubResource("SpriteFrames_xcq3l")
+
+[node name="Label" type="Label" parent="." unique_id=1989175527]
+offset_left = -90.0
+offset_top = -275.0
+offset_right = 96.0
+offset_bottom = -207.0

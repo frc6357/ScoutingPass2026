@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://b3v62nyafqopb"]
+
+[ext_resource type="Script" uid="uid://26tdouyoi1cd" path="res://3) Scripts/Important/main.gd" id="1_u75ya"]
+[ext_resource type="Texture2D" uid="uid://5pn64g4l605s" path="res://1) Assets/General/matchScoutingButton.png" id="2_ke5ww"]
+[ext_resource type="Texture2D" uid="uid://cenu3x3mo28ub" path="res://1) Assets/General/PitScoutingButton.png" id="3_ovgja"]
+[ext_resource type="Texture2D" uid="uid://bsmt0j86vl0so" path="res://1) Assets/General/Strategy.png" id="4_artf5"]
+[ext_resource type="Texture2D" uid="uid://btpivolaqck8j" path="res://1) Assets/General/HistoryButton.png" id="5_8e1yi"]
+[ext_resource type="Texture2D" uid="uid://1tpk36ktewt7" path="res://1) Assets/General/helpButton.png" id="6_jj4kc"]
+[ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://2) Scenes/Important/data_storage.tscn" id="7_xyfcl"]
+[ext_resource type="Script" uid="uid://dcgj6pq0byp2m" path="res://3) Scripts/General/text_edit.gd" id="9_yfk2d"]
+[ext_resource type="Texture2D" uid="uid://c6kctf2d3xuio" path="res://1) Assets/General/arrow2.png" id="10_u3rw3"]
+[ext_resource type="Texture2D" uid="uid://be2r412xww81q" path="res://1) Assets/General/Settings.png" id="11_pxjt7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvxjn"]
+size = Vector2(60, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6iyac"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fdnlq"]
+radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdnlq"]
+size = Vector2(500, 500)
+
+[node name="Main" type="Node2D" unique_id=67654157]
+script = ExtResource("1_u75ya")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1123794902]
+
+[node name="buttons" type="Node2D" parent="." unique_id=951621231]
+
+[node name="Scouting" type="TouchScreenButton" parent="buttons" unique_id=1822975725]
+position = Vector2(-1, -248)
+scale = Vector2(8.8, 5.57)
+shape = SubResource("RectangleShape2D_qvxjn")
+action = "auto"
+
+[node name="Image" type="Sprite2D" parent="buttons/Scouting" unique_id=1051814019]
+position = Vector2(0.044935502, -0.41137064)
+scale = Vector2(0.06036468, 0.070267685)
+texture = ExtResource("2_ke5ww")
+
+[node name="Pitscouting" type="TouchScreenButton" parent="buttons" unique_id=1887538557]
+position = Vector2(-1, -123)
+scale = Vector2(8.74347, 5.50977)
+shape = SubResource("RectangleShape2D_qvxjn")
+action = "pit"
+
+[node name="Image" type="Sprite2D" parent="buttons/Pitscouting" unique_id=1163726631]
+position = Vector2(0.11437106, 0)
+scale = Vector2(0.061, 0.067)
+texture = ExtResource("3_ovgja")
+
+[node name="Strategy" type="TouchScreenButton" parent="buttons" unique_id=391212590]
+position = Vector2(2, 4.99999)
+scale = Vector2(8.84, 5.64)
+shape = SubResource("RectangleShape2D_qvxjn")
+action = "strategy"
+
+[node name="Image" type="Sprite2D" parent="buttons/Strategy" unique_id=615828881]
+position = Vector2(-0.3393665, -9.536743e-07)
+scale = Vector2(0.06, 0.067)
+texture = ExtResource("4_artf5")
+
+[node name="History" type="TouchScreenButton" parent="buttons" unique_id=802089420]
+position = Vector2(1, 131)
+scale = Vector2(8.65889, -5.64585)
+shape = SubResource("RectangleShape2D_qvxjn")
+action = "history"
+
+[node name="Image" type="Sprite2D" parent="buttons/History" unique_id=43893154]
+position = Vector2(0, -0.5)
+scale = Vector2(0.06084887, -0.066632845)
+texture = ExtResource("5_8e1yi")
+
+[node name="Help" type="TouchScreenButton" parent="buttons" unique_id=1753634752]
+position = Vector2(1, 257)
+scale = Vector2(8.68, 5.68)
+shape = SubResource("RectangleShape2D_qvxjn")
+action = "help"
+
+[node name="Image" type="Sprite2D" parent="buttons/Help" unique_id=1902394950]
+scale = Vector2(0.061, 0.067)
+texture = ExtResource("6_jj4kc")
+
+[node name="DataStorage" parent="." unique_id=146184140 instance=ExtResource("7_xyfcl")]
+
+[node name="Name" type="Node2D" parent="." unique_id=922287311]
+
+[node name="Label" type="Label" parent="Name" unique_id=207357284]
+offset_left = 333.0
+offset_top = -246.0
+offset_right = 514.0
+offset_bottom = -188.0
+theme_override_font_sizes/font_size = 25
+text = "Scouter Name"
+
+[node name="TextEdit" type="TextEdit" parent="Name" unique_id=461011697]
+offset_left = 286.0
+offset_top = -210.0
+offset_right = 558.0
+offset_bottom = -169.0
+script = ExtResource("9_yfk2d")
+
+[node name="Robot" type="Node2D" parent="." unique_id=288357841]
+
+[node name="Label" type="Label" parent="Robot" unique_id=663210532]
+offset_left = 333.0
+offset_top = -51.0
+offset_right = 514.0
+offset_bottom = 7.0
+theme_override_font_sizes/font_size = 25
+text = "Robot Number"
+
+[node name="TextEdit" type="TextEdit" parent="Robot" unique_id=769271344]
+offset_left = 292.0
+offset_top = -14.0
+offset_right = 564.0
+offset_bottom = 27.0
+script = ExtResource("9_yfk2d")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=390700420]
+
+[node name="Arrow3" type="Sprite2D" parent="Node2D" unique_id=740360349]
+position = Vector2(361, -92)
+rotation = 3.1415927
+scale = Vector2(0.195, -0.195)
+texture = ExtResource("10_u3rw3")
+
+[node name="Arrow2" type="Sprite2D" parent="Node2D" unique_id=330226362]
+position = Vector2(489, -95)
+scale = Vector2(0.19502316, 0.19502315)
+texture = ExtResource("10_u3rw3")
+
+[node name="match" type="Label" parent="Node2D" unique_id=2093020078]
+offset_left = 391.0
+offset_top = -114.0
+offset_right = 461.0
+offset_bottom = -59.0
+theme_override_font_sizes/font_size = 40
+text = "1"
+horizontal_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Node2D" unique_id=1869283979]
+position = Vector2(479, -92)
+shape = SubResource("CircleShape2D_6iyac")
+action = "match+"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Node2D" unique_id=431746316]
+position = Vector2(371, -91)
+shape = SubResource("CircleShape2D_fdnlq")
+action = "match-"
+
+[node name="Label" type="Label" parent="Node2D" unique_id=1658022205]
+offset_left = 330.0
+offset_top = -161.0
+offset_right = 513.0
+offset_bottom = -103.0
+theme_override_font_sizes/font_size = 25
+text = "Match Number"
+
+[node name="Settings" type="Sprite2D" parent="." unique_id=920291905]
+position = Vector2(-445.00003, -199)
+scale = Vector2(0.3265, 0.3265)
+texture = ExtResource("11_pxjt7")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Settings" unique_id=877140890]
+shape = SubResource("RectangleShape2D_fdnlq")

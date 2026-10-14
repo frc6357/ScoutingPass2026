@@ -1,4 +1,10 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+/ScoutingPass.xcframework/ios-arm64/libgodot.a
 /ScoutingPass.xcframework/
+/ScoutingPass.xcframework/ios-arm64_x86_64-simulator/libgodot.a
+*.apk
+*.so
+*.a
+/

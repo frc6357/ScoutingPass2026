@@ -1,0 +1,316 @@
+[gd_scene format=3 uid="uid://dokjhhg2g5n87"]
+
+[ext_resource type="Script" uid="uid://bqvwxyt2xy1qg" path="res://3) Scripts/Season Specific/pit_scouting.gd" id="1_4luf6"]
+[ext_resource type="Script" uid="uid://dcgj6pq0byp2m" path="res://3) Scripts/General/text_edit.gd" id="2_ge7op"]
+[ext_resource type="Texture2D" uid="uid://6wksducocnk1" path="res://1) Assets/General/button2.png" id="3_ydrlf"]
+[ext_resource type="Texture2D" uid="uid://cg2bv1c3xhxxk" path="res://1) Assets/General/done.png" id="4_xov50"]
+[ext_resource type="Texture2D" uid="uid://bl8cprb4q61ob" path="res://1) Assets/General/eeeeee.png" id="5_6wqa8"]
+[ext_resource type="Texture2D" uid="uid://bfmnlhyre3gtx" path="res://1) Assets/General/eeeee.png" id="6_a0vu2"]
+[ext_resource type="PackedScene" uid="uid://b4uye4bit4uft" path="res://2) Scenes/Important/data_storage.tscn" id="7_j1sa6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nc53u"]
+radius = 240.34
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlk0v"]
+size = Vector2(200, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awhb8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bm5af"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6wqa8")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_a0vu2")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[node name="pit_scouting" type="Node2D" unique_id=1155759669]
+script = ExtResource("1_4luf6")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1019542629]
+
+[node name="Number" type="TextEdit" parent="." unique_id=1433225647]
+offset_left = 19.0
+offset_top = -306.0
+offset_right = 291.0
+offset_bottom = -265.0
+scale = Vector2(0.5999988, 1)
+script = ExtResource("2_ge7op")
+metadata/_edit_use_anchors_ = true
+
+[node name="Height1" type="TextEdit" parent="." unique_id=1051903975]
+offset_left = -200.0
+offset_top = -251.0
+offset_right = 72.0
+offset_bottom = -210.0
+scale = Vector2(0.5600003, 1)
+script = ExtResource("2_ge7op")
+metadata/_edit_use_anchors_ = true
+
+[node name="Height2" type="TextEdit" parent="." unique_id=1631629423]
+offset_left = 198.99998
+offset_top = -252.0
+offset_right = 471.0
+offset_bottom = -211.0
+scale = Vector2(0.5600003, 1)
+script = ExtResource("2_ge7op")
+metadata/_edit_use_anchors_ = true
+
+[node name="Width" type="TextEdit" parent="." unique_id=104664470]
+offset_left = -250.0
+offset_top = -198.24997
+offset_right = -21.0
+offset_bottom = -157.24997
+script = ExtResource("2_ge7op")
+metadata/_edit_use_anchors_ = true
+
+[node name="DriveTrain" type="TextEdit" parent="." unique_id=1527155540]
+offset_left = -259.0
+offset_top = -149.0
+offset_right = -35.0
+offset_bottom = -108.0
+script = ExtResource("2_ge7op")
+metadata/_edit_use_anchors_ = true
+
+[node name="Intake" type="TextEdit" parent="." unique_id=1418607024]
+offset_left = 150.0
+offset_top = -149.0
+offset_right = 374.0
+offset_bottom = -108.0
+script = ExtResource("2_ge7op")
+metadata/_edit_use_anchors_ = true
+
+[node name="Capacity" type="TextEdit" parent="." unique_id=806587914]
+offset_left = -24.499985
+offset_top = -93.99999
+offset_right = 204.50002
+offset_bottom = -52.999992
+script = ExtResource("2_ge7op")
+metadata/_edit_use_anchors_ = true
+
+[node name="Favorite" type="TextEdit" parent="." unique_id=312034244]
+offset_left = -258.0
+offset_top = 147.0
+offset_right = 260.0
+offset_bottom = 214.0
+script = ExtResource("2_ge7op")
+metadata/_edit_use_anchors_ = true
+
+[node name="Lenth" type="TextEdit" parent="." unique_id=1658022483]
+offset_left = 92.0
+offset_top = -198.24997
+offset_right = 324.0
+offset_bottom = -157.24997
+script = ExtResource("2_ge7op")
+metadata/_edit_use_anchors_ = true
+
+[node name="exit" type="TouchScreenButton" parent="." unique_id=1361062276]
+position = Vector2(347, -385.00003)
+scale = Vector2(0.37499997, 0.37499997)
+texture_normal = ExtResource("3_ydrlf")
+shape = SubResource("CircleShape2D_nc53u")
+action = "main"
+
+[node name="Team" type="Label" parent="." unique_id=916798328]
+offset_left = -173.0
+offset_top = -303.0
+offset_bottom = -269.0
+theme_override_font_sizes/font_size = 24
+text = "Team Number:"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="U_height" type="Label" parent="." unique_id=681052157]
+offset_left = -466.0
+offset_top = -247.0
+offset_right = -187.0
+offset_bottom = -213.0
+theme_override_font_sizes/font_size = 24
+text = "Unextended Height:"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="E_height" type="Label" parent="." unique_id=1074921879]
+offset_left = -52.0
+offset_top = -251.0
+offset_right = 227.0
+offset_bottom = -217.0
+theme_override_font_sizes/font_size = 24
+text = "Extended Height:"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="width" type="Label" parent="." unique_id=1631676882]
+offset_left = -341.00003
+offset_top = -195.5
+offset_right = -246.00003
+offset_bottom = -161.5
+theme_override_font_sizes/font_size = 24
+text = "Width:"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="length" type="Label" parent="." unique_id=1626810649]
+offset_left = -17.0
+offset_top = -197.25
+offset_right = 84.0
+offset_bottom = -163.25
+theme_override_font_sizes/font_size = 24
+text = "Length:"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Storage" type="Label" parent="." unique_id=2144226697]
+offset_left = -434.0
+offset_top = -149.0
+offset_right = -237.0
+offset_bottom = -115.0
+theme_override_font_sizes/font_size = 24
+text = "Drive train:"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Storage2" type="Label" parent="." unique_id=2027012038]
+offset_left = -25.0
+offset_top = -146.0
+offset_right = 172.0
+offset_bottom = -112.0
+theme_override_font_sizes/font_size = 24
+text = "Intake type:"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Storage3" type="Label" parent="." unique_id=2088456314]
+offset_left = -232.50003
+offset_top = -94.99999
+offset_right = -35.50003
+offset_bottom = -60.999992
+theme_override_font_sizes/font_size = 24
+text = "Storage capacity:"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Storage5" type="Label" parent="." unique_id=302025142]
+offset_left = -241.0
+offset_top = -45.0
+offset_right = 178.0
+offset_bottom = -8.0
+theme_override_font_sizes/font_size = 24
+text = "Climb?            yes                   no"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Storage6" type="Label" parent="." unique_id=1005507415]
+offset_left = -220.0
+offset_top = 1.5000114
+offset_right = 149.0
+offset_bottom = 35.50001
+theme_override_font_sizes/font_size = 24
+text = "Turret?                yes                    no"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Storage7" type="Label" parent="." unique_id=1226870251]
+offset_left = -283.00003
+offset_top = 44.499996
+offset_right = 235.99997
+offset_bottom = 78.5
+theme_override_font_sizes/font_size = 24
+text = "Multiple Launchers?                yes                    no"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Storage8" type="Label" parent="." unique_id=870086706]
+offset_left = -255.00003
+offset_top = 106.500015
+offset_right = 257.99997
+offset_bottom = 140.50002
+theme_override_font_sizes/font_size = 24
+text = "What is your favorite thing about this robot?"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Done" type="TouchScreenButton" parent="." unique_id=1006497787]
+position = Vector2(-156.00002, 219)
+scale = Vector2(1.6500002, 1.6500002)
+texture_normal = ExtResource("4_xov50")
+shape = SubResource("RectangleShape2D_rlk0v")
+
+[node name="cYes" type="TouchScreenButton" parent="." unique_id=1713519780]
+position = Vector2(17, -27)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_awhb8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="cYes" unique_id=1427434542]
+position = Vector2(1, -0.5)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_bm5af")
+animation = &"off"
+
+[node name="tYes" type="TouchScreenButton" parent="." unique_id=1048191759]
+position = Vector2(44, 17.500004)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_awhb8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tYes" unique_id=2113535771]
+position = Vector2(0.5, 0.5)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_bm5af")
+animation = &"off"
+
+[node name="mYes" type="TouchScreenButton" parent="." unique_id=1396968378]
+position = Vector2(120, 62.5)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_awhb8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="mYes" unique_id=1747339454]
+position = Vector2(0.5, 0.5)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_bm5af")
+animation = &"off"
+
+[node name="cNo" type="TouchScreenButton" parent="." unique_id=2016480963]
+position = Vector2(155, -27.5)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_awhb8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="cNo" unique_id=952295899]
+position = Vector2(0.5, 0)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_bm5af")
+animation = &"off"
+
+[node name="tNo" type="TouchScreenButton" parent="." unique_id=1498766146]
+position = Vector2(188, 17.500004)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_awhb8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tNo" unique_id=874563924]
+position = Vector2(0.5, 0)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_bm5af")
+animation = &"off"
+
+[node name="mNo" type="TouchScreenButton" parent="." unique_id=798532126]
+position = Vector2(264, 62.5)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_awhb8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="mNo" unique_id=506144852]
+position = Vector2(0.5, 0)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_bm5af")
+animation = &"off"
+
+[node name="DataStorage" parent="." unique_id=540420952 instance=ExtResource("7_j1sa6")]
